@@ -1,0 +1,105 @@
+name: Dokoiko
+
+# Build Configurations
+configs:
+  Debug: debug
+  Release: release
+
+options:
+  bundleIdPrefix: com.tyomashin.Dokoiko
+  deploymentTarget:
+    iOS: 13.0
+  developmentLanguage: ja
+  # xcodeVersion: "12.3"
+  # carthageExecutablePath: mint run Carthage/Carthage carthage
+
+# Build Settings
+# ターゲットに依存しない設定
+settings:
+  # Common
+  base:
+    MARKETING_VERSION: 1.0.0
+    CURRENT_PROJECT_VERSION: 1
+    # SWIFT_VERSION: 5
+    # PRODUCT_NAME: $TARGET_NAME
+  configs:
+    Debug:
+      GCC_PREPROCESSOR_DEFINITIONS: DEVELOP=1
+      OTHER_SWIFT_FLAGS: -D DEVELOP
+    Release:
+      GCC_PREPROCESSOR_DEFINITIONS: "$(inherited)"
+      OTHER_SWIFT_FLAGS: "$(inherited)"
+
+targets:
+  Dokoiko:
+    type: application
+    platform: iOS
+    sources: 
+      - Dokoiko
+      # 自動生成するソースのパスを追加
+      # 以下はサンプル
+      ## Mockoloで生成するファイル
+      # - path: "Foo/Generated/MockResults.swift"
+      #   optional: true
+      #  type: file
+    settings:
+      base: 
+        INFOPLIST_FILE: Dokoiko/Info.plist
+    # 依存するライブラリなどを指定
+    dependencies:
+      - carthage: RxSwift
+      - carthage: RxCocoa
+      - carthage: RxRelay
+      # - framework: Extensions.framework # 自作したフレームワーク
+    # TODO: Build Phases で実行するスクリプトを記載
+
+  DokoikoTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: 
+      - DokoikoTests
+      # 試験時に、ソースコードのTarget MemberShipに本ターゲットを追加して参照したい場合は、以下のコメントを外す
+      # - Dokoiko
+    settings:
+      base: 
+        INFOPLIST_FILE: DokoikoTests/Info.plist
+    dependencies:
+      - target: Dokoiko
+
+  DokoikoUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: DokoikoUITests
+    settings:
+      base: 
+        INFOPLIST_FILE: DokoikoUITests/Info.plist
+    dependencies:
+      - target: Dokoiko
+
+# スキームの設定。一旦参考サイトをコピペで記載している
+# https://qiita.com/uhooi/items/16a870eaae24b46103fb
+schemes:
+  Dokoiko:
+    build:
+      targets:
+        Dokoiko: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets:
+        - Dokoiko
+      targets:
+        - name: DokoikoTests
+          parallelizable: true
+          randomExecutionOrder: true
+        - name: DokoikoUITests
+          parallelizable: true
+          randomExecutionOrder: true
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
