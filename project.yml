@@ -6,7 +6,7 @@ configs:
   Release: release
 
 options:
-  bundleIdPrefix: com.tyomashin.Dokoiko
+  bundleIdPrefix: com.tyomashin
   deploymentTarget:
     iOS: 13.0
   developmentLanguage: ja
@@ -45,6 +45,15 @@ targets:
     settings:
       base: 
         INFOPLIST_FILE: Dokoiko/Info.plist
+    postCompileScripts:
+      - script: |
+                if which mint >/dev/null; then
+                  xcrun --sdk macosx mint run swiftlint swiftlint autocorrect --format
+                  xcrun --sdk macosx mint run swiftlint swiftlint
+                else
+                  echo "warning: Mint not installed, download from https://github.com/yonaskolb/Mint"
+                fi
+        name: Run Script (SwiftLint)
     # 依存するライブラリなどを指定
     dependencies:
       - carthage: RxSwift

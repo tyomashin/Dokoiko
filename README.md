@@ -79,3 +79,12 @@ XcodeGen は Mint で入れているため、以下のコマンドで実行で�
 ```
 $ mint run xcodegen xcodegen generate
 ```
+
+### 備考
+
+xcodegen のコマンドを実行してから、プロジェクトを開くまでのコマンドを Makefile に記載している。<br>
+以下のコマンドを入力するだけで、上記 xcodeGen コマンドが実行される。
+
+```
+$ make
+```
