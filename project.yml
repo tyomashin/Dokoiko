@@ -54,6 +54,13 @@ targets:
                   echo "warning: Mint not installed, download from https://github.com/yonaskolb/Mint"
                 fi
         name: Run Script (SwiftLint)
+      - script: |
+                if which mint >/dev/null; then
+                  xcrun --sdk macosx mint run swiftgen 
+                else
+                  echo "failed SwiftGen Run Script"
+                fi
+        name: Run Script (SwiftGen)
     # 依存するライブラリなどを指定
     dependencies:
       - carthage: RxSwift
