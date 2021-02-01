@@ -45,6 +45,14 @@ targets:
     settings:
       base: 
         INFOPLIST_FILE: Dokoiko/Info.plist
+    preBuildScripts:
+      - script: |
+                if which mint >/dev/null; then
+                  xcrun --sdk macosx mint run swiftformat swiftformat . --exclude Carthage,Pods --trimwhitespace nonblank-lines --stripunusedargs closure-only --disable strongOutlets,trailingCommas
+                else
+                 echo "warning: SwiftFormat not installed"
+                fi
+        name: Run Script (Swift Format)
     postCompileScripts:
       - script: |
                 if which mint >/dev/null; then
@@ -56,7 +64,7 @@ targets:
         name: Run Script (SwiftLint)
       - script: |
                 if which mint >/dev/null; then
-                  xcrun --sdk macosx mint run swiftgen 
+                  xcrun --sdk macosx mint run swiftgen
                 else
                   echo "failed SwiftGen Run Script"
                 fi
