@@ -103,7 +103,7 @@ opt_in_rules:
   - closure_end_indentation            # クロージャの終了位置は開始位置と同じインデントを持つべき
   - closure_spacing                    # クロージャ内の両端にはそれぞれ一つスペースを持つべき.  例：[].map ({ $0.description })
   - collection_alignment               # コレクション内の要素は垂直方向に整列すべき
-  - conditional_returns_on_newline     # 条件式でreturnする場合、次の行でreturnすること
+  #- conditional_returns_on_newline     # 条件式でreturnする場合、次の行でreturnすること
   - contains_over_filter_is_empty      # [].filter(where:).isEmpty より contains() を使うべき
   - contains_over_first_not_nil        # [].first(where:) != nil より contains() を使うべき
   - contains_over_range_nil_comparison # range(of:) != nil and range(of:) == nil より contains() を使うべき
@@ -117,17 +117,17 @@ opt_in_rules:
   - empty_xctest_method                # 空のXCTestメソッドを実装すべきではない
   - enum_case_associated_values_count  # enum の associated values は多すぎないようにするべき（警告：5、エラー：6以上）
   #- expiring_todo                     # TODO, FIXME コメントに期限が指定されている場合、期限までに解決すべき（本プロジェクトはサンプルなので期限はないため無効化している）
-  - explicit_acl                       # 全ての定義でアクセス制御レベル（ACL）のキーワードを明示的に指定すべき
+  #- explicit_acl                       # 全ての定義でアクセス制御レベル（ACL）のキーワードを明示的に指定すべき
   #- explicit_enum_raw_value           # enum は rawValue を明示的に割り当てるべき（省略することもあるため無効にしている）
   - explicit_init                      # .init() を明示的に呼び出すべきではない
   #- explicit_self                     # インスタンス変数と関数は self をつけて呼び出すべき（関数は「self.」を付けずに呼び出したいため無効にしている）
-  - explicit_top_level_acl             # 最上位の定義ではアクセス制御レベルのキーワードを明示的に指定すべき
+  #- explicit_top_level_acl             # 最上位の定義ではアクセス制御レベルのキーワードを明示的に指定すべき
   #- explicit_type_interface           # プロパティは型インターフェースを持って型を明示的に指定すべき（できる限り型推論したいため無効にしている）
   - extension_access_modifier          # extension で定義したプロパティ、メソッドが全てpublicの場合、extension自身にpublicキーワードをつけるべき
   - fallthrough                        # Switch文において fallthrough キーワードの使用は避けるべき 
   - fatal_error_message                # fatalError はメッセージをつけて呼び出すべき
   #- file_header                       # このルールの説明が不明なため無効
-  - file_name                          # ファイル名は、ファイルで宣言されている型またはエクステンションと一致すべき
+  #- file_name                          # ファイル名は、ファイルで宣言されている型またはエクステンションと一致すべき
   - file_name_no_space                 # ファイル名にスペースを含めるべきでない
   #- file_types_order                   # ファイル内の型の順序を強制する（参考：https://qiita.com/uhooi/items/582a16f18e5b7b20c216）（ファイル名と、中で定義している先頭の型名が一致しないこともあるため無効にしている）
   - first_where                        # コレクションでは、「.filter{ }.first」よりも「.first(where:)」を優先すること
@@ -180,7 +180,7 @@ opt_in_rules:
   - reduce_into                        # reduce(_:_:) よりも reduce(into:_:) を使用すべき（Copy on Write な 型（structなど）のために）
   - redundant_nil_coalescing           # 「??」演算子は左辺がnilの時に評価されるため、右辺にnilを書くのは冗長（bad:「var myVar: Int? = nil; myVar↓ ?? nil」）
   - redundant_type_annotation          # 変数には冗長な型注釈を持たせるべきではない（bad:「var url: URL = URL()」）
-  - required_deinit                    # クラスには明示的な deinit メソッドが必要
+  #- required_deinit                    # クラスには明示的な deinit メソッドが必要
   - required_enum_case                 # 特定のプロトコルに準拠する列挙型は、特定のcaseを実装する必要がある
   - single_test_class                  # テストファイルは単一の QuickSpec または XCTestCase クラスを含むべき
   - sorted_first_last                  # sorted().first や sorted().last より min() や max() を使うべき
@@ -209,8 +209,8 @@ opt_in_rules:
 excluded:
   - Pods
   - Carthage
-  - SkywalkerAppTests
-  - SkywalkerAppUITests
+  - DokoikoTests
+  - DokoikoUITests
 
 # 1行あたり200文字まで
 line_length: 200
