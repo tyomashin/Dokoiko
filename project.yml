@@ -20,8 +20,12 @@ settings:
   base:
     MARKETING_VERSION: 1.0.0
     CURRENT_PROJECT_VERSION: 1
+    DEVELOPMENT_TEAM: 38BV25GUUS
     # SWIFT_VERSION: 5
     # PRODUCT_NAME: $TARGET_NAME
+    # Xcode 12.3 で、以下のパラメータが欠落しているとのことなので明示的に指定（デフォルト値）
+    # 参考：https://stackoverflow.com/questions/63267897/building-for-ios-simulator-but-the-linked-framework-framework-was-built
+    VALIDATE_WORKSPACE: NO
   configs:
     Debug:
       GCC_PREPROCESSOR_DEFINITIONS: DEVELOP=1
