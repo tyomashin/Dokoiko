@@ -64,7 +64,8 @@ $ carthage update --platform iOS --no-use-binaries
 現在（2021/01/13）、[issue](https://github.com/Carthage/Carthage/issues/3019#issuecomment-665136323)
 で議論されているビルドエラーが発生している。<br>
 
-この問題の暫定的な回避策として、[この方法](https://github.com/Carthage/Carthage/issues/3019#issuecomment-665136323)を実施している。
+この問題の暫定的な回避策として、[この方法](https://github.com/Carthage/Carthage/issues/3019#issuecomment-665136323)を実施している。<br>
+このシェルスクリプトを使うために、Carthage は Mint でインストールしていない。
 
 ```
 $ ./carthage.sh update --platform iOS --no-use-binaries
