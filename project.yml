@@ -75,10 +75,9 @@ targets:
         name: Run Script (SwiftGen)
     # 依存するライブラリなどを指定
     dependencies:
-      - carthage: RxSwift
-      - carthage: RxCocoa
-      - carthage: RxRelay
-      # - framework: Extensions.framework # 自作したフレームワーク
+      - framework: Carthage/Build/RxSwift.xcframework
+      - framework: Carthage/Build/RxCocoa.xcframework
+      - framework: Carthage/Build/RxRelay.xcframework
     # TODO: Build Phases で実行するスクリプトを記載
 
   DokoikoTests:

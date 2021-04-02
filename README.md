@@ -20,6 +20,7 @@
 * SwiftGen
 * SwiftFormat
 * XcodeGen
+* Carthage
 
 これらは mint でインストールしている（Mintfile に記載）。<br>
 
@@ -45,30 +46,11 @@ $ mint bootstrap
 
 ライブラリ管理に Carthage を使用している。<br>
 
-まず、Carthage をインストールする。
-
-```
-$ brew install carthage
-```
-
-次に、ライブラリをビルドして framework を作成する。
+ライブラリをビルドして xcframework を作成する。
 プラットフォームは iOS だけにしている。
 
 ```
-// Swift 5.3.2 に合致するバイナリがない場合はビルドする（--no-use-binaries）
-$ carthage update --platform iOS --no-use-binaries
-```
-
-**ビルドが失敗する場合**
-
-現在（2021/01/13）、[issue](https://github.com/Carthage/Carthage/issues/3019#issuecomment-665136323)
-で議論されているビルドエラーが発生している。<br>
-
-この問題の暫定的な回避策として、[この方法](https://github.com/Carthage/Carthage/issues/3019#issuecomment-665136323)を実施している。<br>
-このシェルスクリプトを使うために、Carthage は Mint でインストールしていない。
-
-```
-$ ./carthage.sh update --platform iOS --no-use-binaries
+$ mint run carthage update --platform iOS --use-xcframeworks
 ```
 
 ## 3. プロジェクトファイルの生成

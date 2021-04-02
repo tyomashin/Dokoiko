@@ -2,3 +2,4 @@ realm/SwiftLint@0.42.0
 SwiftGen/SwiftGen@6.4.0
 nicklockwood/SwiftFormat@0.47.10
 yonaskolb/xcodegen@2.18.0
+Carthage/Carthage@0.37.0
