@@ -52,7 +52,7 @@ targets:
     preBuildScripts:
       - script: |
                 if which mint >/dev/null; then
-                  xcrun --sdk macosx mint run swiftformat swiftformat . --exclude Carthage,Pods --trimwhitespace nonblank-lines --stripunusedargs closure-only --disable strongOutlets,trailingCommas
+                  xcrun --sdk macosx mint run swiftformat swiftformat . --exclude Carthage,Pods --stripunusedargs closure-only --disable strongOutlets,trailingCommas
                 else
                  echo "warning: SwiftFormat not installed"
                 fi

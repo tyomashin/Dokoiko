@@ -21,7 +21,7 @@ class AppDataTests: XCTestCase {
     func testAppDataAccess() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
+
         // 初期化フラグ
         // デフォルト値テスト
         XCTAssertEqual(AppData.firstLaunchFlag, false)
