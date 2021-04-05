@@ -78,6 +78,7 @@ targets:
       - framework: Carthage/Build/RxSwift.xcframework
       - framework: Carthage/Build/RxCocoa.xcframework
       - framework: Carthage/Build/RxRelay.xcframework
+      - framework: Carthage/Build/Alamofire.xcframework
     # TODO: Build Phases で実行するスクリプトを記載
 
   DokoikoTests:
