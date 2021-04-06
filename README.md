@@ -50,6 +50,13 @@ Carthage によってライブラリをビルドして xcframework を作成す�
 $ mint run carthage update --platform iOS --use-xcframeworks
 ```
 
+なお、Carthage のバージョンは 0.37.0 を使用しているため、
+Xcode12 から発生していたframeworkのビルドエラーにも対処できている。<br>
+
+### 参考文献
+[XCFrameworksに対応したCarthageを使ってみた](https://laptrinhx.com/xcframeworksni-dui-yingshitacarthagewo-shittemita-2660437151/) <br>
+
+
 ## 3. プロジェクトファイルの生成
 
 XcodeGen を使用してプロジェクトファイルを自動生成している。<br>
@@ -84,9 +91,9 @@ MVVM を採用している。
 * DataStore
 * Entity
 
-DataStore は、データ操作や API の実行を行う。<br>
-データ操作には、RealmSwift を使用した DB の操作、UserDefaults へのアクセス、
-API の実行は Alamofire を使用しているが、このような実装の詳細は上位レイヤーから隠蔽される。<br>
+DataStore は、ローカル（DB）またはリモート（API）のデータソースからデータを取得する責務を担う。<br>
+RealmSwift を使用した DB の操作、UserDefaults へのアクセス、
+Alamofire によるAPIの実行などの実装の詳細は上位レイヤーから隠蔽される。<br>
 <br>
 Entity は、DataStore で扱う静的なオブジェクト（Valueオブジェクト）。<br>
 Realmオブジェクトなどが該当する。<br>
@@ -115,3 +122,4 @@ UseCase は、アプリ固有のユースケースロジックを担う。<br>
 
 [まだMVC,MVP,MVVMで消耗してるの？ iOS Clean Architectureについて](https://qiita.com/koutalou/items/07a4f9cf51a2d13e4cdc)	
 
+[iOSのMVP、MVVM、クリーンアーキテクチャ](https://medium.com/@salma.salah.ashour/mvp-mvvm-and-clean-architecture-in-ios-49643b456a5)

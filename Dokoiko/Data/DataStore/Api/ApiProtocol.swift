@@ -11,18 +11,19 @@ import RxSwift
 
 /// APIリクエストを定義する構造体が準拠する必要のあるプロトコル
 protocol ApiProtocol {
+    typealias Request = ApiRequestProtocol
     /// APIリクエストを実行する
     /// - Parameter request: リクエストの詳細
-    func request<T: ApiRequestProtocol, U: Codable>(request: T) -> Observable<ApiResponse<U>>
+    func request<T: Codable>(request: Request) -> Observable<ApiResponse<T>>
     /// Alamofire の引数に渡す URLRequest インスタンスを生成して返す
     /// - Parameter request: リクエストの詳細
-    func getDefaultUrlRequest<T: ApiRequestProtocol>(request: T) -> URLRequest?
+    func getDefaultUrlRequest(request: Request) -> URLRequest?
 }
 
 /// プロトコルのデフォルト実装を定義
 extension ApiProtocol {
     /// APIリクエストを実行する
-    func request<T: ApiRequestProtocol, U: Codable>(request: T) -> Observable<ApiResponse<U>> {
+    func request<T: Codable>(request: Request) -> Observable<ApiResponse<T>> {
         Observable.create { observer in
             // 引数のリクエスト情報から URLRequest インスタンスを生成
             guard let req = getDefaultUrlRequest(request: request) else {
@@ -38,7 +39,7 @@ extension ApiProtocol {
                 switch statusCode {
                 case .success:
                     // レスポンスのJsonをデコードして構造体にマッピングする
-                    let result = ApiResponseDecoder<U>(jsonData: response.data)
+                    let result = ApiResponseDecoder<T>(jsonData: response.data)
                     if case let .success(entity: entity) = result {
                         observer.onNext(.success(response: entity))
                     } else {
@@ -56,7 +57,7 @@ extension ApiProtocol {
     }
 
     /// リクエスト情報からURLRequestオブジェクトを生成する
-    func getDefaultUrlRequest<T: ApiRequestProtocol>(request: T) -> URLRequest? {
+    func getDefaultUrlRequest(request: Request) -> URLRequest? {
         guard let url = request.baseURL else {
             return nil
         }
