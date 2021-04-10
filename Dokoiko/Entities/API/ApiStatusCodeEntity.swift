@@ -1,5 +1,5 @@
 //
-//  ApiStatusCodeError.swift
+//  ApiStatusCodeEntity.swift
 //  Dokoiko
 //
 //  Created by 岡崎伸也 on 2021/04/05.
@@ -8,7 +8,7 @@
 import Foundation
 
 /// APIステータスコード
-enum ApiStatusCode {
+enum ApiStatusCodeEntity {
     case success
     case someError
 

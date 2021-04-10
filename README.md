@@ -84,42 +84,46 @@ MVVM を採用している。
 
 ## システムアーキテクチャ
 
-クリーンアーキテクチャを模倣して、MVVM の Model レイヤーをレイヤ分割している。<br>
-上位のレイヤーは直下のレイヤーの抽象にのみ依存する。<br>
+クリーンアーキテクチャを採用して、MVVM の Model レイヤを分割している。<br>
+アプリ全体のレイヤは以下のように分割している。
 
-### Dataレイヤー
-* DataStore
-* Entity
+* Entities
+* UseCases
+* InterfaceAdapters
+* FrameworksAndDrivers
 
-DataStore は、ローカル（DB）またはリモート（API）のデータソースからデータを取得する責務を担う。<br>
-RealmSwift を使用した DB の操作、UserDefaults へのアクセス、
-Alamofire によるAPIの実行などの実装の詳細は上位レイヤーから隠蔽される。<br>
-<br>
-Entity は、DataStore で扱う静的なオブジェクト（Valueオブジェクト）。<br>
-Realmオブジェクトなどが該当する。<br>
-上位レイヤーには隠蔽される。（Repository にて、上位レイヤーで扱うオブジェクトとの変換が行われる）<br>
+### Entities
+一番内側（下層）のレイヤーで、データ構造・メソッドの集合体。<br>
+他のどこのレイヤーにも依存しない。<br>
 
+### UseCases
+Entities の一つ上のレイヤー。<br>
+アプリ固有のビジネスロジックが記述される。<br>
+このレイヤーは、上位層の UI、DB、API などの実装詳細に依存しない。<br>
+このため、「import UIKit」「import Alamofire」「import RealmSwift」などのコードを記述してはならない。<br>
+UseCase から DB への参照や、API の実行を行う場合は、「InterfaceAdapters」レイヤーを介して行う必要がある。<br>
+なお、InterfaceAdapters レイヤーは UseCase レイヤーよりも上位にあるため、UseCase から直接参照することはできず、抽象に依存する形で参照する必要がある（依存性逆転の法則）。<br>
 
-### Domainレイヤー
-* Repository
-* UseCase
-* Model
+### InterfaceAdapters
+UseCase の一つ上のレイヤー。<br>
+InterfaceAdapters レイヤーは、UseCase と、この上のレイヤーのつなぎ役、およびレイヤー間のデータ構造の変換層を担っている。<br>
 
-Repository は、Data レイヤーと Domain レイヤーを結ぶインターフェースの役割を担う。<br>
-Repository によって、Data レイヤーの実装は隠蔽される。<br>
-また、Entity <-> Model の変換もここで行う。<br>
-<br>
+なお、本プロジェクトでは役割に応じて以下の命名を取っている。<br>
 
-UseCase は、アプリ固有のユースケースロジックを担う。<br>
-複数の Model（Repository が Entity をユースケース用に変換したオブジェクト） を組み合わせて調整することで実現する。<br>
-ここでは Data レイヤーの実装内容を気にする必要はなく、
-「import RealmSwift」や「import Alamofire」といった記述が不要（Data レイヤーが依存するライブラリに UseCase は依存しない）。<br>
-このため、Dataレイヤーは丸ごと置き換えが可能になる。<br>
+* ViewModel ... UI と UseCase の仲介役
+* GateWay ... DB の参照や API 実行の仲介役
 
+例えば、DBからデータを取得した後で、Realm オブジェクトと Entity の変換までは、GateWay の責務となる。<br>
 
+### FrameworksAndDrivers
+最も外側（上位）のレイヤー。<br>
+UI、DB、APIクライアントなどがこのレイヤーに該当する。<br>
+UIKit や Alamofire、RealmSwift などのライブラリを使用したロジックはこのレイヤーに記述される。<br>
+このレイヤーが最外層にあることで、ネットワーク通信や DB にどんなライブラリを使用していたとしてもビジネスロジックはその詳細に依存することはない。<br>
+このためライブラリを置き換える際にも下層レイヤーへの影響が少なくなる。<br>
+例えば以下のようなライブラリ、フレームワークを使用する処理もこのレイヤーに置かれる。<br>
 
-## 参考文献
-
-[まだMVC,MVP,MVVMで消耗してるの？ iOS Clean Architectureについて](https://qiita.com/koutalou/items/07a4f9cf51a2d13e4cdc)	
-
-[iOSのMVP、MVVM、クリーンアーキテクチャ](https://medium.com/@salma.salah.ashour/mvp-mvvm-and-clean-architecture-in-ios-49643b456a5)
+* CoreLocation
+* GoogleMaps
+* NotificationCenter
+* CoreBluetooth

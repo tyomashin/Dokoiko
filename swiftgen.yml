@@ -2,7 +2,7 @@ input_dir: ./Dokoiko
 output_dir: ./Dokoiko/Generated/SwiftGen
 
 ib:
-  - inputs: Presentation
+  - inputs: FrameworksAndDrivers/UI
     filter: .+\.storyboard$
     outputs:
       - templateName: scenes-swift5

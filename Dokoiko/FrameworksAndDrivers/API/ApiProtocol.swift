@@ -14,7 +14,7 @@ protocol ApiProtocol {
     typealias Request = ApiRequestProtocol
     /// APIリクエストを実行する
     /// - Parameter request: リクエストの詳細
-    func request<T: Codable>(request: Request) -> Observable<ApiResponse<T>>
+    func request<T: Codable>(request: Request) -> Observable<ApiResponseEntity<T>>
     /// Alamofire の引数に渡す URLRequest インスタンスを生成して返す
     /// - Parameter request: リクエストの詳細
     func getDefaultUrlRequest(request: Request) -> URLRequest?
@@ -23,7 +23,7 @@ protocol ApiProtocol {
 /// プロトコルのデフォルト実装を定義
 extension ApiProtocol {
     /// APIリクエストを実行する
-    func request<T: Codable>(request: Request) -> Observable<ApiResponse<T>> {
+    func request<T: Codable>(request: Request) -> Observable<ApiResponseEntity<T>> {
         Observable.create { observer in
             // 引数のリクエスト情報から URLRequest インスタンスを生成
             guard let req = getDefaultUrlRequest(request: request) else {
@@ -35,7 +35,7 @@ extension ApiProtocol {
             // Alamofire によってAPIを実行
             AF.request(req).response { response in
                 // ステータスコードを確認
-                let statusCode = ApiStatusCode(statusCode: response.response?.statusCode)
+                let statusCode = ApiStatusCodeEntity(statusCode: response.response?.statusCode)
                 switch statusCode {
                 case .success:
                     // レスポンスのJsonをデコードして構造体にマッピングする

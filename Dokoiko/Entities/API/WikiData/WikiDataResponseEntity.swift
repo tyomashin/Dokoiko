@@ -1,5 +1,5 @@
 //
-//  WikiDataEntity.swift
+//  WikiDataResponseEntity.swift
 //  Dokoiko
 //
 //  Created by 岡崎伸也 on 2021/04/05.
@@ -7,8 +7,7 @@
 
 import Foundation
 
-/// WikiDataStore で扱うEntity。
-/// WikiデータAPIから取得したオブジェクトが格納される
+/// Wikiデータ情報が格納される
 struct WikiDataResponseEntity: Codable {
     /// entities 配下はWikiコードを動的Keyに持つ
     var entities: [String: WikiDataDetails]?
