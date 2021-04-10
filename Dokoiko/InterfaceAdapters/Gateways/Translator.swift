@@ -7,8 +7,6 @@
 
 import Foundation
 import RxSwift
-import CoreLocation
-import NotificationCenter
 
 /// 参考：https://github.com/koutalou/iOS-CleanArchitecture/tree/master/iOSCleanArchitectureTwitterSample/Domain/UseCase/Translater
 protocol Translator {
