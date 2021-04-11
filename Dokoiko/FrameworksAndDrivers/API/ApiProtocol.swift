@@ -14,7 +14,7 @@ protocol ApiProtocol {
     typealias Request = ApiRequestProtocol
     /// APIリクエストを実行する
     /// - Parameter request: リクエストの詳細
-    func request<T: Codable>(request: Request) -> Observable<ApiResponseEntity<T>>
+    func request<T: Codable>(request: Request) -> Single<ApiResponseEntity<T>>
     /// Alamofire の引数に渡す URLRequest インスタンスを生成して返す
     /// - Parameter request: リクエストの詳細
     func getDefaultUrlRequest(request: Request) -> URLRequest?
@@ -23,13 +23,12 @@ protocol ApiProtocol {
 /// プロトコルのデフォルト実装を定義
 extension ApiProtocol {
     /// APIリクエストを実行する
-    func request<T: Codable>(request: Request) -> Observable<ApiResponseEntity<T>> {
-        Observable.create { observer in
+    func request<T: Codable>(request: Request) -> Single<ApiResponseEntity<T>> {
+        Single.create { single in
             // 引数のリクエスト情報から URLRequest インスタンスを生成
             guard let req = getDefaultUrlRequest(request: request) else {
                 // リクエストが生成できなければエラーを返す
-                observer.onNext(.error(error: .requestUrlError))
-                observer.onCompleted()
+                single(.success(.error(error: .requestUrlError)))
                 return Disposables.create()
             }
             // Alamofire によってAPIを実行
@@ -41,16 +40,14 @@ extension ApiProtocol {
                     // レスポンスのJsonをデコードして構造体にマッピングする
                     let result = ApiResponseDecoder<T>(jsonData: response.data)
                     if case let .success(entity: entity) = result {
-                        observer.onNext(.success(response: entity))
+                        single(.success(.success(response: entity)))
                     } else {
-                        observer.onNext(.error(error: .dataEmptyError))
+                        single(.success(.error(error: .dataEmptyError)))
                     }
                 // ステータスコードエラー
                 case .someError:
-                    observer.onNext(.error(error: .statusCodeError(statusCode: statusCode)))
+                    single(.success(.error(error: .statusCodeError(statusCode: statusCode))))
                 }
-                // ストリームを終了させる
-                observer.onCompleted()
             }
             return Disposables.create()
         }

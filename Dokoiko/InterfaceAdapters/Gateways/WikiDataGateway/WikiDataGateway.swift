@@ -10,7 +10,7 @@ import RxSwift
 
 protocol WikiDataGatewayProtocol {
     /// Wikiコードに合致する情報を取得する
-    func getWikiData(wikiCode: String) -> Observable<ApiResponseEntity<WikiDataResponseEntity>>
+    func getWikiData(wikiCode: String) -> Single<ApiResponseEntity<WikiDataResponseEntity>>
 }
 
 /// Wikiデータ取得の責務を担うゲートウェイ
@@ -22,7 +22,7 @@ struct WikiDataGateway: WikiDataGatewayProtocol {
     }
 
     /// Wikiコードに合致する情報を取得する
-    func getWikiData(wikiCode: String) -> Observable<ApiResponseEntity<WikiDataResponseEntity>> {
+    func getWikiData(wikiCode: String) -> Single<ApiResponseEntity<WikiDataResponseEntity>> {
         wikiDataClient.getWikiData(wikiCode: wikiCode)
     }
 }

@@ -79,7 +79,6 @@ targets:
       - framework: Carthage/Build/RxCocoa.xcframework
       - framework: Carthage/Build/RxRelay.xcframework
       - framework: Carthage/Build/Alamofire.xcframework
-    # TODO: Build Phases で実行するスクリプトを記載
 
   DokoikoTests:
     type: bundle.unit-test
@@ -93,6 +92,8 @@ targets:
         INFOPLIST_FILE: DokoikoTests/Info.plist
     dependencies:
       - target: Dokoiko
+      - framework: Carthage/Build/RxTest.xcframework
+      - framework: Carthage/Build/RxBlocking.xcframework
 
   DokoikoUITests:
     type: bundle.ui-testing

@@ -10,7 +10,7 @@ import RxSwift
 
 protocol WikiDataUseCaseProtocol {
     /// Wikiコードに合致するWikiデータをデータソースから取得する
-    func getWikiData(wikiCode: String) -> Observable<ApiResponseEntity<WikiDataResponseEntity>>
+    func getWikiData(wikiCode: String) -> Single<ApiResponseEntity<WikiDataResponseEntity>>
 }
 
 /// WikiデータをGatewayから取得する責務を担うユースケース
@@ -22,7 +22,7 @@ struct WikiDataUseCase: WikiDataUseCaseProtocol {
     }
 
     /// Wikiコードに合致するWikiデータをGatewayから取得する
-    func getWikiData(wikiCode: String) -> Observable<ApiResponseEntity<WikiDataResponseEntity>> {
+    func getWikiData(wikiCode: String) -> Single<ApiResponseEntity<WikiDataResponseEntity>> {
         wikiDataGateway.getWikiData(wikiCode: wikiCode)
     }
 }

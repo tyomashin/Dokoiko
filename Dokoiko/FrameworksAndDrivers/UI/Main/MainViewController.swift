@@ -20,9 +20,9 @@ class MainViewController: UIViewController {
 
         let hoge = WikiDataUseCase(wikiDataGateway: WikiDataGateway(wikiDataClient: WikiDataClient()))
         hoge.getWikiData(wikiCode: "Q750569")
-            .subscribe(onNext: { result in
+            .subscribe { result in
                 print(result)
-            })
+            }
     }
 
     internal func inject(viewModel: MainViewModelProtocol) {
