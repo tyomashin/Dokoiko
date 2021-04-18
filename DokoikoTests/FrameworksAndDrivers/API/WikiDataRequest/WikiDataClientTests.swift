@@ -40,6 +40,7 @@ class WikiDataClientTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 
+        // FIXME: Mockingjayを導入してサーバーのモックを作成する
         let result = try! wikiDataClient.getWikiData(wikiCode: "Q750569").toBlocking(timeout: 5000).single()
         switch result {
         case let .success(response: response):
