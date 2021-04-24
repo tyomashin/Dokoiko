@@ -18,4 +18,6 @@ protocol ApiRequestProtocol {
     var method: HTTPMethod { get }
     /// リクエストヘッダー
     var headers: [String: String] { get }
+    /// クエリパラメータ
+    var queryParameters: [String: String] { get }
 }

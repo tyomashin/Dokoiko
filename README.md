@@ -76,6 +76,17 @@ xcodegen のコマンドを実行してから、プロジェクトを開くま�
 $ make
 ```
 
+### 4. APIキー
+
+本プロジェクトでは API キーを格納した swift ファイルを gitignore に追加している。<br>
+このため、以下の形式のファイルをプロジェクトのどこかに格納しておく必要がある。<br>
+
+```swift
+enum APIKeys {
+    static let RESAS_API_KEY = ""
+}
+```
+
 
 # アーキテクチャ
 ## GUIアーキテクチャ

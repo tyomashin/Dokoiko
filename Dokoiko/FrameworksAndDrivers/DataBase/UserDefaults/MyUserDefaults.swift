@@ -15,6 +15,12 @@ internal struct MyUserDefaults<T: Codable> {
     private let defaultValue: T
     private let userdef: UserDefaults
 
+    // iOS12 までは、基本型はCodableではないため、構造体でラップしている
+    // https://stackoverflow.com/questions/59473051/userdefault-property-wrapper-not-saving-values-ios-versions-below-ios-13
+    struct Wrapper<T>: Codable where T: Codable {
+        let wrapped: T
+    }
+
     internal var wrappedValue: T {
         get {
             // UserDefaults にデータがなければデフォルト値を返す
@@ -23,10 +29,10 @@ internal struct MyUserDefaults<T: Codable> {
             }
 
             // データを取得
-            let value = try? JSONDecoder().decode(T.self, from: data)
-            return value ?? defaultValue
+            let value = try? JSONDecoder().decode(Wrapper<T>.self, from: data)
+            return value?.wrapped ?? defaultValue
         } set {
-            let data = try? JSONEncoder().encode(newValue)
+            let data = try? JSONEncoder().encode(Wrapper(wrapped: newValue))
             userdef.set(data, forKey: key)
         }
     }

@@ -12,7 +12,7 @@ import RxTest
 import XCTest
 
 class WikiDataClientTests: XCTestCase {
-    var wikiDataClient: WikiDataClientProtocol!
+    var wikiDataClient: WikiDataAPIClientProtocol!
     var disposeBag: DisposeBag!
     var scheduler: ConcurrentDispatchQueueScheduler!
     var testScheduler: TestScheduler!
@@ -21,7 +21,7 @@ class WikiDataClientTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         super.setUp()
         disposeBag = DisposeBag()
-        wikiDataClient = WikiDataClient()
+        wikiDataClient = WikiDataAPIClient()
         scheduler = ConcurrentDispatchQueueScheduler(qos: .default)
         testScheduler = TestScheduler(initialClock: 0)
     }

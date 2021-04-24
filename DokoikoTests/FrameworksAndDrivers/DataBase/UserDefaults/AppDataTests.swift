@@ -23,11 +23,12 @@ class AppDataTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 
         // 初期化フラグ
-        // デフォルト値テスト
+        let currentFirstLaunchFlag = AppData.firstLaunchFlag
+        AppData.firstLaunchFlag = false
         XCTAssertEqual(AppData.firstLaunchFlag, false)
-        // 値の変更が反映されているかテスト
         AppData.firstLaunchFlag = true
         XCTAssertEqual(AppData.firstLaunchFlag, true)
+        AppData.firstLaunchFlag = currentFirstLaunchFlag
     }
 
     func testPerformanceExample() throws {

@@ -58,9 +58,26 @@ extension ApiProtocol {
         guard let url = request.baseURL else {
             return nil
         }
-        var req = URLRequest(url: url)
-        req.method = request.method
-        req.allHTTPHeaderFields = request.headers
-        return req
+        var newUrl: URL? = url
+        // クエリパラメータがある場合
+        if !request.queryParameters.isEmpty {
+            // urlにクエリパラメータを付与
+            var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+            var queryItems = [URLQueryItem]()
+            request.queryParameters.forEach { queryParameter in
+                queryItems.append(URLQueryItem(name: queryParameter.key, value: queryParameter.value))
+            }
+            components?.queryItems = queryItems
+            newUrl = components?.url
+        }
+        print("hoge ... request", newUrl)
+        if let newUrl = newUrl {
+            var req = URLRequest(url: newUrl)
+            req.method = request.method
+            req.allHTTPHeaderFields = request.headers
+            return req
+        }
+
+        return nil
     }
 }

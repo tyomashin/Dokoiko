@@ -124,3 +124,6 @@ iOSInjectionProject/
 # For XcodeGen
 *.xcodeproj
 *.xcworkspace
+
+# Other file
+**/APIKeys.swift

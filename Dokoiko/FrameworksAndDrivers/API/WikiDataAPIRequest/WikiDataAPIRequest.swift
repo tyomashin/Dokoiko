@@ -1,5 +1,5 @@
 //
-//  WikiDataRequest.swift
+//  WikiDataAPIRequest.swift
 //  Dokoiko
 //
 //  Created by 岡崎伸也 on 2021/04/05.
@@ -8,12 +8,12 @@
 import Alamofire
 import Foundation
 
-enum WikiDataRequest {
+enum WikiDataAPIRequest {
     // APIのエンドポイント定義
     case entityData(entityCode: String)
 }
 
-extension WikiDataRequest: ApiRequestProtocol {
+extension WikiDataAPIRequest: ApiRequestProtocol {
     var baseURL: URL? {
         URL(string: "https://www.wikidata.org/" + path)
     }
@@ -35,8 +35,14 @@ extension WikiDataRequest: ApiRequestProtocol {
     var headers: [String: String] {
         switch self {
         case .entityData:
-            return ["Content-Type": "application/json",
-                    "Accept": "application/json"]
+            return [
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            ]
         }
+    }
+
+    var queryParameters: [String: String] {
+        [:]
     }
 }

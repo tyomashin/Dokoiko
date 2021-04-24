@@ -15,9 +15,9 @@ protocol WikiDataGatewayProtocol {
 
 /// Wikiデータ取得の責務を担うゲートウェイ
 struct WikiDataGateway: WikiDataGatewayProtocol {
-    private let wikiDataClient: WikiDataClientProtocol
+    private let wikiDataClient: WikiDataAPIClientProtocol
 
-    init(wikiDataClient: WikiDataClientProtocol) {
+    init(wikiDataClient: WikiDataAPIClientProtocol) {
         self.wikiDataClient = wikiDataClient
     }
 
