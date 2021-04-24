@@ -41,8 +41,9 @@ $ mint bootstrap
 本プロジェクトでは Carthage でライブラリ管理をしている。<br>
 導入しているライブラリは以下の通り。
 
-* RxSwift
-* Alamofire
+* RxSwift      ... 非同期処理の補助、およびデータバインディング
+* Alamofire    ... ネットワーク通信の補助
+* OHHTTPStubs  ... APIClientのユニットテスト時にネットワーク通信をスタブ化
 
 Carthage によってライブラリをビルドして xcframework を作成する。
 

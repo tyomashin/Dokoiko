@@ -1,0 +1,449 @@
+{
+    "message": null,
+    "result": [
+        {
+            "prefCode": 27,
+            "cityCode": "27100",
+            "cityName": "大阪市",
+            "bigCityFlag": "2"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27102",
+            "cityName": "大阪市都島区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27103",
+            "cityName": "大阪市福島区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27104",
+            "cityName": "大阪市此花区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27106",
+            "cityName": "大阪市西区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27107",
+            "cityName": "大阪市港区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27108",
+            "cityName": "大阪市大正区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27109",
+            "cityName": "大阪市天王寺区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27111",
+            "cityName": "大阪市浪速区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27113",
+            "cityName": "大阪市西淀川区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27114",
+            "cityName": "大阪市東淀川区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27115",
+            "cityName": "大阪市東成区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27116",
+            "cityName": "大阪市生野区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27117",
+            "cityName": "大阪市旭区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27118",
+            "cityName": "大阪市城東区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27119",
+            "cityName": "大阪市阿倍野区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27120",
+            "cityName": "大阪市住吉区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27121",
+            "cityName": "大阪市東住吉区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27122",
+            "cityName": "大阪市西成区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27123",
+            "cityName": "大阪市淀川区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27124",
+            "cityName": "大阪市鶴見区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27125",
+            "cityName": "大阪市住之江区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27126",
+            "cityName": "大阪市平野区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27127",
+            "cityName": "大阪市北区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27128",
+            "cityName": "大阪市中央区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27140",
+            "cityName": "堺市",
+            "bigCityFlag": "2"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27141",
+            "cityName": "堺市堺区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27142",
+            "cityName": "堺市中区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27143",
+            "cityName": "堺市東区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27144",
+            "cityName": "堺市西区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27145",
+            "cityName": "堺市南区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27146",
+            "cityName": "堺市北区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27147",
+            "cityName": "堺市美原区",
+            "bigCityFlag": "1"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27202",
+            "cityName": "岸和田市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27203",
+            "cityName": "豊中市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27204",
+            "cityName": "池田市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27205",
+            "cityName": "吹田市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27206",
+            "cityName": "泉大津市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27207",
+            "cityName": "高槻市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27208",
+            "cityName": "貝塚市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27209",
+            "cityName": "守口市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27210",
+            "cityName": "枚方市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27211",
+            "cityName": "茨木市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27212",
+            "cityName": "八尾市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27213",
+            "cityName": "泉佐野市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27214",
+            "cityName": "富田林市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27215",
+            "cityName": "寝屋川市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27216",
+            "cityName": "河内長野市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27217",
+            "cityName": "松原市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27218",
+            "cityName": "大東市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27219",
+            "cityName": "和泉市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27220",
+            "cityName": "箕面市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27221",
+            "cityName": "柏原市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27222",
+            "cityName": "羽曳野市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27223",
+            "cityName": "門真市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27224",
+            "cityName": "摂津市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27225",
+            "cityName": "高石市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27226",
+            "cityName": "藤井寺市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27227",
+            "cityName": "東大阪市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27228",
+            "cityName": "泉南市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27229",
+            "cityName": "四條畷市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27230",
+            "cityName": "交野市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27231",
+            "cityName": "大阪狭山市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27232",
+            "cityName": "阪南市",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27301",
+            "cityName": "島本町",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27321",
+            "cityName": "豊能町",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27322",
+            "cityName": "能勢町",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27341",
+            "cityName": "忠岡町",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27361",
+            "cityName": "熊取町",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27362",
+            "cityName": "田尻町",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27366",
+            "cityName": "岬町",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27381",
+            "cityName": "太子町",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27382",
+            "cityName": "河南町",
+            "bigCityFlag": "0"
+        },
+        {
+            "prefCode": 27,
+            "cityCode": "27383",
+            "cityName": "千早赤阪村",
+            "bigCityFlag": "0"
+        }
+    ]
+}

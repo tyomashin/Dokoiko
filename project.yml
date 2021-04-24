@@ -75,30 +75,37 @@ targets:
         name: Run Script (SwiftGen)
     # 依存するライブラリなどを指定
     dependencies:
+      - framework: Carthage/Build/RxBlocking.xcframework
       - framework: Carthage/Build/RxSwift.xcframework
       - framework: Carthage/Build/RxCocoa.xcframework
       - framework: Carthage/Build/RxRelay.xcframework
       - framework: Carthage/Build/Alamofire.xcframework
+      - framework: Carthage/Build/RxTest.xcframework
+      - framework: Carthage/Build/OHHTTPStubs.xcframework
 
   DokoikoTests:
     type: bundle.unit-test
     platform: iOS
     sources: 
       - DokoikoTests
-      # 試験時に、ソースコードのTarget MemberShipに本ターゲットを追加して参照したい場合は、以下のコメントを外す
+      # リソースを使用する場合はここにパスを追加する
+      # memo: 
+      # ターゲット内に一つもリソースが存在しない場合、Build Phases の Copy Bundle Resources セクションが作成されず、
+      # swift ファイル以外のリソースの Target Membership にチェックを入れられなくなる。
+      # - Dokoiko/Resources
       # - Dokoiko
     settings:
       base: 
         INFOPLIST_FILE: DokoikoTests/Info.plist
     dependencies:
       - target: Dokoiko
-      - framework: Carthage/Build/RxTest.xcframework
-      - framework: Carthage/Build/RxBlocking.xcframework
 
   DokoikoUITests:
     type: bundle.ui-testing
     platform: iOS
-    sources: DokoikoUITests
+    sources: 
+      - DokoikoUITests
+      # - Dokoiko
     settings:
       base: 
         INFOPLIST_FILE: DokoikoUITests/Info.plist
