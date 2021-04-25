@@ -1,5 +1,5 @@
 //
-//  ResasUseCase.swift
+//  ResasUseCaseTests.swift
 //  DokoikoTests
 //
 //  Created by 岡崎伸也 on 2021/04/24.
@@ -12,7 +12,7 @@ import RxTest
 import XCTest
 
 class ResasUseCaseTests: XCTestCase {
-    var resasUseCase: ResasUseCaseProtocol!
+    var useCase: ResasUseCaseProtocol!
     var disposeBag: DisposeBag!
     var scheduler: ConcurrentDispatchQueueScheduler!
     var testScheduler: TestScheduler!
@@ -21,8 +21,7 @@ class ResasUseCaseTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         super.setUp()
         disposeBag = DisposeBag()
-        // FIXME: モックを自動生成した型を使用する
-        resasUseCase = ResasUseCase(resasGateway: ResasGateway(resasAPIClient: ResasAPIClient()))
+        useCase = ResasUseCase(resasGateway: ResasGatewayMock())
         scheduler = ConcurrentDispatchQueueScheduler(qos: .default)
         testScheduler = TestScheduler(initialClock: 0)
     }
@@ -30,7 +29,7 @@ class ResasUseCaseTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         disposeBag = nil
-        resasUseCase = nil
+        useCase = nil
         scheduler = nil
         testScheduler = nil
         super.tearDown()
@@ -41,9 +40,7 @@ class ResasUseCaseTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 
-        // TODO: ここでスタブを設定しておく
-
-        let result = try! resasUseCase.getCitiesInPrefecture(prefCode: "\(PrefectureType.Aomori.prefCode)")
+        let result = try! useCase.getCitiesInPrefecture(prefCode: "\(PrefectureType.Osaka.prefCode)")
             .toBlocking(timeout: 5000).single()
         switch result {
         case let .success(response: response):
