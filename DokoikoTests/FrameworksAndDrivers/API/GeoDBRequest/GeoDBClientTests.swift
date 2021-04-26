@@ -1,8 +1,8 @@
 //
-//  ResasClientTests.swift
+//  GeoDBClientTests.swift
 //  DokoikoTests
 //
-//  Created by 岡崎伸也 on 2021/04/25.
+//  Created by 岡崎伸也 on 2021/04/26.
 //
 
 @testable import Dokoiko
@@ -12,8 +12,8 @@ import RxSwift
 import RxTest
 import XCTest
 
-class ResasClientTests: XCTestCase {
-    var resasClient: ResasAPIClientProtocol!
+class GeoDBClientTests: XCTestCase {
+    var geoDBClient: GeoDBAPIClientProtocol!
     var disposeBag: DisposeBag!
     var scheduler: ConcurrentDispatchQueueScheduler!
     var testScheduler: TestScheduler!
@@ -22,7 +22,7 @@ class ResasClientTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         super.setUp()
         disposeBag = DisposeBag()
-        resasClient = ResasAPIClient()
+        geoDBClient = GeoDBAPIClient()
         scheduler = ConcurrentDispatchQueueScheduler(qos: .default)
         testScheduler = TestScheduler(initialClock: 0)
     }
@@ -30,37 +30,36 @@ class ResasClientTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         disposeBag = nil
-        resasClient = nil
+        geoDBClient = nil
         scheduler = nil
         testScheduler = nil
         super.tearDown()
     }
 
-    /// ResasAPIで市区町村を取得するテスト
-    func testGetMunicipalities() throws {
+    /// GeoDBCitiesで市区情報を取得する
+    func testGetGeoDBCities() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 
         // ネットワーク通信スタブ：正常系
-        stub(condition: isHost("opendata.resas-portal.go.jp")) { _ in
-            let stubPath = OHPathForFile("resasMunicipalityPrefCode27.json", type(of: self))
+        stub(condition: isHost("wft-geo-db.p.rapidapi.com")) { _ in
+            let stubPath = OHPathForFile("geoDBCities.json", type(of: self))
             return fixture(filePath: stubPath!, status: 200, headers: ["Content-Type": "application/json"])
         }
-
-        var result = try! resasClient.getMunicipalities(prefCode: "27").toBlocking(timeout: 5000).single()
+        var result = try! geoDBClient.getCitiesInArea(location: "", radiusKM: "").toBlocking(timeout: 1000).single()
         switch result {
         case let .success(response: response):
-            XCTAssertEqual(response.result?.filter { $0.cityName == "大阪市" && $0.bigCityFlag == "2" }.count, 1)
+            XCTAssertTrue(response.data?.count != 0)
         case .error(error: _):
             XCTFail()
         }
 
         // ステータスエラー
-        stub(condition: isHost("opendata.resas-portal.go.jp")) { _ in
-            let stubPath = OHPathForFile("resasMunicipalityPrefCode27.json", type(of: self))
+        stub(condition: isHost("wft-geo-db.p.rapidapi.com")) { _ in
+            let stubPath = OHPathForFile("geoDBCities.json", type(of: self))
             return fixture(filePath: stubPath!, status: 400, headers: ["Content-Type": "application/json"])
         }
-        result = try! resasClient.getMunicipalities(prefCode: "27").toBlocking(timeout: 1000).single()
+        result = try! geoDBClient.getCitiesInArea(location: "", radiusKM: "").toBlocking(timeout: 1000).single()
         switch result {
         case .success(response: _):
             XCTFail()
@@ -74,11 +73,11 @@ class ResasClientTests: XCTestCase {
         }
 
         // データエンプティ
-        stub(condition: isHost("opendata.resas-portal.go.jp")) { _ in
+        stub(condition: isHost("wft-geo-db.p.rapidapi.com")) { _ in
             let stubPath = OHPathForFile("empty.json", type(of: self))
             return fixture(filePath: stubPath!, status: 200, headers: ["Content-Type": "application/json"])
         }
-        result = try! resasClient.getMunicipalities(prefCode: "27").toBlocking(timeout: 1000).single()
+        result = try! geoDBClient.getCitiesInArea(location: "", radiusKM: "").toBlocking(timeout: 1000).single()
         switch result {
         case .success(response: _):
             XCTFail()

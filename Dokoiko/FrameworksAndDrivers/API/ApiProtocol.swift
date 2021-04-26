@@ -37,6 +37,7 @@ extension ApiProtocol {
                 let statusCode = ApiStatusCodeEntity(statusCode: response.response?.statusCode)
                 switch statusCode {
                 case .success:
+                    // print(String(data: response.data!, encoding: .utf8))
                     // レスポンスのJsonをデコードして構造体にマッピングする
                     let result = ApiResponseDecoder<T>(jsonData: response.data)
                     if case let .success(entity: entity) = result {
@@ -68,6 +69,9 @@ extension ApiProtocol {
                 queryItems.append(URLQueryItem(name: queryParameter.key, value: queryParameter.value))
             }
             components?.queryItems = queryItems
+            // 「+」がパーセントエンコードされないため置換している
+            let encodedQuery = components?.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+            components?.percentEncodedQuery = encodedQuery
             newUrl = components?.url
         }
         print("hoge ... request", newUrl)
