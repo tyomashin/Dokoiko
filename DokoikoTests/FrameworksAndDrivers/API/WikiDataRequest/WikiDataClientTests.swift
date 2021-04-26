@@ -55,4 +55,16 @@ class WikiDataClientTests: XCTestCase {
             XCTFail()
         }
     }
+
+    /// リクエストのテスト
+    func testRequest() throws {
+        let entityDataRequest = WikiDataAPIRequest.entityData(entityCode: "Q000000")
+        let url = wikiDataClient.getDefaultUrlRequest(request: entityDataRequest)
+        guard let urlStr = url?.url?.absoluteString else {
+            XCTFail()
+            return
+        }
+        // URLのパスが正しいかテスト
+        XCTAssertTrue(urlStr.contains("wiki/Special:EntityData/Q000000"))
+    }
 }

@@ -92,6 +92,18 @@ class ResasClientTests: XCTestCase {
         }
     }
 
+    /// リクエストのテスト
+    func testRequest() throws {
+        let citiesRequest = ResasAPIRequest.cities(prefCode: "28")
+        let url = resasClient.getDefaultUrlRequest(request: citiesRequest)
+        guard let urlStr = url?.url?.absoluteString else {
+            XCTFail()
+            return
+        }
+        // クエリパラメータがURLに含まれているかテスト
+        XCTAssertTrue(urlStr.contains("prefCode=28"))
+    }
+
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         measure {

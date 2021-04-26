@@ -91,6 +91,19 @@ class GeoDBClientTests: XCTestCase {
         }
     }
 
+    /// リクエストのテスト
+    func testRequest() throws {
+        let citiesRequest = GeoDBAPIRequest.cities(location: "+30.000+130.000", radiusKM: "5")
+        let url = geoDBClient.getDefaultUrlRequest(request: citiesRequest)
+        guard let urlStr = url?.url?.absoluteString else {
+            XCTFail()
+            return
+        }
+        // クエリパラメータがURLに含まれているかテスト
+        XCTAssertTrue(urlStr.contains("location=%2B30.000%2B130.000"))
+        XCTAssertTrue(urlStr.contains("radius=5"))
+    }
+
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         measure {
