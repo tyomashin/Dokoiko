@@ -16,10 +16,10 @@ protocol ResasGatewayProtocol {
 
 /// APIを呼び出して市区町村一覧を取得するGateway
 struct ResasGateway: ResasGatewayProtocol {
-    private let resasAPIClient: ResasAPIClient
+    private let resasAPIClient: ResasAPIClientProtocol
 
-    init(resasAPIClient: ResasAPIClient) {
-        self.resasAPIClient = ResasAPIClient()
+    init(resasAPIClient: ResasAPIClientProtocol) {
+        self.resasAPIClient = resasAPIClient
     }
 
     /// 都道府県コードに合致する市区町村一覧を取得する
