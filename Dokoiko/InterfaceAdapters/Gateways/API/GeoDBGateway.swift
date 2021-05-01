@@ -9,8 +9,14 @@ import Foundation
 import RxSwift
 
 /// GeoDB Cities API を呼び出すゲートウェイのプロトコル
+/// sourcery: AutoMockable
 protocol GeoDBGatewayProtocol {
     /// エリア内に存在する市区情報を取得する
+    /// - Parameters:
+    ///   - lat: エリアの緯度
+    ///   - lng: エリアの軽度
+    ///   - radiusKM: エリア半径
+    /// - Returns: API結果
     func getCitiesInArea(lat: Double, lng: Double, radiusKM: Double) -> Single<ApiResponseEntity<GeoDBCitiesEntity>>
 }
 
@@ -23,11 +29,6 @@ struct GeoDBGateway: GeoDBGatewayProtocol {
     }
 
     /// エリア内に存在する市区情報を取得する
-    /// - Parameters:
-    ///   - lat: エリアの緯度
-    ///   - lng: エリアの軽度
-    ///   - radiusKM: エリア半径
-    /// - Returns: API結果
     func getCitiesInArea(lat: Double, lng: Double, radiusKM: Double) -> Single<ApiResponseEntity<GeoDBCitiesEntity>> {
         // APIに渡す位置情報文字列を生成
         var location = ""

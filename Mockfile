@@ -1,0 +1,15 @@
+sourceryCommand: null
+sourceryTemplate: null
+DokoikoTests:
+  sources:
+    include:
+    - ./Dokoiko
+  output: ./DokoikoTests/Resources/Mock.generated.swift
+  targets:
+  - DokoikoTests
+  testable:
+  - Dokoiko
+  import:
+  - Foundation
+  - RxSwift
+  - RxBlocking

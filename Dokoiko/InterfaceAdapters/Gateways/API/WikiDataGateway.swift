@@ -8,8 +8,11 @@
 import Foundation
 import RxSwift
 
+/// Wikiデータ取得の責務を担うゲートウェイが準拠するプロトコル
+/// sourcery: AutoMockable
 protocol WikiDataGatewayProtocol {
     /// Wikiコードに合致する情報を取得する
+    /// - Parameter wikiCode: Wikiコード
     func getWikiData(wikiCode: String) -> Single<ApiResponseEntity<WikiDataResponseEntity>>
 }
 

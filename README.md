@@ -19,6 +19,7 @@
 * SwiftFormat
 * XcodeGen
 * Carthage
+* SwiftyMocky
 
 これらは mint でインストールしている（Mintfile に記載）。<br>
 
@@ -48,7 +49,7 @@ $ mint bootstrap
 Carthage によってライブラリをビルドして xcframework を作成する。
 
 ```
-$ mint run carthage update --platform iOS --use-xcframeworks
+$ mint run carthage update --platform iOS --use-xcframeworks --cache-builds
 ```
 
 なお、Carthage のバージョンは 0.37.0 を使用しているため、
@@ -104,9 +105,14 @@ MVVM を採用している。
 * InterfaceAdapters
 * FrameworksAndDrivers
 
+この命名は、クリーンアーキテクチャの説明で使用されている同心円画像を参考にしている。<br>
+
+[The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+
+
 ### Entities
 一番内側（下層）のレイヤーで、データ構造・メソッドの集合体。<br>
-他のどこのレイヤーにも依存しない。<br>
+他のどのレイヤーにも依存しない。<br>
 
 ### UseCases
 Entities の一つ上のレイヤー。<br>
@@ -114,25 +120,29 @@ Entities の一つ上のレイヤー。<br>
 このレイヤーは、上位層の UI、DB、API などの実装詳細に依存しない。<br>
 このため、「import UIKit」「import Alamofire」「import RealmSwift」などのコードを記述してはならない。<br>
 UseCase から DB への参照や、API の実行を行う場合は、「InterfaceAdapters」レイヤーを介して行う必要がある。<br>
-なお、InterfaceAdapters レイヤーは UseCase レイヤーよりも上位にあるため、UseCase から直接参照することはできず、抽象に依存する形で参照する必要がある（依存性逆転の法則）。<br>
+なお、InterfaceAdapters レイヤーは UseCase レイヤーよりも上位にあるため、
+UseCase から直接参照してはならず、抽象に依存する形で参照する必要がある（依存性逆転の法則）。<br>
 
 ### InterfaceAdapters
 UseCase の一つ上のレイヤー。<br>
-InterfaceAdapters レイヤーは、UseCase と、この上のレイヤーのつなぎ役、およびレイヤー間のデータ構造の変換層を担っている。<br>
+InterfaceAdapters レイヤーは、UseCase と、この上のレイヤー（DB, API通信などの実装詳細を担うレイヤー）とのつなぎ役、
+およびレイヤー間のデータ構造の変換層を担っている。<br>
 
 なお、本プロジェクトでは役割に応じて以下の命名を取っている。<br>
 
 * ViewModel ... UI と UseCase の仲介役
 * GateWay ... DB の参照や API 実行の仲介役
 
-例えば、DBからデータを取得した後で、Realm オブジェクトと Entity の変換までは、GateWay の責務となる。<br>
+例えば、DB(上位レイヤー)から Realm オブジェクトを取得した後に Entity へデータ構造を変換して UseCase に返却する、
+という一連の処理が GateWay の責務となる。<br>
 
 ### FrameworksAndDrivers
 最も外側（上位）のレイヤー。<br>
 UI、DB、APIクライアントなどがこのレイヤーに該当する。<br>
 UIKit や Alamofire、RealmSwift などのライブラリを使用したロジックはこのレイヤーに記述される。<br>
-このレイヤーが最外層にあることで、ネットワーク通信や DB にどんなライブラリを使用していたとしてもビジネスロジックはその詳細に依存することはない。<br>
-このためライブラリを置き換える際にも下層レイヤーへの影響が少なくなる。<br>
+このレイヤーが最外層にあることで、ネットワーク通信や DB にどんなライブラリを使用していたとしても、
+ビジネスロジックはその詳細に依存することなく記述できる。<br>
+このためDBや通信ライブラリを置き換える際にも下層レイヤーへの影響が少なくなる。<br>
 例えば以下のようなライブラリ、フレームワークを使用する処理もこのレイヤーに置かれる。<br>
 
 * CoreLocation

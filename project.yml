@@ -26,6 +26,8 @@ settings:
     # Xcode 12.3 で、以下のパラメータが欠落しているとのことなので明示的に指定（デフォルト値）
     # 参考：https://stackoverflow.com/questions/63267897/building-for-ios-simulator-but-the-linked-framework-framework-was-built
     VALIDATE_WORKSPACE: NO
+    # 一部のフレームワークでBitCode対応がされていないものがあるためNo指定
+    ENABLE_BITCODE: NO
   configs:
     Debug:
       GCC_PREPROCESSOR_DEFINITIONS: DEVELOP=1
@@ -50,6 +52,13 @@ targets:
       base: 
         INFOPLIST_FILE: Dokoiko/Info.plist
     preBuildScripts:
+      - script: |
+                if which mint >/dev/null; then
+                  xcrun --sdk macosx mint run swiftymocky generate
+                else
+                 echo "warning: swiftymocky not installed"
+                fi
+        name: Run Script (SwiftyMocky)
       - script: |
                 if which mint >/dev/null; then
                   xcrun --sdk macosx mint run swiftformat swiftformat . --exclude Carthage,Pods --stripunusedargs closure-only --disable strongOutlets,trailingCommas
@@ -82,6 +91,10 @@ targets:
       - framework: Carthage/Build/Alamofire.xcframework
       - framework: Carthage/Build/RxTest.xcframework
       - framework: Carthage/Build/OHHTTPStubs.xcframework
+      - framework: Carthage/Build/RealmSwift.xcframework
+      - framework: Carthage/Build/Realm.xcframework
+      - framework: Carthage/Build/SwiftyMocky.xcframework
+      - framework: Carthage/Build/SwiftyPrototype.xcframework
 
   DokoikoTests:
     type: bundle.unit-test

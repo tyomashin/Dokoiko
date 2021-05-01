@@ -9,8 +9,10 @@ import Foundation
 import RxSwift
 
 /// APIを呼び出して市区町村一覧を取得するGatewayが準拠するプロトコル
+/// sourcery: AutoMockable
 protocol ResasGatewayProtocol {
     /// 都道府県コードに合致する市区町村一覧を取得する
+    /// - Parameter prefCode: 都道府県コード
     func getMunicipalities(prefCode: String) -> Single<ApiResponseEntity<ResasMunicipalityResponseEntity>>
 }
 
