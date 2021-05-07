@@ -170,7 +170,7 @@ opt_in_rules:
   - prefer_zero_over_explicit_init     # 0 パラメータで初期化するよりも、「.zero」を使用すべき（bad: CGPoint(x: 0, y: 0), good: .zero）
   - prefixed_toplevel_constant         # 最上位の定数にはプリフィックスに「k」をつけるべき（例：let kBar = 20.0）
   - private_action                     # IBAction は private にすべき
-  - private_outlet                     # IBOutlet は private にすべき
+  #- private_outlet                     # IBOutlet は private にすべき
   #- prohibited_interface_builder      # Interface Builderを使用してビューを作成することは避けるべき（ストーリーボードまたはnibを使ってビューを生成したいため無効にしている）
   - prohibited_super_call              # 一部のメソッドは親クラスのメソッドを呼び出すべきではない
   - quick_discouraged_call             # 「describe」および「context」ブロック内で処理を呼び出すべきではない

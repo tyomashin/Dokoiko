@@ -16,9 +16,74 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUg-pW-Yl0" userLabel="HeaderView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="80"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app-logo" translatesAutoresizingMaskIntoConstraints="NO" id="FQm-HI-m2D">
+                                        <rect key="frame" x="124" y="8" width="166" height="64"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="FQm-HI-m2D" firstAttribute="height" secondItem="eUg-pW-Yl0" secondAttribute="height" multiplier="0.8" id="Mnh-bG-Ryv"/>
+                                    <constraint firstItem="FQm-HI-m2D" firstAttribute="centerX" secondItem="eUg-pW-Yl0" secondAttribute="centerX" id="VSG-f4-ONQ"/>
+                                    <constraint firstItem="FQm-HI-m2D" firstAttribute="centerY" secondItem="eUg-pW-Yl0" secondAttribute="centerY" id="dUu-Kr-u0S"/>
+                                    <constraint firstAttribute="height" constant="80" id="mxg-Hb-6ps"/>
+                                    <constraint firstItem="FQm-HI-m2D" firstAttribute="width" secondItem="eUg-pW-Yl0" secondAttribute="width" multiplier="0.4" id="yXe-ay-mvm"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huB-Fa-iLO" userLabel="ButtonAreaView">
+                                <rect key="frame" x="0.0" y="124" width="414" height="240"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SpX-gJ-7P4">
+                                        <rect key="frame" x="129" y="42" width="156" height="156"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="SpX-gJ-7P4" secondAttribute="height" multiplier="1:1" id="FiA-dF-s2s"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="top-primary-button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="SpX-gJ-7P4" firstAttribute="centerX" secondItem="huB-Fa-iLO" secondAttribute="centerX" id="D9A-DK-2l3"/>
+                                    <constraint firstAttribute="height" constant="240" id="kZd-s7-jcR"/>
+                                    <constraint firstItem="SpX-gJ-7P4" firstAttribute="height" secondItem="huB-Fa-iLO" secondAttribute="height" multiplier="0.65" id="qib-Az-NGu"/>
+                                    <constraint firstItem="SpX-gJ-7P4" firstAttribute="centerY" secondItem="huB-Fa-iLO" secondAttribute="centerY" id="xfz-em-gOo"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fap-DV-DRx" userLabel="contentAreaView" customClass="MainContentView" customModule="Dokoiko" customModuleProvider="target">
+                                <rect key="frame" x="20" y="384" width="374" height="512"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="250" constant="200" id="b2x-bR-hqV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="huB-Fa-iLO" firstAttribute="top" secondItem="eUg-pW-Yl0" secondAttribute="bottom" id="2Pm-gt-Pes"/>
+                            <constraint firstItem="Fap-DV-DRx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="83J-hh-d93"/>
+                            <constraint firstItem="huB-Fa-iLO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DVT-No-qLS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="huB-Fa-iLO" secondAttribute="trailing" id="Qgd-mu-Syd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eUg-pW-Yl0" secondAttribute="trailing" id="dLs-Y4-Jdl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fap-DV-DRx" secondAttribute="trailing" constant="20" id="ek5-Tc-Rum"/>
+                            <constraint firstItem="Fap-DV-DRx" firstAttribute="top" secondItem="huB-Fa-iLO" secondAttribute="bottom" priority="750" constant="20" id="f97-AN-HAE"/>
+                            <constraint firstItem="eUg-pW-Yl0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="isT-k5-rhG"/>
+                            <constraint firstAttribute="bottom" secondItem="Fap-DV-DRx" secondAttribute="bottom" id="lAG-m7-TDq"/>
+                            <constraint firstItem="eUg-pW-Yl0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zMI-Mm-3LK"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonAreaView" destination="huB-Fa-iLO" id="w5o-HP-pt2"/>
+                        <outlet property="contentAreaHeightConstraint" destination="b2x-bR-hqV" id="CW4-jS-te1"/>
+                        <outlet property="contentAreaTopConstraint" destination="f97-AN-HAE" id="ODA-v3-eTB"/>
+                        <outlet property="contentAreaView" destination="Fap-DV-DRx" id="D5r-ez-qUQ"/>
+                        <outlet property="headerImageView" destination="FQm-HI-m2D" id="ipX-XF-uSo"/>
+                        <outlet property="headerView" destination="eUg-pW-Yl0" id="HhM-bW-aGE"/>
+                        <outlet property="searchButton" destination="SpX-gJ-7P4" id="pVa-ql-YQP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -26,6 +91,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="app-logo" width="2918" height="945"/>
+        <image name="top-primary-button" width="3335" height="3334"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -105,7 +105,7 @@ MVVM を採用している。
 * InterfaceAdapters
 * FrameworksAndDrivers
 
-この命名は、クリーンアーキテクチャの説明で使用されている同心円画像を参考にしている。<br>
+この名称は、主にクリーンアーキテクチャの説明で使用されている同心円画像から拝借している。<br>
 
 [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
@@ -149,3 +149,20 @@ UIKit や Alamofire、RealmSwift などのライブラリを使用したロジ�
 * GoogleMaps
 * NotificationCenter
 * CoreBluetooth
+
+## 画面遷移とDI
+
+アーキテクチャを採用してレイヤ分割した状態から、画面を組み立てるために、
+本プロジェクトでは以下の概念を導入している。
+
+* Router
+
+参考：
+[VIPER の実装コストを下げるために](https://buildersbox.corp-sansan.com/entry/2020/03/04/110000)
+
+本プロジェクトの Router の特徴は以下の通りである。
+
+* 画面遷移の責務を担う（遷移ロジックを ViewController から切り離す）
+* 画面遷移に必要な事前処理も行う（ViewController, ViewModel, UseCase などそれぞれの依存関係を解消してインスタンス化 == DI）
+* Router 自体は ViewModel がプロパティとして保持する
+* 1画面1Router

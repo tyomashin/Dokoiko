@@ -15,4 +15,5 @@ struct SearchResultEntity {
     let cityName: String
     var lat: Double?
     var lng: Double?
+    var date: Date?
 }

@@ -104,7 +104,8 @@ extension DataBaseGateway {
             prefName: prefType.name,
             cityName: object.cityName,
             lat: object.lat.value,
-            lng: object.lng.value
+            lng: object.lng.value,
+            date: object.date
         )
         return entity
     }

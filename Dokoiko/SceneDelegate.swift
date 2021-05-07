@@ -17,13 +17,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
 
         // 初期 ViewController の設定
-        let mainVC = StoryboardScene.Main.initialScene.instantiate()
-        let mainViewModel = MainViewModel()
-        mainVC.inject(viewModel: mainViewModel)
-        let nv = UINavigationController(rootViewController: mainVC)
+
+        /*
+         let mainVC = StoryboardScene.Main.initialScene.instantiate()
+         let mainViewModel = MainViewModel()
+         mainVC.inject(viewModel: mainViewModel)
+         let nv = UINavigationController(rootViewController: mainVC)
+         window = UIWindow(windowScene: windowScene)
+         window?.rootViewController = nv
+         window?.makeKeyAndVisible()
+         */
+
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = nv
         window?.makeKeyAndVisible()
+
+        _ = MainRouter()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
