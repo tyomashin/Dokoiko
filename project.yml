@@ -84,12 +84,10 @@ targets:
         name: Run Script (SwiftGen)
     # 依存するライブラリなどを指定
     dependencies:
-      - framework: Carthage/Build/RxBlocking.xcframework
       - framework: Carthage/Build/RxSwift.xcframework
       - framework: Carthage/Build/RxCocoa.xcframework
       - framework: Carthage/Build/RxRelay.xcframework
       - framework: Carthage/Build/Alamofire.xcframework
-      - framework: Carthage/Build/RxTest.xcframework
       - framework: Carthage/Build/OHHTTPStubs.xcframework
       - framework: Carthage/Build/RealmSwift.xcframework
       - framework: Carthage/Build/Realm.xcframework
@@ -112,6 +110,10 @@ targets:
         INFOPLIST_FILE: DokoikoTests/Info.plist
     dependencies:
       - target: Dokoiko
+      # テスト用のフレームワークをメインターゲットで指定すると、シミュレーターで実行する際にエラーが出るためテストターゲットのみで指定
+      # https://github.com/Carthage/Carthage/issues/1717
+      - framework: Carthage/Build/RxBlocking.xcframework
+      - framework: Carthage/Build/RxTest.xcframework
 
   DokoikoUITests:
     type: bundle.ui-testing
@@ -124,6 +126,9 @@ targets:
         INFOPLIST_FILE: DokoikoUITests/Info.plist
     dependencies:
       - target: Dokoiko
+      - framework: Carthage/Build/RxBlocking.xcframework
+      - framework: Carthage/Build/RxTest.xcframework
+
 
 # スキームの設定。一旦参考サイトをコピペで記載している
 # https://qiita.com/uhooi/items/16a870eaae24b46103fb
