@@ -5,3 +5,14 @@
   Created by 岡崎伸也 on 2021/02/02.
   
 */
+
+"title.searchCondition" = "検索条件";
+"btn.searchCondition.search" = "地域をランダムに検索";
+"btn.searchCondition.prefectures" = "都道府県から探す";
+"btn.searchCondition.currentLocation" = "現在地の近くから探す";
+"searchCondition.empty" = "地域の検索方法を選択してください";
+"searchCondition.area.title" = "エリア";
+"searchCondition.prefecture.title" = "都道府県";
+"searchCondition.currentLocation.notice" = "マップをタップするか、現在地ボタンを押して地点を選択してください";
+"searchCondition.currentLocation.radius.title" = "半径";
+"searchCondition.currentLocation.radius.unit" = "km";

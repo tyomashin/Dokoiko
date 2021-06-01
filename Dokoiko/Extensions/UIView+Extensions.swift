@@ -29,7 +29,7 @@ extension UIView {
         // 影の色
         layer.shadowColor = color.cgColor
         // 影の濃さ
-        layer.shadowOpacity = 0.5
+        layer.shadowOpacity = 0.8
         // 影の方向
         layer.shadowOffset = CGSize(width: 1, height: 1)
         // 影のぼかし量

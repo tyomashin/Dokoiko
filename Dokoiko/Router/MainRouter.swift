@@ -54,7 +54,7 @@ struct MainRouter: MainRouterProtocol {
             let mainViewModel = MainViewModel(view: mainVC, router: self, searchResultUseCase: searchResultUseCase)
             mainVC.inject(viewModel: mainViewModel)
             navigationController.pushViewController(mainVC, animated: true)
-            
+
         // 検索条件画面に遷移する
         case .searchCondition:
             let searchRouter = SearchConditionRouter(navigationController: navigationController)

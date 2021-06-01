@@ -38,7 +38,15 @@ struct SearchConditionRouter: SearchConditionRouterProtocol {
         switch destination {
         case .searchCondition:
             let searchVC = StoryboardScene.SearchCondition.initialScene.instantiate()
-            let searchViewModel = SearchConditionViewModel(view: searchVC, router: self)
+            let appDataGateway = AppDataGateway()
+            let locationManager = LocationManager.shared
+            let locationGateway = LocationGateway(locationManager: locationManager)
+            let searchViewModel = SearchConditionViewModel(
+                view: searchVC,
+                router: self,
+                appDataGateway: appDataGateway,
+                locationGateway: locationGateway
+            )
             searchVC.inject(viewModel: searchViewModel)
             navigationController.pushViewController(searchVC, animated: true)
 

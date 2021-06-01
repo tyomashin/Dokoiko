@@ -30,11 +30,10 @@ class LocationManager: NSObject, LocationManagerProtocol {
     private let authLocationRelay = BehaviorRelay<CLAuthorizationStatus>(value: .notDetermined)
     private lazy var authLocation: Observable<CLAuthorizationStatus> = authLocationRelay.asObservable()
 
-    // 現在地の緯度経度のストリーム。初期値は東京都
-    private let currentLocationRelay = BehaviorRelay<LocationData>(value: (35.684338151185294, 139.76557870506642))
+    // 現在地の緯度経度のストリーム
+    private let currentLocationRelay = BehaviorRelay<LocationData?>(value: nil)
     // nil を除去（参考：https://stackoverflow.com/questions/59337420/convert-publishrelay-to-behaviorrelay-of-optional-element）
-    // private lazy var currentLocation: Observable<LocationData> = currentLocationRelay.compactMap { $0 }
-    private lazy var currentLocation: Observable<LocationData> = currentLocationRelay.asObservable()
+    private lazy var currentLocation: Observable<LocationData> = currentLocationRelay.compactMap { $0 }
 
     override private init() {
         super.init()

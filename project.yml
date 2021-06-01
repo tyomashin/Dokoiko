@@ -28,6 +28,7 @@ settings:
     VALIDATE_WORKSPACE: NO
     # 一部のフレームワークでBitCode対応がされていないものがあるためNo指定
     ENABLE_BITCODE: NO
+    OTHER_LDFLAGS: -ObjC
   configs:
     Debug:
       GCC_PREPROCESSOR_DEFINITIONS: DEVELOP=1
@@ -42,6 +43,9 @@ targets:
     platform: iOS
     sources: 
       - Dokoiko
+      - path: Carthage/Build/iOS/GoogleMaps.framework/Resources/GoogleMaps.bundle
+        optional: true
+        type: folder
       # 自動生成するソースのパスを追加
       # 以下はサンプル
       ## Mockoloで生成するファイル
@@ -93,6 +97,19 @@ targets:
       - framework: Carthage/Build/Realm.xcframework
       - framework: Carthage/Build/SwiftyMocky.xcframework
       - framework: Carthage/Build/SwiftyPrototype.xcframework
+      # GoogleMap導入（参考リンクメモ）
+      # https://nekowen.hatenablog.jp/entry/2020/09/01/133812
+      # https://stackoverflow.com/questions/8171164/ios-objc-class-cttelephonynetworkinfo-not-found
+      # https://developers.google.com/maps/documentation/ios-sdk/v3-client-migration#use-carthage
+      - carthage: GoogleMaps
+        embed: false
+      - carthage: GoogleMapsBase
+        embed: false
+      - carthage: GoogleMapsCore
+        embed: false
+      - sdk: libc++.tbd
+      - sdk: libz.tbd
+      - sdk: CoreTelephony.framework
 
   DokoikoTests:
     type: bundle.unit-test

@@ -166,3 +166,12 @@ UIKit や Alamofire、RealmSwift などのライブラリを使用したロジ�
 * 画面遷移に必要な事前処理も行う（ViewController, ViewModel, UseCase などそれぞれの依存関係を解消してインスタンス化 == DI）
 * Router 自体は ViewModel がプロパティとして保持する
 * 1画面1Router
+
+# 今後の課題
+
+## ViewModel の肥大化
+
+単方向データバインディングを実現するReactorKitを導入したい。<br>
+
+[ReactorKit(Flux + Reactive Programming)を学ぶ1 入門編](https://qiita.com/yusuga/items/e793963ff51ee493497a)
+[ReactorKitを導入してiOS開発のViewModel複雑化を改善する](https://cam-inc.co.jp/p/techblog/441147032279712705)

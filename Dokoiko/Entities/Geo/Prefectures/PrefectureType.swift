@@ -8,7 +8,7 @@
 import Foundation
 
 /// 都道府県の情報を定義
-enum PrefectureType: CaseIterable {
+enum PrefectureType: Int, CaseIterable, Codable {
     case Hokkaido
     case Aomori
     case Iwate
@@ -95,7 +95,7 @@ extension PrefectureType {
         case .Toyama:
             return "富山県"
         case .Ishikawa:
-            return "富山県"
+            return "石川県"
         case .Fukui:
             return "福井県"
         case .Yamanashi:

@@ -148,8 +148,8 @@ opt_in_rules:
   - lower_acl_than_parent              # ある定義（例：class）に含まれる定義（例：変数、関数）は、親よりも低い、または同等のアクセス制御レベルであるべき
   - missing_docs                       # 定義にはドキュメントコメントを書くべき
   - modifier_order                     # 修飾子の順序は一貫しているべき：[override, acl, setterACL, dynamic, mutators, lazy, final, required, convenience, typeMethods, owned]
-  - multiline_arguments                # 引数は同じ行に入れるか、一行ごとに入れるべき
-  - multiline_arguments_brackets       # 複数行の引数は、それを括る括弧を別の行に持つべき
+  #- multiline_arguments                # 引数は同じ行に入れるか、一行ごとに入れるべき
+  #- multiline_arguments_brackets       # 複数行の引数は、それを括る括弧を別の行に持つべき
   - multiline_function_chains          # 連鎖関数呼び出しは、同じ行にするか、行ごとに1関数ずつにすべき
   - multiline_literal_brackets         # 複数行のリテラルは、それを括る括弧を別の行に持つべき
   - multiline_parameters               # 関数およびメソッドの引数は、同じ行か、1行に1つずつあるべき
@@ -186,11 +186,11 @@ opt_in_rules:
   - sorted_first_last                  # sorted().first や sorted().last より min() や max() を使うべき
   - sorted_imports                     # import 文はアルファベット順にソートするべき
   - static_operator                    # 演算子は静的関数として定義すべき
-  - strict_fileprivate                 # fileprivateは避けるべき
+  #- strict_fileprivate                 # fileprivateは避けるべき（Reactive Extension 宣言内でアクセスできるように無効化している）
   #- strong_iboutlet                    # IBOutlet を weak で宣言すべきではない（weakで宣言したいので無効化している）
   - switch_case_on_newline             # Switch文の中のcaseは常に改行すべき
   - toggle_bool                        # Bool型変数の値を入れ替える時に、「flag = !flag」ではなく「flag.toggle()」とすべき
-  - trailing_closure                   # 可能な限り、トレイリングクロージャを使うべき
+  #- trailing_closure                   # 可能な限り、トレイリングクロージャを使うべき ( Observable とバインディングする際に onNext 引数以降の onError などを省略する場合、trailing_closureにできないため無効化) 
   - type_contents_order                # 型定義内のサブタイプ、プロパティ、メソッドなどの順序に関するルール
   - unavailable_function               # 未実装の関数は使用不可としてマークされるべき（fatalErrorで例外を吐くなどしてマークする）
   - unneeded_parentheses_in_closure_argument  # クロージャ引数を宣言する時に括弧は不要

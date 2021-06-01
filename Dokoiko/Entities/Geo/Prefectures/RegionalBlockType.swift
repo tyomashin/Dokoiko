@@ -8,7 +8,7 @@
 import Foundation
 
 /// 地域ブロック
-enum RegionalBlockType: CaseIterable {
+enum RegionalBlockType: Int, CaseIterable, Codable {
     case Hokkaido
     case Tohoku
     case Kanto
