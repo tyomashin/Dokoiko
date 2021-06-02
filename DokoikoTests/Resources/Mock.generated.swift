@@ -145,15 +145,15 @@ open class DatabaseProtocolMock: DatabaseProtocol, Mock {
         }
 
         public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, lat: Parameter<Double?>, lng: Parameter<Double?>, willReturn: Single<Result<SearchResultObject, DataBaseError>>...) -> MethodStub {
-            return Given(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(prefCode, cityName, lat, lng), products: willReturn.map { StubProduct.return($0 as Any) })
+            Given(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(prefCode, cityName, lat, lng), products: willReturn.map { StubProduct.return($0 as Any) })
         }
 
         public static func setCityLocation(id: Parameter<String>, lat: Parameter<Double>, lng: Parameter<Double>, willReturn: Single<Result<SearchResultObject, DataBaseError>>...) -> MethodStub {
-            return Given(method: .m_setCityLocation__id_idlat_latlng_lng(id, lat, lng), products: willReturn.map { StubProduct.return($0 as Any) })
+            Given(method: .m_setCityLocation__id_idlat_latlng_lng(id, lat, lng), products: willReturn.map { StubProduct.return($0 as Any) })
         }
 
         public static func getCitySearchResult(willReturn: Single<Result<[SearchResultObject], DataBaseError>>...) -> MethodStub {
-            return Given(method: .m_getCitySearchResult, products: willReturn.map { StubProduct.return($0 as Any) })
+            Given(method: .m_getCitySearchResult, products: willReturn.map { StubProduct.return($0 as Any) })
         }
 
         public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, lat: Parameter<Double?>, lng: Parameter<Double?>, willProduce: (Stubber<Single<Result<SearchResultObject, DataBaseError>>>) -> Void) -> MethodStub {
@@ -184,9 +184,9 @@ open class DatabaseProtocolMock: DatabaseProtocol, Mock {
     public struct Verify {
         fileprivate var method: MethodType
 
-        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, lat: Parameter<Double?>, lng: Parameter<Double?>) -> Verify { return Verify(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(prefCode, cityName, lat, lng)) }
-        public static func setCityLocation(id: Parameter<String>, lat: Parameter<Double>, lng: Parameter<Double>) -> Verify { return Verify(method: .m_setCityLocation__id_idlat_latlng_lng(id, lat, lng)) }
-        public static func getCitySearchResult() -> Verify { return Verify(method: .m_getCitySearchResult) }
+        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, lat: Parameter<Double?>, lng: Parameter<Double?>) -> Verify { Verify(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(prefCode, cityName, lat, lng)) }
+        public static func setCityLocation(id: Parameter<String>, lat: Parameter<Double>, lng: Parameter<Double>) -> Verify { Verify(method: .m_setCityLocation__id_idlat_latlng_lng(id, lat, lng)) }
+        public static func getCitySearchResult() -> Verify { Verify(method: .m_getCitySearchResult) }
     }
 
     public struct Perform {
@@ -194,15 +194,15 @@ open class DatabaseProtocolMock: DatabaseProtocol, Mock {
         var performs: Any
 
         public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, lat: Parameter<Double?>, lng: Parameter<Double?>, perform: @escaping (Int, String, Double?, Double?) -> Void) -> Perform {
-            return Perform(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(prefCode, cityName, lat, lng), performs: perform)
+            Perform(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(prefCode, cityName, lat, lng), performs: perform)
         }
 
         public static func setCityLocation(id: Parameter<String>, lat: Parameter<Double>, lng: Parameter<Double>, perform: @escaping (String, Double, Double) -> Void) -> Perform {
-            return Perform(method: .m_setCityLocation__id_idlat_latlng_lng(id, lat, lng), performs: perform)
+            Perform(method: .m_setCityLocation__id_idlat_latlng_lng(id, lat, lng), performs: perform)
         }
 
         public static func getCitySearchResult(perform: @escaping () -> Void) -> Perform {
-            return Perform(method: .m_getCitySearchResult, performs: perform)
+            Perform(method: .m_getCitySearchResult, performs: perform)
         }
     }
 
@@ -260,7 +260,7 @@ open class DatabaseProtocolMock: DatabaseProtocol, Mock {
     }
 
     private func matchingCalls(_ method: Verify, file: StaticString?, line: UInt?) -> Int {
-        return matchingCalls(method.method, file: file, line: line).count
+        matchingCalls(method.method, file: file, line: line).count
     }
 
     private func givenGetterValue<T>(_ method: MethodType, _ message: String) -> T {
@@ -376,7 +376,7 @@ open class GeoDBGatewayProtocolMock: GeoDBGatewayProtocol, Mock {
         }
 
         public static func getCitiesInArea(lat: Parameter<Double>, lng: Parameter<Double>, radiusKM: Parameter<Double>, willReturn: Single<ApiResponseEntity<GeoDBCitiesEntity>>...) -> MethodStub {
-            return Given(method: .m_getCitiesInArea__lat_latlng_lngradiusKM_radiusKM(lat, lng, radiusKM), products: willReturn.map { StubProduct.return($0 as Any) })
+            Given(method: .m_getCitiesInArea__lat_latlng_lngradiusKM_radiusKM(lat, lng, radiusKM), products: willReturn.map { StubProduct.return($0 as Any) })
         }
 
         public static func getCitiesInArea(lat: Parameter<Double>, lng: Parameter<Double>, radiusKM: Parameter<Double>, willProduce: (Stubber<Single<ApiResponseEntity<GeoDBCitiesEntity>>>) -> Void) -> MethodStub {
@@ -391,7 +391,7 @@ open class GeoDBGatewayProtocolMock: GeoDBGatewayProtocol, Mock {
     public struct Verify {
         fileprivate var method: MethodType
 
-        public static func getCitiesInArea(lat: Parameter<Double>, lng: Parameter<Double>, radiusKM: Parameter<Double>) -> Verify { return Verify(method: .m_getCitiesInArea__lat_latlng_lngradiusKM_radiusKM(lat, lng, radiusKM)) }
+        public static func getCitiesInArea(lat: Parameter<Double>, lng: Parameter<Double>, radiusKM: Parameter<Double>) -> Verify { Verify(method: .m_getCitiesInArea__lat_latlng_lngradiusKM_radiusKM(lat, lng, radiusKM)) }
     }
 
     public struct Perform {
@@ -399,7 +399,7 @@ open class GeoDBGatewayProtocolMock: GeoDBGatewayProtocol, Mock {
         var performs: Any
 
         public static func getCitiesInArea(lat: Parameter<Double>, lng: Parameter<Double>, radiusKM: Parameter<Double>, perform: @escaping (Double, Double, Double) -> Void) -> Perform {
-            return Perform(method: .m_getCitiesInArea__lat_latlng_lngradiusKM_radiusKM(lat, lng, radiusKM), performs: perform)
+            Perform(method: .m_getCitiesInArea__lat_latlng_lngradiusKM_radiusKM(lat, lng, radiusKM), performs: perform)
         }
     }
 
@@ -457,7 +457,7 @@ open class GeoDBGatewayProtocolMock: GeoDBGatewayProtocol, Mock {
     }
 
     private func matchingCalls(_ method: Verify, file: StaticString?, line: UInt?) -> Int {
-        return matchingCalls(method.method, file: file, line: line).count
+        matchingCalls(method.method, file: file, line: line).count
     }
 
     private func givenGetterValue<T>(_ method: MethodType, _ message: String) -> T {
@@ -571,7 +571,7 @@ open class ResasGatewayProtocolMock: ResasGatewayProtocol, Mock {
         }
 
         public static func getMunicipalities(prefCode: Parameter<String>, willReturn: Single<ApiResponseEntity<ResasMunicipalityResponseEntity>>...) -> MethodStub {
-            return Given(method: .m_getMunicipalities__prefCode_prefCode(prefCode), products: willReturn.map { StubProduct.return($0 as Any) })
+            Given(method: .m_getMunicipalities__prefCode_prefCode(prefCode), products: willReturn.map { StubProduct.return($0 as Any) })
         }
 
         public static func getMunicipalities(prefCode: Parameter<String>, willProduce: (Stubber<Single<ApiResponseEntity<ResasMunicipalityResponseEntity>>>) -> Void) -> MethodStub {
@@ -586,7 +586,7 @@ open class ResasGatewayProtocolMock: ResasGatewayProtocol, Mock {
     public struct Verify {
         fileprivate var method: MethodType
 
-        public static func getMunicipalities(prefCode: Parameter<String>) -> Verify { return Verify(method: .m_getMunicipalities__prefCode_prefCode(prefCode)) }
+        public static func getMunicipalities(prefCode: Parameter<String>) -> Verify { Verify(method: .m_getMunicipalities__prefCode_prefCode(prefCode)) }
     }
 
     public struct Perform {
@@ -594,7 +594,7 @@ open class ResasGatewayProtocolMock: ResasGatewayProtocol, Mock {
         var performs: Any
 
         public static func getMunicipalities(prefCode: Parameter<String>, perform: @escaping (String) -> Void) -> Perform {
-            return Perform(method: .m_getMunicipalities__prefCode_prefCode(prefCode), performs: perform)
+            Perform(method: .m_getMunicipalities__prefCode_prefCode(prefCode), performs: perform)
         }
     }
 
@@ -652,7 +652,7 @@ open class ResasGatewayProtocolMock: ResasGatewayProtocol, Mock {
     }
 
     private func matchingCalls(_ method: Verify, file: StaticString?, line: UInt?) -> Int {
-        return matchingCalls(method.method, file: file, line: line).count
+        matchingCalls(method.method, file: file, line: line).count
     }
 
     private func givenGetterValue<T>(_ method: MethodType, _ message: String) -> T {
@@ -766,7 +766,7 @@ open class WikiDataGatewayProtocolMock: WikiDataGatewayProtocol, Mock {
         }
 
         public static func getWikiData(wikiCode: Parameter<String>, willReturn: Single<ApiResponseEntity<WikiDataResponseEntity>>...) -> MethodStub {
-            return Given(method: .m_getWikiData__wikiCode_wikiCode(wikiCode), products: willReturn.map { StubProduct.return($0 as Any) })
+            Given(method: .m_getWikiData__wikiCode_wikiCode(wikiCode), products: willReturn.map { StubProduct.return($0 as Any) })
         }
 
         public static func getWikiData(wikiCode: Parameter<String>, willProduce: (Stubber<Single<ApiResponseEntity<WikiDataResponseEntity>>>) -> Void) -> MethodStub {
@@ -781,7 +781,7 @@ open class WikiDataGatewayProtocolMock: WikiDataGatewayProtocol, Mock {
     public struct Verify {
         fileprivate var method: MethodType
 
-        public static func getWikiData(wikiCode: Parameter<String>) -> Verify { return Verify(method: .m_getWikiData__wikiCode_wikiCode(wikiCode)) }
+        public static func getWikiData(wikiCode: Parameter<String>) -> Verify { Verify(method: .m_getWikiData__wikiCode_wikiCode(wikiCode)) }
     }
 
     public struct Perform {
@@ -789,7 +789,7 @@ open class WikiDataGatewayProtocolMock: WikiDataGatewayProtocol, Mock {
         var performs: Any
 
         public static func getWikiData(wikiCode: Parameter<String>, perform: @escaping (String) -> Void) -> Perform {
-            return Perform(method: .m_getWikiData__wikiCode_wikiCode(wikiCode), performs: perform)
+            Perform(method: .m_getWikiData__wikiCode_wikiCode(wikiCode), performs: perform)
         }
     }
 
@@ -847,7 +847,7 @@ open class WikiDataGatewayProtocolMock: WikiDataGatewayProtocol, Mock {
     }
 
     private func matchingCalls(_ method: Verify, file: StaticString?, line: UInt?) -> Int {
-        return matchingCalls(method.method, file: file, line: line).count
+        matchingCalls(method.method, file: file, line: line).count
     }
 
     private func givenGetterValue<T>(_ method: MethodType, _ message: String) -> T {

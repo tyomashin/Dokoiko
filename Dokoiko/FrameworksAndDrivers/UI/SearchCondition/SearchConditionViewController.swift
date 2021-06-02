@@ -40,7 +40,7 @@ class SearchConditionViewController: UIViewController {
     @IBOutlet weak var bottonView: UIView!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchConditionSelectionView: SearchConditionSelectView!
-    @IBOutlet weak var searchConditionSelectViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var searchConditionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var searchConditionPrefecturesView: SearchConditionPrefecturesView!
     @IBOutlet weak var searchConditionCurrentLocationView: SearchConditionCurrentLocationView!
 
@@ -79,7 +79,7 @@ class SearchConditionViewController: UIViewController {
 
         searchConditionSelectionView.rx.myHeight
             .drive(onNext: { [weak self] myHeight in
-                self?.searchConditionSelectViewHeightConstraint.constant = myHeight
+                self?.searchConditionViewHeightConstraint.constant = myHeight
             })
             .disposed(by: disposeBag)
 

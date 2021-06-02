@@ -52,10 +52,12 @@ class PrefectureSearchViewModel: PrefectureSearchViewModelProtocol {
                 if let data = data {
                     result = data
                 } else {
-                    result = SearchConditionPrefectures(regionBlockList: RegionalBlockType.allCases,
-                                                        selectedRegionBlockIndex: 2,
-                                                        prefecturesList: RegionalBlockType.allCases[2].prefectures,
-                                                        selectedPrefectureIndex: 5)
+                    result = SearchConditionPrefectures(
+                        regionBlockList: RegionalBlockType.allCases,
+                        selectedRegionBlockIndex: 2,
+                        prefecturesList: RegionalBlockType.allCases[2].prefectures,
+                        selectedPrefectureIndex: 5
+                    )
                 }
                 self?.searchConditionPrefecturesRelay.accept(result)
             })

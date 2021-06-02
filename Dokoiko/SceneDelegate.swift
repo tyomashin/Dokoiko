@@ -16,21 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = scene as? UIWindowScene else { return }
 
-        // 初期 ViewController の設定
-
-        /*
-         let mainVC = StoryboardScene.Main.initialScene.instantiate()
-         let mainViewModel = MainViewModel()
-         mainVC.inject(viewModel: mainViewModel)
-         let nv = UINavigationController(rootViewController: mainVC)
-         window = UIWindow(windowScene: windowScene)
-         window?.rootViewController = nv
-         window?.makeKeyAndVisible()
-         */
-
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
 
+        // 初期画面の設定
         _ = MainRouter()
     }
 

@@ -11,15 +11,15 @@ import Foundation
 /// 参考：https://swiftsenpai.com/swift/create-the-perfect-userdefaults-wrapper-using-property-wrapper/
 @propertyWrapper
 internal struct MyUserDefaults<T: Codable> {
-    private let key: String
-    private let defaultValue: T
-    private let userdef: UserDefaults
-
     // iOS12 までは、基本型はCodableではないため、構造体でラップしている
     // https://stackoverflow.com/questions/59473051/userdefault-property-wrapper-not-saving-values-ios-versions-below-ios-13
     struct Wrapper<T>: Codable where T: Codable {
         let wrapped: T
     }
+
+    private let key: String
+    private let defaultValue: T
+    private let userdef: UserDefaults
 
     internal var wrappedValue: T {
         get {

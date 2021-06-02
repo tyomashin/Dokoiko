@@ -50,7 +50,7 @@ class LocationManager: NSObject, LocationManagerProtocol {
     /// 現在の位置情報を取得する
     func getCurrentLocation() -> Observable<LocationData> {
         // 位置情報の利用許可が取れているかどうか確認
-        return currentLocation
+        currentLocation
     }
 }
 

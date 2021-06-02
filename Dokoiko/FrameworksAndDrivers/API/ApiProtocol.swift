@@ -74,7 +74,7 @@ extension ApiProtocol {
             components?.percentEncodedQuery = encodedQuery
             newUrl = components?.url
         }
-        print("hoge ... request", newUrl)
+        print("hoge ... request", newUrl ?? "")
         if let newUrl = newUrl {
             var req = URLRequest(url: newUrl)
             req.method = request.method

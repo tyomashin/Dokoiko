@@ -23,7 +23,7 @@ struct PrefecturesUseCase: PrefecturesUseCaseProtocol {
     /// エリア一覧を取得する
     func getRegionBlockList() -> Single<[String]> {
         Single.create { single in
-            single(.success(RegionalBlockType.allCases.map { $0.name }))
+            single(.success(RegionalBlockType.allCases.map(\.name)))
             return Disposables.create()
         }
     }

@@ -178,7 +178,7 @@ class SearchConditionViewModel: SearchConditionViewModelProtocol {
             conditionData = .currentLocation(condition: locationSearchViewModel.searchConditionData)
         }
 
-        // TODO:画面遷移する
+        // TODO: 画面遷移する
         print(conditionData)
     }
 }

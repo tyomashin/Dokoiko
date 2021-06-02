@@ -107,14 +107,18 @@ class SearchConditionPrefecturesView: UIView {
     /// 検索条件オブジェクトを受け取ってViewを初期化
     fileprivate func setSearchCondition(searchCondition: SearchConditionPrefectures) {
         guard let regionBlockView = regionBlockView, let prefectureView = prefectureView else { return }
-        let regionList = searchCondition.regionBlockList.map { $0.name }
-        regionBlockView.setDetails(title: L10n.SearchCondition.Area.title,
-                                   dataList: regionList,
-                                   selectedIndex: searchCondition.selectedRegionBlockIndex)
-        let prefectureList = searchCondition.prefecturesList.map { $0.name }
-        prefectureView.setDetails(title: L10n.SearchCondition.Prefecture.title,
-                                  dataList: prefectureList,
-                                  selectedIndex: searchCondition.selectedPrefectureIndex)
+        let regionList = searchCondition.regionBlockList.map(\.name)
+        regionBlockView.setDetails(
+            title: L10n.SearchCondition.Area.title,
+            dataList: regionList,
+            selectedIndex: searchCondition.selectedRegionBlockIndex
+        )
+        let prefectureList = searchCondition.prefecturesList.map(\.name)
+        prefectureView.setDetails(
+            title: L10n.SearchCondition.Prefecture.title,
+            dataList: prefectureList,
+            selectedIndex: searchCondition.selectedPrefectureIndex
+        )
     }
 }
 

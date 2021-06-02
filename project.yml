@@ -110,6 +110,8 @@ targets:
       - sdk: libc++.tbd
       - sdk: libz.tbd
       - sdk: CoreTelephony.framework
+      - framework: Carthage/Build/RxBlocking.xcframework
+      - framework: Carthage/Build/RxTest.xcframework
 
   DokoikoTests:
     type: bundle.unit-test
@@ -129,8 +131,8 @@ targets:
       - target: Dokoiko
       # テスト用のフレームワークをメインターゲットで指定すると、シミュレーターで実行する際にエラーが出るためテストターゲットのみで指定
       # https://github.com/Carthage/Carthage/issues/1717
-      - framework: Carthage/Build/RxBlocking.xcframework
-      - framework: Carthage/Build/RxTest.xcframework
+      #- framework: Carthage/Build/RxBlocking.xcframework
+      #- framework: Carthage/Build/RxTest.xcframework
 
   DokoikoUITests:
     type: bundle.ui-testing
@@ -143,8 +145,8 @@ targets:
         INFOPLIST_FILE: DokoikoUITests/Info.plist
     dependencies:
       - target: Dokoiko
-      - framework: Carthage/Build/RxBlocking.xcframework
-      - framework: Carthage/Build/RxTest.xcframework
+      #- framework: Carthage/Build/RxBlocking.xcframework
+      #- framework: Carthage/Build/RxTest.xcframework
 
 
 # スキームの設定。一旦参考サイトをコピペで記載している
