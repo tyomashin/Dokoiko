@@ -145,8 +145,8 @@
                         <outlet property="searchButton" destination="ajX-KM-sVU" id="ctC-D3-X2A"/>
                         <outlet property="searchConditionCurrentLocationView" destination="Wt1-4O-k67" id="Y9H-5K-4pE"/>
                         <outlet property="searchConditionPrefecturesView" destination="8I6-3G-OrL" id="LG9-9b-32F"/>
-                        <outlet property="searchConditionSelectViewHeightConstraint" destination="OrG-it-phV" id="qVl-GC-ko3"/>
                         <outlet property="searchConditionSelectionView" destination="qdZ-LB-6i0" id="vv9-tu-xzg"/>
+                        <outlet property="searchConditionViewHeightConstraint" destination="OrG-it-phV" id="BNw-Vo-YVM"/>
                         <outlet property="titleLabel" destination="T9p-a1-zoq" id="aa9-8a-XwV"/>
                         <outlet property="topView" destination="Oa3-qh-a7I" id="pxn-w2-ndJ"/>
                     </connections>

@@ -10,9 +10,10 @@ import RxCocoa
 import RxSwift
 
 /// メイン画面のViewModelが準拠するプロトコル
+/// sourcery: AutoMockable
 protocol MainViewModelProtocol: AnyObject {
     /// アプリ初回起動フラグ
-    var initialFlag: Driver<Bool> { get }
+    // var initialFlag: Driver<Bool> { get }
     /// 検索履歴リスト
     var searchHistoryList: Driver<[SearchResultEntity]> { get }
     /// View読み込み完了後に呼ばれる
@@ -22,10 +23,12 @@ protocol MainViewModelProtocol: AnyObject {
 /// メイン画面のViewModel
 class MainViewModel: MainViewModelProtocol {
     /// 初回起動フラグ
-    private let initialFlagRelay = BehaviorRelay<Bool>(value: false)
-    var initialFlag: Driver<Bool> {
-        initialFlagRelay.asDriver()
-    }
+    /*
+     private let initialFlagRelay = BehaviorRelay<Bool>(value: false)
+     var initialFlag: Driver<Bool> {
+     initialFlagRelay.asDriver()
+     }
+     */
 
     /// 検索履歴リスト
     private let searchHistoryListRelay = BehaviorRelay<[SearchResultEntity]>(value: [])
@@ -68,14 +71,14 @@ class MainViewModel: MainViewModelProtocol {
         guard let view = view else { return }
         // TableViewのセルが選択された時に呼ばれる
         view.itemSelected
-            .subscribe(onNext: { indexPath in
-                print(indexPath.row)
+            .subscribe(onNext: { row in
+                print(row)
             })
             .disposed(by: disposeBag)
 
         // 検索ボタンタップ時に呼ばれる
         view.tapSearchButton
-            .subscribe(onNext: { [weak self] in
+            .drive(onNext: { [weak self] in
                 // 検索条件画面に遷移する
                 self?.router.navigate(to: .searchCondition)
             })

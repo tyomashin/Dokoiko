@@ -8,7 +8,7 @@
 import Foundation
 
 /// 検索した市区の情報を格納するエンティティ
-struct SearchResultEntity {
+struct SearchResultEntity: Equatable {
     let id: String
     let prefCode: Int
     let prefName: String

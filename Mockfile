@@ -13,3 +13,4 @@ DokoikoTests:
   - Foundation
   - RxSwift
   - RxBlocking
+  - RxCocoa

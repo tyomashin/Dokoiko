@@ -6,6 +6,7 @@
 @testable import Dokoiko
 import Foundation
 import RxBlocking
+import RxCocoa
 import RxSwift
 import SwiftyMocky
 import XCTest
@@ -483,6 +484,583 @@ open class GeoDBGatewayProtocolMock: GeoDBGatewayProtocol, Mock {
     }
 }
 
+// MARK: - MainRouterProtocol
+
+open class MainRouterProtocolMock: MainRouterProtocol, Mock {
+    public init(sequencing sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst, stubbing stubbingPolicy: StubbingPolicy = .wrap, file: StaticString = #file, line: UInt = #line) {
+        SwiftyMockyTestObserver.setup()
+        self.sequencingPolicy = sequencingPolicy
+        self.stubbingPolicy = stubbingPolicy
+        self.file = file
+        self.line = line
+    }
+
+    var matcher = Matcher.default
+    var stubbingPolicy: StubbingPolicy = .wrap
+    var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
+    private var invocations: [MethodType] = []
+    private var methodReturnValues: [Given] = []
+    private var methodPerformValues: [Perform] = []
+    private var file: StaticString?
+    private var line: UInt?
+
+    public typealias PropertyStub = Given
+    public typealias MethodStub = Given
+    public typealias SubscriptStub = Given
+
+    /// Convenience method - call setupMock() to extend debug information when failure occurs
+    public func setupMock(file: StaticString = #file, line: UInt = #line) {
+        self.file = file
+        self.line = line
+    }
+
+    /// Clear mock internals. You can specify what to reset (invocations aka verify, givens or performs) or leave it empty to clear all mock internals
+    public func resetMock(_ scopes: MockScope...) {
+        let scopes: [MockScope] = scopes.isEmpty ? [.invocation, .given, .perform] : scopes
+        if scopes.contains(.invocation) { invocations = [] }
+        if scopes.contains(.given) { methodReturnValues = [] }
+        if scopes.contains(.perform) { methodPerformValues = [] }
+    }
+
+    public var window: UIWindow? { invocations.append(.p_window_get); return __p_window ?? optionalGivenGetterValue(.p_window_get, "MainRouterProtocolMock - stub value for window was not defined") }
+
+    private var __p_window: (UIWindow)?
+
+    open func navigate(to destination: MainNavigationDestination) {
+        addInvocation(.m_navigate__to_destination(Parameter<MainNavigationDestination>.value(destination)))
+        let perform = methodPerformValue(.m_navigate__to_destination(Parameter<MainNavigationDestination>.value(destination))) as? (MainNavigationDestination) -> Void
+        perform?(destination)
+    }
+
+    open func rootNavigation(to destination: BaseRouterNavigationDestination) {
+        addInvocation(.m_rootNavigation__to_destination(Parameter<BaseRouterNavigationDestination>.value(destination)))
+        let perform = methodPerformValue(.m_rootNavigation__to_destination(Parameter<BaseRouterNavigationDestination>.value(destination))) as? (BaseRouterNavigationDestination) -> Void
+        perform?(destination)
+    }
+
+    fileprivate enum MethodType {
+        case m_navigate__to_destination(Parameter<MainNavigationDestination>)
+        case m_rootNavigation__to_destination(Parameter<BaseRouterNavigationDestination>)
+        case p_window_get
+
+        static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
+            switch (lhs, rhs) {
+            case let (.m_navigate__to_destination(lhsDestination), .m_navigate__to_destination(rhsDestination)):
+                var results: [Matcher.ParameterComparisonResult] = []
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsDestination, rhs: rhsDestination, with: matcher), lhsDestination, rhsDestination, "to destination"))
+                return Matcher.ComparisonResult(results)
+
+            case let (.m_rootNavigation__to_destination(lhsDestination), .m_rootNavigation__to_destination(rhsDestination)):
+                var results: [Matcher.ParameterComparisonResult] = []
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsDestination, rhs: rhsDestination, with: matcher), lhsDestination, rhsDestination, "to destination"))
+                return Matcher.ComparisonResult(results)
+            case (.p_window_get, .p_window_get): return Matcher.ComparisonResult.match
+            default: return .none
+            }
+        }
+
+        func intValue() -> Int {
+            switch self {
+            case let .m_navigate__to_destination(p0): return p0.intValue
+            case let .m_rootNavigation__to_destination(p0): return p0.intValue
+            case .p_window_get: return 0
+            }
+        }
+
+        func assertionName() -> String {
+            switch self {
+            case .m_navigate__to_destination: return ".navigate(to:)"
+            case .m_rootNavigation__to_destination: return ".rootNavigation(to:)"
+            case .p_window_get: return "[get] .window"
+            }
+        }
+    }
+
+    open class Given: StubbedMethod {
+        fileprivate var method: MethodType
+
+        private init(method: MethodType, products: [StubProduct]) {
+            self.method = method
+            super.init(products)
+        }
+
+        public static func window(getter defaultValue: UIWindow?...) -> PropertyStub {
+            Given(method: .p_window_get, products: defaultValue.map { StubProduct.return($0 as Any) })
+        }
+    }
+
+    public struct Verify {
+        fileprivate var method: MethodType
+
+        public static func navigate(to destination: Parameter<MainNavigationDestination>) -> Verify { Verify(method: .m_navigate__to_destination(destination)) }
+        public static func rootNavigation(to destination: Parameter<BaseRouterNavigationDestination>) -> Verify { Verify(method: .m_rootNavigation__to_destination(destination)) }
+        public static var window: Verify { Verify(method: .p_window_get) }
+    }
+
+    public struct Perform {
+        fileprivate var method: MethodType
+        var performs: Any
+
+        public static func navigate(to destination: Parameter<MainNavigationDestination>, perform: @escaping (MainNavigationDestination) -> Void) -> Perform {
+            Perform(method: .m_navigate__to_destination(destination), performs: perform)
+        }
+
+        public static func rootNavigation(to destination: Parameter<BaseRouterNavigationDestination>, perform: @escaping (BaseRouterNavigationDestination) -> Void) -> Perform {
+            Perform(method: .m_rootNavigation__to_destination(destination), performs: perform)
+        }
+    }
+
+    public func given(_ method: Given) {
+        methodReturnValues.append(method)
+    }
+
+    public func perform(_ method: Perform) {
+        methodPerformValues.append(method)
+        methodPerformValues.sort { $0.method.intValue() < $1.method.intValue() }
+    }
+
+    public func verify(_ method: Verify, count: Count = Count.moreOrEqual(to: 1), file: StaticString = #file, line: UInt = #line) {
+        let fullMatches = matchingCalls(method, file: file, line: line)
+        let success = count.matches(fullMatches)
+        let assertionName = method.method.assertionName()
+        let feedback: String = {
+            guard !success else { return "" }
+            return Utils.closestCallsMessage(
+                for: self.invocations.map { invocation in
+                    matcher.set(file: file, line: line)
+                    defer { matcher.clearFileAndLine() }
+                    return MethodType.compareParameters(lhs: invocation, rhs: method.method, matcher: matcher)
+                },
+                name: assertionName
+            )
+        }()
+        MockyAssert(success, "Expected: \(count) invocations of `\(assertionName)`, but was: \(fullMatches).\(feedback)", file: file, line: line)
+    }
+
+    private func addInvocation(_ call: MethodType) {
+        queue.sync { invocations.append(call) }
+    }
+
+    private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
+        matcher.set(file: file, line: line)
+        defer { matcher.clearFileAndLine() }
+        let candidates = sequencingPolicy.sorted(methodReturnValues, by: { $0.method.intValue() > $1.method.intValue() })
+        let matched = candidates.first(where: { $0.isValid && MethodType.compareParameters(lhs: $0.method, rhs: method, matcher: matcher).isFullMatch })
+        guard let product = matched?.getProduct(policy: stubbingPolicy) else { throw MockError.notStubed }
+        return product
+    }
+
+    private func methodPerformValue(_ method: MethodType) -> Any? {
+        matcher.set(file: file, line: line)
+        defer { matcher.clearFileAndLine() }
+        let matched = methodPerformValues.reversed().first { MethodType.compareParameters(lhs: $0.method, rhs: method, matcher: matcher).isFullMatch }
+        return matched?.performs
+    }
+
+    private func matchingCalls(_ method: MethodType, file: StaticString?, line: UInt?) -> [MethodType] {
+        matcher.set(file: file ?? self.file, line: line ?? self.line)
+        defer { matcher.clearFileAndLine() }
+        return invocations.filter { MethodType.compareParameters(lhs: $0, rhs: method, matcher: matcher).isFullMatch }
+    }
+
+    private func matchingCalls(_ method: Verify, file: StaticString?, line: UInt?) -> Int {
+        matchingCalls(method.method, file: file, line: line).count
+    }
+
+    private func givenGetterValue<T>(_ method: MethodType, _ message: String) -> T {
+        do {
+            return try methodReturnValue(method).casted()
+        } catch {
+            onFatalFailure(message)
+            Failure(message)
+        }
+    }
+
+    private func optionalGivenGetterValue<T>(_ method: MethodType, _ message: String) -> T? {
+        do {
+            return try methodReturnValue(method).casted()
+        } catch {
+            return nil
+        }
+    }
+
+    private func onFatalFailure(_ message: String) {
+        guard let file = self.file, let line = self.line else { return } // Let if fail if cannot handle gratefully
+        SwiftyMockyTestObserver.handleFatalError(message: message, file: file, line: line)
+    }
+}
+
+// MARK: - MainVCProtocol
+
+open class MainVCProtocolMock: MainVCProtocol, Mock {
+    public init(sequencing sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst, stubbing stubbingPolicy: StubbingPolicy = .wrap, file: StaticString = #file, line: UInt = #line) {
+        SwiftyMockyTestObserver.setup()
+        self.sequencingPolicy = sequencingPolicy
+        self.stubbingPolicy = stubbingPolicy
+        self.file = file
+        self.line = line
+    }
+
+    var matcher = Matcher.default
+    var stubbingPolicy: StubbingPolicy = .wrap
+    var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
+    private var invocations: [MethodType] = []
+    private var methodReturnValues: [Given] = []
+    private var methodPerformValues: [Perform] = []
+    private var file: StaticString?
+    private var line: UInt?
+
+    public typealias PropertyStub = Given
+    public typealias MethodStub = Given
+    public typealias SubscriptStub = Given
+
+    /// Convenience method - call setupMock() to extend debug information when failure occurs
+    public func setupMock(file: StaticString = #file, line: UInt = #line) {
+        self.file = file
+        self.line = line
+    }
+
+    /// Clear mock internals. You can specify what to reset (invocations aka verify, givens or performs) or leave it empty to clear all mock internals
+    public func resetMock(_ scopes: MockScope...) {
+        let scopes: [MockScope] = scopes.isEmpty ? [.invocation, .given, .perform] : scopes
+        if scopes.contains(.invocation) { invocations = [] }
+        if scopes.contains(.given) { methodReturnValues = [] }
+        if scopes.contains(.perform) { methodPerformValues = [] }
+    }
+
+    public var itemSelected: Observable<Int> { invocations.append(.p_itemSelected_get); return __p_itemSelected ?? givenGetterValue(.p_itemSelected_get, "MainVCProtocolMock - stub value for itemSelected was not defined") }
+
+    private var __p_itemSelected: (Observable<Int>)?
+
+    public var tapSearchButton: Driver<Void> { invocations.append(.p_tapSearchButton_get); return __p_tapSearchButton ?? givenGetterValue(.p_tapSearchButton_get, "MainVCProtocolMock - stub value for tapSearchButton was not defined") }
+
+    private var __p_tapSearchButton: (Driver<Void>)?
+
+    fileprivate enum MethodType {
+        case p_itemSelected_get
+        case p_tapSearchButton_get
+
+        static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
+            switch (lhs, rhs) { case (.p_itemSelected_get, .p_itemSelected_get): return Matcher.ComparisonResult.match
+            case (.p_tapSearchButton_get, .p_tapSearchButton_get): return Matcher.ComparisonResult.match
+            default: return .none
+            }
+        }
+
+        func intValue() -> Int {
+            switch self {
+            case .p_itemSelected_get: return 0
+            case .p_tapSearchButton_get: return 0
+            }
+        }
+
+        func assertionName() -> String {
+            switch self {
+            case .p_itemSelected_get: return "[get] .itemSelected"
+            case .p_tapSearchButton_get: return "[get] .tapSearchButton"
+            }
+        }
+    }
+
+    open class Given: StubbedMethod {
+        fileprivate var method: MethodType
+
+        private init(method: MethodType, products: [StubProduct]) {
+            self.method = method
+            super.init(products)
+        }
+
+        public static func itemSelected(getter defaultValue: Observable<Int>...) -> PropertyStub {
+            Given(method: .p_itemSelected_get, products: defaultValue.map { StubProduct.return($0 as Any) })
+        }
+
+        public static func tapSearchButton(getter defaultValue: Driver<Void>...) -> PropertyStub {
+            Given(method: .p_tapSearchButton_get, products: defaultValue.map { StubProduct.return($0 as Any) })
+        }
+    }
+
+    public struct Verify {
+        fileprivate var method: MethodType
+
+        public static var itemSelected: Verify { Verify(method: .p_itemSelected_get) }
+        public static var tapSearchButton: Verify { Verify(method: .p_tapSearchButton_get) }
+    }
+
+    public struct Perform {
+        fileprivate var method: MethodType
+        var performs: Any
+    }
+
+    public func given(_ method: Given) {
+        methodReturnValues.append(method)
+    }
+
+    public func perform(_ method: Perform) {
+        methodPerformValues.append(method)
+        methodPerformValues.sort { $0.method.intValue() < $1.method.intValue() }
+    }
+
+    public func verify(_ method: Verify, count: Count = Count.moreOrEqual(to: 1), file: StaticString = #file, line: UInt = #line) {
+        let fullMatches = matchingCalls(method, file: file, line: line)
+        let success = count.matches(fullMatches)
+        let assertionName = method.method.assertionName()
+        let feedback: String = {
+            guard !success else { return "" }
+            return Utils.closestCallsMessage(
+                for: self.invocations.map { invocation in
+                    matcher.set(file: file, line: line)
+                    defer { matcher.clearFileAndLine() }
+                    return MethodType.compareParameters(lhs: invocation, rhs: method.method, matcher: matcher)
+                },
+                name: assertionName
+            )
+        }()
+        MockyAssert(success, "Expected: \(count) invocations of `\(assertionName)`, but was: \(fullMatches).\(feedback)", file: file, line: line)
+    }
+
+    private func addInvocation(_ call: MethodType) {
+        queue.sync { invocations.append(call) }
+    }
+
+    private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
+        matcher.set(file: file, line: line)
+        defer { matcher.clearFileAndLine() }
+        let candidates = sequencingPolicy.sorted(methodReturnValues, by: { $0.method.intValue() > $1.method.intValue() })
+        let matched = candidates.first(where: { $0.isValid && MethodType.compareParameters(lhs: $0.method, rhs: method, matcher: matcher).isFullMatch })
+        guard let product = matched?.getProduct(policy: stubbingPolicy) else { throw MockError.notStubed }
+        return product
+    }
+
+    private func methodPerformValue(_ method: MethodType) -> Any? {
+        matcher.set(file: file, line: line)
+        defer { matcher.clearFileAndLine() }
+        let matched = methodPerformValues.reversed().first { MethodType.compareParameters(lhs: $0.method, rhs: method, matcher: matcher).isFullMatch }
+        return matched?.performs
+    }
+
+    private func matchingCalls(_ method: MethodType, file: StaticString?, line: UInt?) -> [MethodType] {
+        matcher.set(file: file ?? self.file, line: line ?? self.line)
+        defer { matcher.clearFileAndLine() }
+        return invocations.filter { MethodType.compareParameters(lhs: $0, rhs: method, matcher: matcher).isFullMatch }
+    }
+
+    private func matchingCalls(_ method: Verify, file: StaticString?, line: UInt?) -> Int {
+        matchingCalls(method.method, file: file, line: line).count
+    }
+
+    private func givenGetterValue<T>(_ method: MethodType, _ message: String) -> T {
+        do {
+            return try methodReturnValue(method).casted()
+        } catch {
+            onFatalFailure(message)
+            Failure(message)
+        }
+    }
+
+    private func optionalGivenGetterValue<T>(_ method: MethodType, _ message: String) -> T? {
+        do {
+            return try methodReturnValue(method).casted()
+        } catch {
+            return nil
+        }
+    }
+
+    private func onFatalFailure(_ message: String) {
+        guard let file = self.file, let line = self.line else { return } // Let if fail if cannot handle gratefully
+        SwiftyMockyTestObserver.handleFatalError(message: message, file: file, line: line)
+    }
+}
+
+// MARK: - MainViewModelProtocol
+
+open class MainViewModelProtocolMock: MainViewModelProtocol, Mock {
+    public init(sequencing sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst, stubbing stubbingPolicy: StubbingPolicy = .wrap, file: StaticString = #file, line: UInt = #line) {
+        SwiftyMockyTestObserver.setup()
+        self.sequencingPolicy = sequencingPolicy
+        self.stubbingPolicy = stubbingPolicy
+        self.file = file
+        self.line = line
+    }
+
+    var matcher = Matcher.default
+    var stubbingPolicy: StubbingPolicy = .wrap
+    var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
+    private var invocations: [MethodType] = []
+    private var methodReturnValues: [Given] = []
+    private var methodPerformValues: [Perform] = []
+    private var file: StaticString?
+    private var line: UInt?
+
+    public typealias PropertyStub = Given
+    public typealias MethodStub = Given
+    public typealias SubscriptStub = Given
+
+    /// Convenience method - call setupMock() to extend debug information when failure occurs
+    public func setupMock(file: StaticString = #file, line: UInt = #line) {
+        self.file = file
+        self.line = line
+    }
+
+    /// Clear mock internals. You can specify what to reset (invocations aka verify, givens or performs) or leave it empty to clear all mock internals
+    public func resetMock(_ scopes: MockScope...) {
+        let scopes: [MockScope] = scopes.isEmpty ? [.invocation, .given, .perform] : scopes
+        if scopes.contains(.invocation) { invocations = [] }
+        if scopes.contains(.given) { methodReturnValues = [] }
+        if scopes.contains(.perform) { methodPerformValues = [] }
+    }
+
+    public var searchHistoryList: Driver<[SearchResultEntity]> { invocations.append(.p_searchHistoryList_get); return __p_searchHistoryList ?? givenGetterValue(.p_searchHistoryList_get, "MainViewModelProtocolMock - stub value for searchHistoryList was not defined") }
+
+    private var __p_searchHistoryList: (Driver<[SearchResultEntity]>)?
+
+    open func loadedViews() {
+        addInvocation(.m_loadedViews)
+        let perform = methodPerformValue(.m_loadedViews) as? () -> Void
+        perform?()
+    }
+
+    fileprivate enum MethodType {
+        case m_loadedViews
+        case p_searchHistoryList_get
+
+        static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
+            switch (lhs, rhs) {
+            case (.m_loadedViews, .m_loadedViews): return .match
+            case (.p_searchHistoryList_get, .p_searchHistoryList_get): return Matcher.ComparisonResult.match
+            default: return .none
+            }
+        }
+
+        func intValue() -> Int {
+            switch self {
+            case .m_loadedViews: return 0
+            case .p_searchHistoryList_get: return 0
+            }
+        }
+
+        func assertionName() -> String {
+            switch self {
+            case .m_loadedViews: return ".loadedViews()"
+            case .p_searchHistoryList_get: return "[get] .searchHistoryList"
+            }
+        }
+    }
+
+    open class Given: StubbedMethod {
+        fileprivate var method: MethodType
+
+        private init(method: MethodType, products: [StubProduct]) {
+            self.method = method
+            super.init(products)
+        }
+
+        public static func searchHistoryList(getter defaultValue: Driver<[SearchResultEntity]>...) -> PropertyStub {
+            Given(method: .p_searchHistoryList_get, products: defaultValue.map { StubProduct.return($0 as Any) })
+        }
+    }
+
+    public struct Verify {
+        fileprivate var method: MethodType
+
+        public static func loadedViews() -> Verify { Verify(method: .m_loadedViews) }
+        public static var searchHistoryList: Verify { Verify(method: .p_searchHistoryList_get) }
+    }
+
+    public struct Perform {
+        fileprivate var method: MethodType
+        var performs: Any
+
+        public static func loadedViews(perform: @escaping () -> Void) -> Perform {
+            Perform(method: .m_loadedViews, performs: perform)
+        }
+    }
+
+    public func given(_ method: Given) {
+        methodReturnValues.append(method)
+    }
+
+    public func perform(_ method: Perform) {
+        methodPerformValues.append(method)
+        methodPerformValues.sort { $0.method.intValue() < $1.method.intValue() }
+    }
+
+    public func verify(_ method: Verify, count: Count = Count.moreOrEqual(to: 1), file: StaticString = #file, line: UInt = #line) {
+        let fullMatches = matchingCalls(method, file: file, line: line)
+        let success = count.matches(fullMatches)
+        let assertionName = method.method.assertionName()
+        let feedback: String = {
+            guard !success else { return "" }
+            return Utils.closestCallsMessage(
+                for: self.invocations.map { invocation in
+                    matcher.set(file: file, line: line)
+                    defer { matcher.clearFileAndLine() }
+                    return MethodType.compareParameters(lhs: invocation, rhs: method.method, matcher: matcher)
+                },
+                name: assertionName
+            )
+        }()
+        MockyAssert(success, "Expected: \(count) invocations of `\(assertionName)`, but was: \(fullMatches).\(feedback)", file: file, line: line)
+    }
+
+    private func addInvocation(_ call: MethodType) {
+        queue.sync { invocations.append(call) }
+    }
+
+    private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
+        matcher.set(file: file, line: line)
+        defer { matcher.clearFileAndLine() }
+        let candidates = sequencingPolicy.sorted(methodReturnValues, by: { $0.method.intValue() > $1.method.intValue() })
+        let matched = candidates.first(where: { $0.isValid && MethodType.compareParameters(lhs: $0.method, rhs: method, matcher: matcher).isFullMatch })
+        guard let product = matched?.getProduct(policy: stubbingPolicy) else { throw MockError.notStubed }
+        return product
+    }
+
+    private func methodPerformValue(_ method: MethodType) -> Any? {
+        matcher.set(file: file, line: line)
+        defer { matcher.clearFileAndLine() }
+        let matched = methodPerformValues.reversed().first { MethodType.compareParameters(lhs: $0.method, rhs: method, matcher: matcher).isFullMatch }
+        return matched?.performs
+    }
+
+    private func matchingCalls(_ method: MethodType, file: StaticString?, line: UInt?) -> [MethodType] {
+        matcher.set(file: file ?? self.file, line: line ?? self.line)
+        defer { matcher.clearFileAndLine() }
+        return invocations.filter { MethodType.compareParameters(lhs: $0, rhs: method, matcher: matcher).isFullMatch }
+    }
+
+    private func matchingCalls(_ method: Verify, file: StaticString?, line: UInt?) -> Int {
+        matchingCalls(method.method, file: file, line: line).count
+    }
+
+    private func givenGetterValue<T>(_ method: MethodType, _ message: String) -> T {
+        do {
+            return try methodReturnValue(method).casted()
+        } catch {
+            onFatalFailure(message)
+            Failure(message)
+        }
+    }
+
+    private func optionalGivenGetterValue<T>(_ method: MethodType, _ message: String) -> T? {
+        do {
+            return try methodReturnValue(method).casted()
+        } catch {
+            return nil
+        }
+    }
+
+    private func onFatalFailure(_ message: String) {
+        guard let file = self.file, let line = self.line else { return } // Let if fail if cannot handle gratefully
+        SwiftyMockyTestObserver.handleFatalError(message: message, file: file, line: line)
+    }
+}
+
 // MARK: - ResasGatewayProtocol
 
 open class ResasGatewayProtocolMock: ResasGatewayProtocol, Mock {
@@ -595,6 +1173,198 @@ open class ResasGatewayProtocolMock: ResasGatewayProtocol, Mock {
 
         public static func getMunicipalities(prefCode: Parameter<String>, perform: @escaping (String) -> Void) -> Perform {
             Perform(method: .m_getMunicipalities__prefCode_prefCode(prefCode), performs: perform)
+        }
+    }
+
+    public func given(_ method: Given) {
+        methodReturnValues.append(method)
+    }
+
+    public func perform(_ method: Perform) {
+        methodPerformValues.append(method)
+        methodPerformValues.sort { $0.method.intValue() < $1.method.intValue() }
+    }
+
+    public func verify(_ method: Verify, count: Count = Count.moreOrEqual(to: 1), file: StaticString = #file, line: UInt = #line) {
+        let fullMatches = matchingCalls(method, file: file, line: line)
+        let success = count.matches(fullMatches)
+        let assertionName = method.method.assertionName()
+        let feedback: String = {
+            guard !success else { return "" }
+            return Utils.closestCallsMessage(
+                for: self.invocations.map { invocation in
+                    matcher.set(file: file, line: line)
+                    defer { matcher.clearFileAndLine() }
+                    return MethodType.compareParameters(lhs: invocation, rhs: method.method, matcher: matcher)
+                },
+                name: assertionName
+            )
+        }()
+        MockyAssert(success, "Expected: \(count) invocations of `\(assertionName)`, but was: \(fullMatches).\(feedback)", file: file, line: line)
+    }
+
+    private func addInvocation(_ call: MethodType) {
+        queue.sync { invocations.append(call) }
+    }
+
+    private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
+        matcher.set(file: file, line: line)
+        defer { matcher.clearFileAndLine() }
+        let candidates = sequencingPolicy.sorted(methodReturnValues, by: { $0.method.intValue() > $1.method.intValue() })
+        let matched = candidates.first(where: { $0.isValid && MethodType.compareParameters(lhs: $0.method, rhs: method, matcher: matcher).isFullMatch })
+        guard let product = matched?.getProduct(policy: stubbingPolicy) else { throw MockError.notStubed }
+        return product
+    }
+
+    private func methodPerformValue(_ method: MethodType) -> Any? {
+        matcher.set(file: file, line: line)
+        defer { matcher.clearFileAndLine() }
+        let matched = methodPerformValues.reversed().first { MethodType.compareParameters(lhs: $0.method, rhs: method, matcher: matcher).isFullMatch }
+        return matched?.performs
+    }
+
+    private func matchingCalls(_ method: MethodType, file: StaticString?, line: UInt?) -> [MethodType] {
+        matcher.set(file: file ?? self.file, line: line ?? self.line)
+        defer { matcher.clearFileAndLine() }
+        return invocations.filter { MethodType.compareParameters(lhs: $0, rhs: method, matcher: matcher).isFullMatch }
+    }
+
+    private func matchingCalls(_ method: Verify, file: StaticString?, line: UInt?) -> Int {
+        matchingCalls(method.method, file: file, line: line).count
+    }
+
+    private func givenGetterValue<T>(_ method: MethodType, _ message: String) -> T {
+        do {
+            return try methodReturnValue(method).casted()
+        } catch {
+            onFatalFailure(message)
+            Failure(message)
+        }
+    }
+
+    private func optionalGivenGetterValue<T>(_ method: MethodType, _ message: String) -> T? {
+        do {
+            return try methodReturnValue(method).casted()
+        } catch {
+            return nil
+        }
+    }
+
+    private func onFatalFailure(_ message: String) {
+        guard let file = self.file, let line = self.line else { return } // Let if fail if cannot handle gratefully
+        SwiftyMockyTestObserver.handleFatalError(message: message, file: file, line: line)
+    }
+}
+
+// MARK: - SearchResultUseCaseProtocol
+
+open class SearchResultUseCaseProtocolMock: SearchResultUseCaseProtocol, Mock {
+    public init(sequencing sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst, stubbing stubbingPolicy: StubbingPolicy = .wrap, file: StaticString = #file, line: UInt = #line) {
+        SwiftyMockyTestObserver.setup()
+        self.sequencingPolicy = sequencingPolicy
+        self.stubbingPolicy = stubbingPolicy
+        self.file = file
+        self.line = line
+    }
+
+    var matcher = Matcher.default
+    var stubbingPolicy: StubbingPolicy = .wrap
+    var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
+    private var invocations: [MethodType] = []
+    private var methodReturnValues: [Given] = []
+    private var methodPerformValues: [Perform] = []
+    private var file: StaticString?
+    private var line: UInt?
+
+    public typealias PropertyStub = Given
+    public typealias MethodStub = Given
+    public typealias SubscriptStub = Given
+
+    /// Convenience method - call setupMock() to extend debug information when failure occurs
+    public func setupMock(file: StaticString = #file, line: UInt = #line) {
+        self.file = file
+        self.line = line
+    }
+
+    /// Clear mock internals. You can specify what to reset (invocations aka verify, givens or performs) or leave it empty to clear all mock internals
+    public func resetMock(_ scopes: MockScope...) {
+        let scopes: [MockScope] = scopes.isEmpty ? [.invocation, .given, .perform] : scopes
+        if scopes.contains(.invocation) { invocations = [] }
+        if scopes.contains(.given) { methodReturnValues = [] }
+        if scopes.contains(.perform) { methodPerformValues = [] }
+    }
+
+    open func getCitySearchResult() -> Single<Result<[SearchResultEntity], DataBaseError>> {
+        addInvocation(.m_getCitySearchResult)
+        let perform = methodPerformValue(.m_getCitySearchResult) as? () -> Void
+        perform?()
+        var __value: Single<Result<[SearchResultEntity], DataBaseError>>
+        do {
+            __value = try methodReturnValue(.m_getCitySearchResult).casted()
+        } catch {
+            onFatalFailure("Stub return value not specified for getCitySearchResult(). Use given")
+            Failure("Stub return value not specified for getCitySearchResult(). Use given")
+        }
+        return __value
+    }
+
+    fileprivate enum MethodType {
+        case m_getCitySearchResult
+
+        static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
+            switch (lhs, rhs) {
+            case (.m_getCitySearchResult, .m_getCitySearchResult): return .match
+            }
+        }
+
+        func intValue() -> Int {
+            switch self {
+            case .m_getCitySearchResult: return 0
+            }
+        }
+
+        func assertionName() -> String {
+            switch self {
+            case .m_getCitySearchResult: return ".getCitySearchResult()"
+            }
+        }
+    }
+
+    open class Given: StubbedMethod {
+        fileprivate var method: MethodType
+
+        private init(method: MethodType, products: [StubProduct]) {
+            self.method = method
+            super.init(products)
+        }
+
+        public static func getCitySearchResult(willReturn: Single<Result<[SearchResultEntity], DataBaseError>>...) -> MethodStub {
+            Given(method: .m_getCitySearchResult, products: willReturn.map { StubProduct.return($0 as Any) })
+        }
+
+        public static func getCitySearchResult(willProduce: (Stubber<Single<Result<[SearchResultEntity], DataBaseError>>>) -> Void) -> MethodStub {
+            let willReturn: [Single<Result<[SearchResultEntity], DataBaseError>>] = []
+            let given: Given = { Given(method: .m_getCitySearchResult, products: willReturn.map { StubProduct.return($0 as Any) }) }()
+            let stubber = given.stub(for: Single<Result<[SearchResultEntity], DataBaseError>>.self)
+            willProduce(stubber)
+            return given
+        }
+    }
+
+    public struct Verify {
+        fileprivate var method: MethodType
+
+        public static func getCitySearchResult() -> Verify { Verify(method: .m_getCitySearchResult) }
+    }
+
+    public struct Perform {
+        fileprivate var method: MethodType
+        var performs: Any
+
+        public static func getCitySearchResult(perform: @escaping () -> Void) -> Perform {
+            Perform(method: .m_getCitySearchResult, performs: perform)
         }
     }
 

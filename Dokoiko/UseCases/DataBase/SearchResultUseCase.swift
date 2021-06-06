@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 
 /// 市区検索結果に関する操作を行うユースケースが準拠するプロトコル
+/// sourcery: AutoMockable
 protocol SearchResultUseCaseProtocol {
     /// 市区の検索結果一覧を取得する
     func getCitySearchResult() -> Single<Result<[SearchResultEntity], DataBaseError>>

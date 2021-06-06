@@ -10,11 +10,12 @@ import RxSwift
 import UIKit
 
 /// メイン画面が準拠するプロトコル
+/// sourcery: AutoMockable
 protocol MainVCProtocol: AnyObject {
     /// リストのセルが選択されたときのイベント
-    var itemSelected: ControlEvent<IndexPath> { get }
+    var itemSelected: Observable<Int> { get }
     /// 検索ボタンがタップされた時のイベント
-    var tapSearchButton: ControlEvent<Void> { get }
+    var tapSearchButton: Driver<Void> { get }
 }
 
 /// メイン画面
@@ -135,11 +136,13 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: MainVCProtocol {
-    var itemSelected: ControlEvent<IndexPath> {
-        contentAreaView.tableView.rx.itemSelected
+    var itemSelected: Observable<Int> {
+        contentAreaView.tableView.rx
+            .itemSelected
+            .map(\.row)
     }
 
-    var tapSearchButton: ControlEvent<Void> {
-        searchButton.rx.tap
+    var tapSearchButton: Driver<Void> {
+        searchButton.rx.tap.asDriver()
     }
 }

@@ -19,6 +19,7 @@ enum MainNavigationDestination {
 }
 
 /// メイン画面からの画面遷移、およびDIを行う型が準拠するプロトコル
+/// sourcery: AutoMockable
 protocol MainRouterProtocol: BaseRouter {
     /// 画面遷移
     /// - Parameter destination: 遷移経路
