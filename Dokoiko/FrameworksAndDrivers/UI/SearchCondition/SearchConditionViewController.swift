@@ -10,11 +10,12 @@ import RxSwift
 import UIKit
 
 /// 検索条件画面が準拠するプロトコル
+/// sourcery: AutoMockable
 protocol SearchConditionVCProtocol: AnyObject {
     /// 戻るボタンタップ時のイベント
-    var tapBackButton: ControlEvent<Void> { get }
+    var tapBackButton: Signal<Void> { get }
     /// 検索ボタンタップ時のイベント
-    var tapSearchButton: ControlEvent<Void> { get }
+    var tapSearchButton: Signal<Void> { get }
     /// 選択された検索条件のイベント
     var selectedSearchCondition: Driver<Int> { get }
     /// エリアが選択された時のイベント
@@ -155,12 +156,12 @@ class SearchConditionViewController: UIViewController {
 }
 
 extension SearchConditionViewController: SearchConditionVCProtocol {
-    var tapBackButton: ControlEvent<Void> {
-        backButton.rx.tap
+    var tapBackButton: Signal<Void> {
+        backButton.rx.tap.asSignal()
     }
 
-    var tapSearchButton: ControlEvent<Void> {
-        searchButton.rx.tap
+    var tapSearchButton: Signal<Void> {
+        searchButton.rx.tap.asSignal()
     }
 
     var selectedSearchCondition: Driver<Int> {

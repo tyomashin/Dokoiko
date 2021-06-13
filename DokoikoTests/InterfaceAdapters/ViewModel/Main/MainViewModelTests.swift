@@ -22,11 +22,21 @@ class MainViewModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        view = MainVCProtocolMock()
+        router = MainRouterProtocolMock()
+        searchResultUseCase = SearchResultUseCaseProtocolMock()
+        scheguler = TestScheduler(initialClock: 0)
         disposeBag = DisposeBag()
+
+        Given(view, .itemSelected(getter: .empty()))
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        view = nil
+        router = nil
+        searchResultUseCase = nil
+        scheguler = nil
         disposeBag = nil
     }
 
@@ -34,33 +44,27 @@ class MainViewModelTests: XCTestCase {
     func testTapSearchButton() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        scheguler = TestScheduler(initialClock: 0)
 
         // ボタンタップイベント発火用
-        let tapEvents = scheguler.createColdObservable([.next(10, ()),
-                                                        .next(20, ())])
+        let tapEvents = scheguler
+            .createColdObservable([.next(10, ()),
+                                   .next(20, ())])
+            .asDriver(onErrorJustReturn: ())
 
         // 検索結果リストイベントのテスト用
         let searchResultEvents = scheguler.createObserver([SearchResultEntity].self)
 
-        // ここはモック初期化のために適当な値を生成
-        let rowSelectEvents = scheguler.createColdObservable([.next(30, 0)])
-            .asObservable()
         let searchEntity = [SearchResultEntity(id: "", prefCode: 0, prefName: "", cityName: "", lat: nil, lng: nil, date: nil)]
         let searchResults = Single<Result<[SearchResultEntity], DataBaseError>>.create { single in
             single(.success(.success(searchEntity)))
             return Disposables.create()
         }
 
-        view = MainVCProtocolMock()
-        router = MainRouterProtocolMock()
-        searchResultUseCase = SearchResultUseCaseProtocolMock()
-        
         // view のモックが返す Observable を定義
-        Given(view, .tapSearchButton(getter: tapEvents.asDriver(onErrorJustReturn: ())))
-        Given(view, .itemSelected(getter: rowSelectEvents))
+        Given(view, .tapSearchButton(getter: tapEvents))
         // ViewModel が依存する UseCase が返す Observable を定義
         Given(searchResultUseCase, .getCitySearchResult(willReturn: searchResults))
+
         // ViewModelをモックで初期化
         viewModel = MainViewModel(view: view, router: router, searchResultUseCase: searchResultUseCase)
 

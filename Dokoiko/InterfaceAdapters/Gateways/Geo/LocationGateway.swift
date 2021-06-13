@@ -9,6 +9,7 @@ import CoreLocation
 import Foundation
 import RxSwift
 
+/// sourcery: AutoMockable
 protocol LocationGatewayProtocol {
     /// 位置情報が許可されているかどうかのストリームを返す
     func getLocationAuth() -> Observable<LocationAuthEntity>

@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 
 /// 一時保存しているデータへのアクセスを要求するゲートウェイが準拠するプロトコル
+/// sourcery: AutoMockable
 protocol AppDataGatewayProtocol {
     /// 初回起動フラグ
     var firstLaunchFlag: Single<Bool> { get }

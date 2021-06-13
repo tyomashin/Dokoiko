@@ -10,6 +10,7 @@ import RxCocoa
 import RxSwift
 
 /// 検索条件画面のViewModelが準拠するプロトコル
+/// sourcery: AutoMockable
 protocol SearchConditionViewModelProtocol: AnyObject {
     /// 検索方法の種別リスト
     var searchConditionTypeList: Driver<[SearchConditionData]> { get }
@@ -98,7 +99,7 @@ class SearchConditionViewModel: SearchConditionViewModelProtocol {
         guard let view = view else { return }
         // 戻るボタンタップ時に呼ばれる
         view.tapBackButton
-            .subscribe(onNext: { [weak self] in
+            .emit(onNext: { [weak self] in
                 self?.router.navigate(to: .back)
             })
             .disposed(by: disposeBag)
@@ -117,10 +118,13 @@ class SearchConditionViewModel: SearchConditionViewModelProtocol {
         )
 
         // 「現在地から検索」のViewModel内でViewのイベントを購読
-        locationSearchViewModel.bindViews(selectedLocation: view.selectedLocation, selectedRadius: view.selectedRadius)
+        locationSearchViewModel.bindViews(
+            selectedLocation: view.selectedLocation,
+            selectedRadius: view.selectedRadius
+        )
 
         view.tapSearchButton
-            .subscribe(onNext: { [weak self] in
+            .emit(onNext: { [weak self] in
                 self?.searchCity()
             })
             .disposed(by: disposeBag)
@@ -178,7 +182,8 @@ class SearchConditionViewModel: SearchConditionViewModelProtocol {
             conditionData = .currentLocation(condition: locationSearchViewModel.searchConditionData)
         }
 
-        // TODO: 画面遷移する
+        // 画面遷移する
+        router.navigate(to: .searching(conditionData: conditionData))
         print(conditionData)
     }
 }

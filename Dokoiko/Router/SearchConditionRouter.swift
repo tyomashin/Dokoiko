@@ -13,12 +13,13 @@ enum SearchConditionNavigationDestination {
     // 検索条件画面
     case searchCondition
     // 検索中画面
-    case searching
+    case searching(conditionData: SearchConditionDataEntity)
     // 戻る
     case back
 }
 
 /// 検索条件画面からの画面遷移、およびDIを行う型が準拠するプロトコル
+/// sourcery: AutoMockable
 protocol SearchConditionRouterProtocol: BaseRouter {
     /// 画面遷移を行う
     /// - Parameter destination: 遷移経路
@@ -50,7 +51,7 @@ struct SearchConditionRouter: SearchConditionRouterProtocol {
             searchVC.inject(viewModel: searchViewModel)
             navigationController.pushViewController(searchVC, animated: true)
 
-        case .searching:
+        case let .searching(condition):
             break
 
         case .back:
