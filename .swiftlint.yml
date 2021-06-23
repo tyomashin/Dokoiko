@@ -138,7 +138,7 @@ opt_in_rules:
   - identical_operands                 # 2つの同一オペランドを比較するのはおそらく間違いである
   - implicit_return                    # クロージャ内では、明示的なreturnよりも暗黙的なreturnを使用すべき
   - implicitly_unwrapped_optional      # 暗黙的にアンラップされるオプショナル型はできる限り使用すべきではない（例：private var label: UILabel! ）
-  - indentation_width                  # インデントについて、最初の行はインデントせず、以降は4つの空白でインデントを行う
+  #- indentation_width                  # インデントについて、最初の行はインデントせず、以降は4つの空白でインデントを行う
   - joined_default_parameter           # .joined メソッドで、デフォルトの区切り文字 "" は明示的に使うべきではない
   - last_where                         # コレクションの最後の要素を取得する時は、「.filter{}.last」より「.last(where:)」を使うべき
   - legacy_multiple                    # 倍数かどうかを確認する時に、「value % 2 == 0」のように%を使用せずに、isMultiple(of:) を使用べき。

@@ -54,6 +54,7 @@ class MainViewModelTests: XCTestCase {
         // 検索結果リストイベントのテスト用
         let searchResultEvents = scheguler.createObserver([SearchResultEntity].self)
 
+        // memo: Single は scheduler から生成したObservableをもとに作れなかった（イベントが流れない）ので手動で作成（上のようにDriverなら作成可能）
         let searchEntity = [SearchResultEntity(id: "", prefCode: 0, prefName: "", cityName: "", lat: nil, lng: nil, date: nil)]
         let searchResults = Single<Result<[SearchResultEntity], DataBaseError>>.create { single in
             single(.success(.success(searchEntity)))

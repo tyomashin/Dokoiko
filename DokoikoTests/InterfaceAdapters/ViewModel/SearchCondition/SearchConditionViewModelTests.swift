@@ -31,6 +31,7 @@ class SearchConditionViewModelTests: XCTestCase {
         scheguler = TestScheduler(initialClock: 0)
         disposeBag = DisposeBag()
 
+        // memo: Single は scheduler から生成したObservableをもとに作れなかった（イベントが流れない）ので手動で作成
         let appData = Single<SearchConditionPrefectures?>.create { single in
             single(.success(nil))
             return Disposables.create()

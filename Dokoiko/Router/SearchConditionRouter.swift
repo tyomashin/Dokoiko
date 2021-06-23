@@ -52,7 +52,8 @@ struct SearchConditionRouter: SearchConditionRouterProtocol {
             navigationController.pushViewController(searchVC, animated: true)
 
         case let .searching(condition):
-            break
+            let loadingRouter = SearchLoadingRouter(navigationController: navigationController)
+            loadingRouter.navigate(to: .searching(conditionData: condition))
 
         case .back:
             navigationController.popViewController(animated: true)

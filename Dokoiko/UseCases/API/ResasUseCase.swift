@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 
 /// 市区町村を取得するユースケースが準拠するプロトコル
+/// sourcery: AutoMockable
 protocol ResasUseCaseProtocol {
     /// 都道府県内の市区一覧を取得する
     /// - Parameter prefCode: 都道府県コード

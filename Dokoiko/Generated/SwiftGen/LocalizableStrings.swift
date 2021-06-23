@@ -12,6 +12,8 @@ import Foundation
 internal enum L10n {
 
   internal enum Btn {
+    /// OK
+    internal static let ok = L10n.tr("Localizable", "btn.ok")
     internal enum SearchCondition {
       /// 現在地の近くから探す
       internal static let currentLocation = L10n.tr("Localizable", "btn.searchCondition.currentLocation")
@@ -19,6 +21,23 @@ internal enum L10n {
       internal static let prefectures = L10n.tr("Localizable", "btn.searchCondition.prefectures")
       /// 地域をランダムに検索
       internal static let search = L10n.tr("Localizable", "btn.searchCondition.search")
+    }
+  }
+
+  internal enum Dialog {
+    internal enum Message {
+      internal enum Error {
+        /// 検索に失敗しました
+        internal static let searchLoading = L10n.tr("Localizable", "dialog.message.error.searchLoading")
+        internal enum SearchLoading {
+          /// 有効な場所が見つかりませんでした。検索条件を変更してみてください
+          internal static let empty = L10n.tr("Localizable", "dialog.message.error.searchLoading.empty")
+        }
+      }
+    }
+    internal enum Title {
+      /// エラー
+      internal static let error = L10n.tr("Localizable", "dialog.title.error")
     }
   }
 
@@ -42,6 +61,25 @@ internal enum L10n {
     internal enum Prefecture {
       /// 都道府県
       internal static let title = L10n.tr("Localizable", "searchCondition.prefecture.title")
+    }
+  }
+
+  internal enum SearchLoading {
+    /// あなたの行き先が\n決定しました！
+    internal static let complete = L10n.tr("Localizable", "searchLoading.complete")
+    /// Finish !
+    internal static let finish = L10n.tr("Localizable", "searchLoading.finish")
+    /// あなたに代わって\n今日の行き先を決めています。\nしばらくお待ちください・・・
+    internal static let nowLoading = L10n.tr("Localizable", "searchLoading.nowLoading")
+    internal enum NowLoading {
+      /// Loading
+      internal static let empty = L10n.tr("Localizable", "searchLoading.nowLoading.empty")
+      /// Loading .
+      internal static let one = L10n.tr("Localizable", "searchLoading.nowLoading.one")
+      /// Loading . . .
+      internal static let three = L10n.tr("Localizable", "searchLoading.nowLoading.three")
+      /// Loading . .
+      internal static let two = L10n.tr("Localizable", "searchLoading.nowLoading.two")
     }
   }
 

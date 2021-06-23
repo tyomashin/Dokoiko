@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 
 /// エリア内の市区情報を取得するユースケースが準拠するプロトコル
+/// sourcery: AutoMockable
 protocol GeoDBUseCaseProtocol {
     /// エリア内の市区情報を取得する
     func getCitiesInArea(lat: Double, lng: Double, radiusKM: Double) -> Single<ApiResponseEntity<GeoDBCitiesEntity>>
