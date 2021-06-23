@@ -78,6 +78,7 @@ class MainContentView: UIView {
             tableView.reloadData()
         } else {
             setDisplayMode(state: .historyList)
+            tableView.reloadData()
         }
     }
 

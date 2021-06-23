@@ -13,6 +13,11 @@ import RxSwift
 protocol SearchResultUseCaseProtocol {
     /// 市区の検索結果一覧を取得する
     func getCitySearchResult() -> Single<Result<[SearchResultEntity], DataBaseError>>
+    /// 市区の検索結果を格納する
+    /// - Parameters:
+    ///   - prefCode: 都道府県コード
+    ///   - cityName: 都市名
+    func saveCitySearchResult(prefCode: Int, cityName: String)
 }
 
 /// 市区検索結果に関する操作を行うユースケース
@@ -26,5 +31,10 @@ struct SearchResultUseCase: SearchResultUseCaseProtocol {
     /// 市区の検索結果一覧を取得する
     func getCitySearchResult() -> Single<Result<[SearchResultEntity], DataBaseError>> {
         gateway.getCitySearchResult()
+    }
+
+    /// 市区の検索結果を格納する
+    func saveCitySearchResult(prefCode: Int, cityName: String) {
+        _ = gateway.saveCitySearchResult(prefCode: prefCode, cityName: cityName, lat: nil, lng: nil)
     }
 }

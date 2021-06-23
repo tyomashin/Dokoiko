@@ -18,6 +18,7 @@ class SearchLoadingViewModelTests: XCTestCase {
     var resasUseCase: ResasUseCaseProtocolMock!
     var geoDBUseCase: GeoDBUseCaseProtocolMock!
     var wikiDataUseCase: WikiDataUseCaseProtocolMock!
+    var databaseUseCase: SearchResultUseCaseProtocolMock!
     var router: SearchLoadingRouterProtocolMock!
     var scheguler: TestScheduler!
     var disposeBag: DisposeBag!
@@ -28,6 +29,7 @@ class SearchLoadingViewModelTests: XCTestCase {
         resasUseCase = ResasUseCaseProtocolMock()
         geoDBUseCase = GeoDBUseCaseProtocolMock()
         wikiDataUseCase = WikiDataUseCaseProtocolMock()
+        databaseUseCase = SearchResultUseCaseProtocolMock()
         router = SearchLoadingRouterProtocolMock()
         scheguler = TestScheduler(initialClock: 0)
         disposeBag = DisposeBag()
@@ -95,7 +97,8 @@ class SearchLoadingViewModelTests: XCTestCase {
             searchCondition: conditionEntity,
             resasUseCase: resasUseCase,
             geoDBUseCase: geoDBUseCase,
-            wikiDataUseCase: wikiDataUseCase
+            wikiDataUseCase: wikiDataUseCase,
+            searchResultUseCase: databaseUseCase
         )
 
         viewModel.loadedViews()
@@ -144,7 +147,8 @@ class SearchLoadingViewModelTests: XCTestCase {
             searchCondition: conditionEntity,
             resasUseCase: resasUseCase,
             geoDBUseCase: geoDBUseCase,
-            wikiDataUseCase: wikiDataUseCase
+            wikiDataUseCase: wikiDataUseCase,
+            searchResultUseCase: databaseUseCase
         )
 
         // テスト結果受取用Observerを登録：検索条件オブジェクト変更イベント
@@ -182,6 +186,9 @@ class SearchLoadingViewModelTests: XCTestCase {
         case .completion: break
         default: XCTFail()
         }
+
+        // 検索結果が保存されているかどうか確認
+        Verify(databaseUseCase, 1, .saveCitySearchResult(prefCode: Parameter<Int>(integerLiteral: prefCode), cityName: "test"))
     }
 
     /// 「都道府県から検索」時のローディング状態テスト：異常系
@@ -213,7 +220,8 @@ class SearchLoadingViewModelTests: XCTestCase {
             searchCondition: conditionEntity,
             resasUseCase: resasUseCase,
             geoDBUseCase: geoDBUseCase,
-            wikiDataUseCase: wikiDataUseCase
+            wikiDataUseCase: wikiDataUseCase,
+            searchResultUseCase: databaseUseCase
         )
 
         // テスト結果受取用Observerを登録：検索条件オブジェクト変更イベント
@@ -251,6 +259,9 @@ class SearchLoadingViewModelTests: XCTestCase {
         case .error(message: _): break
         default: XCTFail()
         }
+
+        // 検索結果が保存されていないことを確認
+        Verify(databaseUseCase, 0, .saveCitySearchResult(prefCode: Parameter<Int>(integerLiteral: prefCode), cityName: "test"))
     }
 
     /// 「現在地から検索」時のローディングテスト：正常系
@@ -261,8 +272,9 @@ class SearchLoadingViewModelTests: XCTestCase {
         let conditionEntity = SearchConditionDataEntity.currentLocation(condition: currentLocation)
 
         // ユースケースが返す値を定義
+        let prefCode = 1
         let geoDBSingle = Single<ApiResponseEntity<GeoDBCitiesEntity>>.create { single in
-            let result = [GeoDBCityData(id: 0, wikiDataId: "Qxx", name: "", regionCode: "1", latitude: nil, longitude: nil, population: nil, distance: nil)]
+            let result = [GeoDBCityData(id: 0, wikiDataId: "Qxx", name: "", regionCode: "\(prefCode)", latitude: nil, longitude: nil, population: nil, distance: nil)]
             single(.success(.success(response: GeoDBCitiesEntity(data: result))))
             return Disposables.create()
         }
@@ -282,7 +294,8 @@ class SearchLoadingViewModelTests: XCTestCase {
             searchCondition: conditionEntity,
             resasUseCase: resasUseCase,
             geoDBUseCase: geoDBUseCase,
-            wikiDataUseCase: wikiDataUseCase
+            wikiDataUseCase: wikiDataUseCase,
+            searchResultUseCase: databaseUseCase
         )
 
         // テスト結果受取用Observerを登録：検索条件オブジェクト変更イベント
@@ -315,6 +328,9 @@ class SearchLoadingViewModelTests: XCTestCase {
         case .completion: break
         default: XCTFail()
         }
+
+        // 検索結果が保存されているかどうか確認
+        Verify(databaseUseCase, 1, .saveCitySearchResult(prefCode: Parameter<Int>(integerLiteral: prefCode), cityName: "test"))
     }
 
     /// 「現在地から検索」時のローディングテスト：異常系
@@ -345,7 +361,8 @@ class SearchLoadingViewModelTests: XCTestCase {
             searchCondition: conditionEntity,
             resasUseCase: resasUseCase,
             geoDBUseCase: geoDBUseCase,
-            wikiDataUseCase: wikiDataUseCase
+            wikiDataUseCase: wikiDataUseCase,
+            searchResultUseCase: databaseUseCase
         )
 
         // テスト結果受取用Observerを登録：検索条件オブジェクト変更イベント
@@ -378,6 +395,9 @@ class SearchLoadingViewModelTests: XCTestCase {
         case .error(message: _): break
         default: XCTFail()
         }
+
+        // 検索結果が保存されていないことを確認
+        Verify(databaseUseCase, 0, .saveCitySearchResult(prefCode: Parameter<Int>(integerLiteral: 1), cityName: "test"))
     }
 
     func testPerformanceExample() throws {

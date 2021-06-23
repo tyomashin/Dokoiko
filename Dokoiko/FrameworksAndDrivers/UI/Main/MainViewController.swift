@@ -118,6 +118,11 @@ class MainViewController: UIViewController {
          */
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.viewWillApper()
+    }
+
     /// ViewModelを受け取るメソッドインジェクション
     /// - Parameter viewModel: メイン画面のViewModel
     internal func inject(viewModel: MainViewModelProtocol) {

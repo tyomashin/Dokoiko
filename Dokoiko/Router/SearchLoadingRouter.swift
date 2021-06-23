@@ -52,13 +52,18 @@ struct SearchLoadingRouter: SearchLoadingRouterProtocol {
             let wikiDataGateway = WikiDataGateway(wikiDataClient: wikiDataApiClient)
             let wikiDataUseCase = WikiDataUseCase(wikiDataGateway: wikiDataGateway)
 
+            let database = RealmRepository()
+            let databaseGataway = DataBaseGateway(database: database)
+            let searchResultUseCase = SearchResultUseCase(gateway: databaseGataway)
+
             let viewModel = SearchLoadingViewModel(
                 view: loadingVC,
                 router: self,
                 searchCondition: conditionData,
                 resasUseCase: resasUseCase,
                 geoDBUseCase: geoDBUseCase,
-                wikiDataUseCase: wikiDataUseCase
+                wikiDataUseCase: wikiDataUseCase,
+                searchResultUseCase: searchResultUseCase
             )
             loadingVC.inject(viewModel: viewModel)
             navigationController.pushViewController(loadingVC, animated: true)

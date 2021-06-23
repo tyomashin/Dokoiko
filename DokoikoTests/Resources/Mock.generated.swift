@@ -1534,13 +1534,22 @@ open class MainViewModelProtocolMock: MainViewModelProtocol, Mock {
         perform?()
     }
 
+    open func viewWillApper() {
+        addInvocation(.m_viewWillApper)
+        let perform = methodPerformValue(.m_viewWillApper) as? () -> Void
+        perform?()
+    }
+
     fileprivate enum MethodType {
         case m_loadedViews
+        case m_viewWillApper
         case p_searchHistoryList_get
 
         static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
             switch (lhs, rhs) {
             case (.m_loadedViews, .m_loadedViews): return .match
+
+            case (.m_viewWillApper, .m_viewWillApper): return .match
             case (.p_searchHistoryList_get, .p_searchHistoryList_get): return Matcher.ComparisonResult.match
             default: return .none
             }
@@ -1549,6 +1558,7 @@ open class MainViewModelProtocolMock: MainViewModelProtocol, Mock {
         func intValue() -> Int {
             switch self {
             case .m_loadedViews: return 0
+            case .m_viewWillApper: return 0
             case .p_searchHistoryList_get: return 0
             }
         }
@@ -1556,6 +1566,7 @@ open class MainViewModelProtocolMock: MainViewModelProtocol, Mock {
         func assertionName() -> String {
             switch self {
             case .m_loadedViews: return ".loadedViews()"
+            case .m_viewWillApper: return ".viewWillApper()"
             case .p_searchHistoryList_get: return "[get] .searchHistoryList"
             }
         }
@@ -1578,6 +1589,7 @@ open class MainViewModelProtocolMock: MainViewModelProtocol, Mock {
         fileprivate var method: MethodType
 
         public static func loadedViews() -> Verify { Verify(method: .m_loadedViews) }
+        public static func viewWillApper() -> Verify { Verify(method: .m_viewWillApper) }
         public static var searchHistoryList: Verify { Verify(method: .p_searchHistoryList_get) }
     }
 
@@ -1587,6 +1599,10 @@ open class MainViewModelProtocolMock: MainViewModelProtocol, Mock {
 
         public static func loadedViews(perform: @escaping () -> Void) -> Perform {
             Perform(method: .m_loadedViews, performs: perform)
+        }
+
+        public static func viewWillApper(perform: @escaping () -> Void) -> Perform {
+            Perform(method: .m_viewWillApper, performs: perform)
         }
     }
 
@@ -3384,24 +3400,40 @@ open class SearchResultUseCaseProtocolMock: SearchResultUseCaseProtocol, Mock {
         return __value
     }
 
+    open func saveCitySearchResult(prefCode: Int, cityName: String) {
+        addInvocation(.m_saveCitySearchResult__prefCode_prefCodecityName_cityName(Parameter<Int>.value(prefCode), Parameter<String>.value(cityName)))
+        let perform = methodPerformValue(.m_saveCitySearchResult__prefCode_prefCodecityName_cityName(Parameter<Int>.value(prefCode), Parameter<String>.value(cityName))) as? (Int, String) -> Void
+        perform?(prefCode, cityName)
+    }
+
     fileprivate enum MethodType {
         case m_getCitySearchResult
+        case m_saveCitySearchResult__prefCode_prefCodecityName_cityName(Parameter<Int>, Parameter<String>)
 
         static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
             switch (lhs, rhs) {
             case (.m_getCitySearchResult, .m_getCitySearchResult): return .match
+
+            case let (.m_saveCitySearchResult__prefCode_prefCodecityName_cityName(lhsPrefcode, lhsCityname), .m_saveCitySearchResult__prefCode_prefCodecityName_cityName(rhsPrefcode, rhsCityname)):
+                var results: [Matcher.ParameterComparisonResult] = []
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsPrefcode, rhs: rhsPrefcode, with: matcher), lhsPrefcode, rhsPrefcode, "prefCode"))
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsCityname, rhs: rhsCityname, with: matcher), lhsCityname, rhsCityname, "cityName"))
+                return Matcher.ComparisonResult(results)
+            default: return .none
             }
         }
 
         func intValue() -> Int {
             switch self {
             case .m_getCitySearchResult: return 0
+            case let .m_saveCitySearchResult__prefCode_prefCodecityName_cityName(p0, p1): return p0.intValue + p1.intValue
             }
         }
 
         func assertionName() -> String {
             switch self {
             case .m_getCitySearchResult: return ".getCitySearchResult()"
+            case .m_saveCitySearchResult__prefCode_prefCodecityName_cityName: return ".saveCitySearchResult(prefCode:cityName:)"
             }
         }
     }
@@ -3431,6 +3463,7 @@ open class SearchResultUseCaseProtocolMock: SearchResultUseCaseProtocol, Mock {
         fileprivate var method: MethodType
 
         public static func getCitySearchResult() -> Verify { Verify(method: .m_getCitySearchResult) }
+        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>) -> Verify { Verify(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityName(prefCode, cityName)) }
     }
 
     public struct Perform {
@@ -3439,6 +3472,10 @@ open class SearchResultUseCaseProtocolMock: SearchResultUseCaseProtocol, Mock {
 
         public static func getCitySearchResult(perform: @escaping () -> Void) -> Perform {
             Perform(method: .m_getCitySearchResult, performs: perform)
+        }
+
+        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, perform: @escaping (Int, String) -> Void) -> Perform {
+            Perform(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityName(prefCode, cityName), performs: perform)
         }
     }
 

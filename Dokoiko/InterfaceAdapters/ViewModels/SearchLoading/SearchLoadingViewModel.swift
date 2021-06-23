@@ -30,6 +30,7 @@ class SearchLoadingViewModel: SearchLoadingViewModelProtocol {
     private let resasUseCase: ResasUseCaseProtocol
     private let geoDBUseCase: GeoDBUseCaseProtocol
     private let wikiDataUseCase: WikiDataUseCaseProtocol
+    private let searchResultUseCase: SearchResultUseCaseProtocol
 
     // ローディング状態のイベント
     private let loadingStateRelay = BehaviorRelay<LoadingState>(value: .idle)
@@ -46,7 +47,8 @@ class SearchLoadingViewModel: SearchLoadingViewModelProtocol {
         searchCondition: SearchConditionDataEntity,
         resasUseCase: ResasUseCaseProtocol,
         geoDBUseCase: GeoDBUseCaseProtocol,
-        wikiDataUseCase: WikiDataUseCaseProtocol
+        wikiDataUseCase: WikiDataUseCaseProtocol,
+        searchResultUseCase: SearchResultUseCaseProtocol
     ) {
         self.view = view
         self.router = router
@@ -54,6 +56,7 @@ class SearchLoadingViewModel: SearchLoadingViewModelProtocol {
         self.resasUseCase = resasUseCase
         self.geoDBUseCase = geoDBUseCase
         self.wikiDataUseCase = wikiDataUseCase
+        self.searchResultUseCase = searchResultUseCase
     }
 
     /// View読み込み完了後に呼ばれる
@@ -128,6 +131,7 @@ class SearchLoadingViewModel: SearchLoadingViewModelProtocol {
                        let cityName = searchResult.cityName {
                         // 検索結果を保持してviewに完了通知
                         self.searchResult = (prefecture, cityName)
+                        self.saveSearchResult()
                         self.loadingStateRelay.accept(.completion)
                     }
                     // 検索結果が有効でない場合
@@ -184,6 +188,7 @@ class SearchLoadingViewModel: SearchLoadingViewModelProtocol {
                     // 場所名が正常に取得できた場合
                     if let cityName = response.entities?[wikiDataId]?.labels?.ja?.value {
                         self?.searchResult = (prefecture: prefecture, cityName: cityName)
+                        self?.saveSearchResult()
                         self?.loadingStateRelay.accept(.completion)
                     }
                     // 検索結果が有効でない場合
@@ -197,5 +202,13 @@ class SearchLoadingViewModel: SearchLoadingViewModelProtocol {
                 }
             })
             .disposed(by: disposeBag)
+    }
+
+    /// 検索結果をDBに保存する
+    private func saveSearchResult() {
+        guard let searchResult = searchResult else {
+            return
+        }
+        searchResultUseCase.saveCitySearchResult(prefCode: searchResult.prefecture.prefCode, cityName: searchResult.cityName)
     }
 }

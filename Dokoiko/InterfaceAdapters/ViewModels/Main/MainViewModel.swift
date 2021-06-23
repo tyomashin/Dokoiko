@@ -18,6 +18,8 @@ protocol MainViewModelProtocol: AnyObject {
     var searchHistoryList: Driver<[SearchResultEntity]> { get }
     /// View読み込み完了後に呼ばれる
     func loadedViews()
+    /// View表示時に呼ばれる
+    func viewWillApper()
 }
 
 /// メイン画面のViewModel
@@ -53,17 +55,7 @@ class MainViewModel: MainViewModelProtocol {
     /// 初期化処理
     private func initialize() {
         // 検索履歴の取得
-        searchResultUseCase.getCitySearchResult()
-            .subscribe(onSuccess: { [weak self] result in
-                switch result {
-                case let .success(response):
-                    self?.searchHistoryListRelay.accept(response)
-
-                case .failure:
-                    self?.searchHistoryListRelay.accept([])
-                }
-            })
-            .disposed(by: disposeBag)
+        updateSearchResults()
     }
 
     /// Viewのイベントを購読
@@ -88,5 +80,26 @@ class MainViewModel: MainViewModelProtocol {
     /// View読み込み完了後に呼ばれる
     func loadedViews() {
         bindViews()
+    }
+
+    /// View表示時に呼ばれる
+    func viewWillApper() {
+        // 検索履歴の際取得
+        updateSearchResults()
+    }
+
+    /// 検索履歴の取得
+    private func updateSearchResults() {
+        searchResultUseCase.getCitySearchResult()
+            .subscribe(onSuccess: { [weak self] result in
+                switch result {
+                case let .success(response):
+                    self?.searchHistoryListRelay.accept(response)
+
+                case .failure:
+                    self?.searchHistoryListRelay.accept([])
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }
