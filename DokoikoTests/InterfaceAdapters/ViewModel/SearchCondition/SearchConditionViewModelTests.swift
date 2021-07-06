@@ -103,16 +103,13 @@ class SearchConditionViewModelTests: XCTestCase {
 
         /* 評価 */
         // 検索ボタン活性化テスト
-        XCTAssertEqual(isEnableEvent.events, [
-            .next(0, false),
-            .next(10, true),
-            .next(20, true)
-        ])
+        XCTAssertEqual(isEnableEvent.events[0].value.element, false)
+        XCTAssertEqual(isEnableEvent.events[1].value.element, true)
+        XCTAssertEqual(isEnableEvent.events[2].value.element, true)
+
         // 検索条件が選択された時にイベントが発火しているかどうかのテスト
-        XCTAssertEqual(conditionEvent.events, [
-            .next(10, SearchConditionType.prefectures),
-            .next(20, SearchConditionType.currentLocation)
-        ])
+        XCTAssertEqual(conditionEvent.events[0].value.element, .prefectures)
+        XCTAssertEqual(conditionEvent.events[1].value.element, .currentLocation)
 
         // 検索ボタンタップ後の画面遷移処理が呼ばれているかどうかのテスト
         Verify(router, .navigate(to: .any))

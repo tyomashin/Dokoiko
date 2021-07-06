@@ -17,7 +17,7 @@ protocol SearchResultUseCaseProtocol {
     /// - Parameters:
     ///   - prefCode: 都道府県コード
     ///   - cityName: 都市名
-    func saveCitySearchResult(prefCode: Int, cityName: String)
+    func saveCitySearchResult(prefCode: Int, cityName: String, lat: Double?, lng: Double?) -> Single<Result<SearchResultEntity, DataBaseError>>
 }
 
 /// 市区検索結果に関する操作を行うユースケース
@@ -34,7 +34,7 @@ struct SearchResultUseCase: SearchResultUseCaseProtocol {
     }
 
     /// 市区の検索結果を格納する
-    func saveCitySearchResult(prefCode: Int, cityName: String) {
-        _ = gateway.saveCitySearchResult(prefCode: prefCode, cityName: cityName, lat: nil, lng: nil)
+    func saveCitySearchResult(prefCode: Int, cityName: String, lat: Double?, lng: Double?) -> Single<Result<SearchResultEntity, DataBaseError>> {
+        gateway.saveCitySearchResult(prefCode: prefCode, cityName: cityName, lat: lat, lng: lng)
     }
 }

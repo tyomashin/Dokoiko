@@ -157,7 +157,7 @@ class SearchLoadingViewController: UIViewController {
         loadingLabel.text = L10n.SearchLoading.finish
         gifImageView.image = Asset.loadingCompletion.image
 
-        // 1秒待機
+        // 0.75 秒待機
         Observable<Int>
             .timer(RxTimeInterval.milliseconds(750), scheduler: MainScheduler.instance)
             .flatMap { [weak self] _ -> Observable<Void> in
@@ -171,7 +171,6 @@ class SearchLoadingViewController: UIViewController {
                     }
             }
             .subscribe(onNext: { [weak self] in
-                print("hoge, animated!")
                 // アニメーション完了イベントを発火
                 self?.completionAnmationRelay.accept(true)
             })

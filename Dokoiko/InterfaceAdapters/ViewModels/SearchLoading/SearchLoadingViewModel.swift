@@ -21,7 +21,7 @@ protocol SearchLoadingViewModelProtocol: AnyObject {
 /// 検索ローディング画面のViewModel
 class SearchLoadingViewModel: SearchLoadingViewModelProtocol {
     // 場所の検索結果格納用の型
-    typealias SearchResultData = (prefecture: PrefectureType, cityName: String)
+    // typealias SearchResultData = (prefecture: PrefectureType, cityName: String)
 
     private weak var view: SearchLoadingVCProtocol?
     private let router: SearchLoadingRouterProtocol
@@ -39,7 +39,7 @@ class SearchLoadingViewModel: SearchLoadingViewModelProtocol {
     }
 
     // 検索結果格納用
-    private var searchResult: SearchResultData?
+    private var searchResult: SearchResultEntity?
 
     init(
         view: SearchLoadingVCProtocol,
@@ -85,7 +85,7 @@ class SearchLoadingViewModel: SearchLoadingViewModelProtocol {
                 }
                 // 検索結果画面に遷移する
                 if isCompletion, let searchResult = self.searchResult {
-                    self.router.navigate(to: .searchResult(prefecture: searchResult.prefecture, cityName: searchResult.cityName))
+                    self.router.navigate(to: .searchResult(searchResult: searchResult))
                 }
             })
             .disposed(by: disposeBag)
@@ -129,10 +129,8 @@ class SearchLoadingViewModel: SearchLoadingViewModelProtocol {
                        let prefCode = searchResult.prefCode,
                        let prefecture = PrefectureType.allCases.first(where: { $0.prefCode == prefCode }),
                        let cityName = searchResult.cityName {
-                        // 検索結果を保持してviewに完了通知
-                        self.searchResult = (prefecture, cityName)
-                        self.saveSearchResult()
-                        self.loadingStateRelay.accept(.completion)
+                        // 検索結果をDBに格納
+                        self.saveSearchResult(prefCode: prefecture.prefCode, cityName: cityName, lat: nil, lng: nil)
                     }
                     // 検索結果が有効でない場合
                     else {
@@ -161,7 +159,7 @@ class SearchLoadingViewModel: SearchLoadingViewModelProtocol {
                        let wikiDataId = searchResult.wikiDataId,
                        let prefCode = searchResult.regionCode,
                        let prefecture = PrefectureType.allCases.first(where: { prefCode == "\($0.prefCode)" }) {
-                        self?.searchCityDetail(wikiDataId: wikiDataId, prefecture: prefecture)
+                        self?.searchCityDetail(wikiDataId: wikiDataId, prefecture: prefecture, lat: searchResult.latitude, lng: searchResult.longitude)
                     }
                     // 検索結果が有効でない場合
                     else {
@@ -177,7 +175,7 @@ class SearchLoadingViewModel: SearchLoadingViewModelProtocol {
     }
 
     /// wikiDataIDから場所の情報を取得する
-    private func searchCityDetail(wikiDataId: String, prefecture: PrefectureType) {
+    private func searchCityDetail(wikiDataId: String, prefecture: PrefectureType, lat: Double?, lng: Double?) {
         // API実行して場所名を取得する
         wikiDataUseCase
             .getWikiData(wikiCode: wikiDataId)
@@ -187,9 +185,7 @@ class SearchLoadingViewModel: SearchLoadingViewModelProtocol {
                 case let .success(response: response):
                     // 場所名が正常に取得できた場合
                     if let cityName = response.entities?[wikiDataId]?.labels?.ja?.value {
-                        self?.searchResult = (prefecture: prefecture, cityName: cityName)
-                        self?.saveSearchResult()
-                        self?.loadingStateRelay.accept(.completion)
+                        self?.saveSearchResult(prefCode: prefecture.prefCode, cityName: cityName, lat: lat, lng: lng)
                     }
                     // 検索結果が有効でない場合
                     else {
@@ -205,10 +201,19 @@ class SearchLoadingViewModel: SearchLoadingViewModelProtocol {
     }
 
     /// 検索結果をDBに保存する
-    private func saveSearchResult() {
-        guard let searchResult = searchResult else {
-            return
-        }
-        searchResultUseCase.saveCitySearchResult(prefCode: searchResult.prefecture.prefCode, cityName: searchResult.cityName)
+    private func saveSearchResult(prefCode: Int, cityName: String, lat: Double?, lng: Double?) {
+        searchResultUseCase
+            .saveCitySearchResult(prefCode: prefCode, cityName: cityName, lat: lat, lng: lng)
+            .subscribe(onSuccess: { [weak self] result in
+                switch result {
+                case let .success(entity):
+                    self?.searchResult = entity
+                    self?.loadingStateRelay.accept(.completion)
+
+                case .failure:
+                    self?.loadingStateRelay.accept(.error(message: L10n.Dialog.Message.Error.searchLoading))
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }

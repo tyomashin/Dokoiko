@@ -14,6 +14,8 @@ enum MainNavigationDestination {
     case top
     // 検索条件画面
     case searchCondition
+    // 検索結果画面
+    case searchResult(searchResult: SearchResultEntity)
     // 戻る
     case back
 }
@@ -60,6 +62,11 @@ struct MainRouter: MainRouterProtocol {
         case .searchCondition:
             let searchRouter = SearchConditionRouter(navigationController: navigationController)
             searchRouter.navigate(to: .searchCondition)
+
+        // 検索結果画面に遷移する
+        case let .searchResult(searchResult: searchResult):
+            let searchResultRouter = SearchResultRouter(navigationController: navigationController)
+            searchResultRouter.navigate(to: .searchResult(searchResult: searchResult))
 
         case .back:
             navigationController.popViewController(animated: true)

@@ -63,8 +63,12 @@ class MainViewModel: MainViewModelProtocol {
         guard let view = view else { return }
         // TableViewのセルが選択された時に呼ばれる
         view.itemSelected
-            .subscribe(onNext: { row in
-                print(row)
+            .subscribe(onNext: { [weak self] row in
+                guard let self = self else { return }
+                if self.searchHistoryListRelay.value.indices.contains(row) {
+                    // 検索結果画面に遷移
+                    self.router.navigate(to: .searchResult(searchResult: self.searchHistoryListRelay.value[row]))
+                }
             })
             .disposed(by: disposeBag)
 

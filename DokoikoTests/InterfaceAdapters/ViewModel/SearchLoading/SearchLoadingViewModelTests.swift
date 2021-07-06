@@ -51,6 +51,14 @@ class SearchLoadingViewModelTests: XCTestCase {
             Disposables.create()
         }
         Given(wikiDataUseCase, .getWikiData(wikiCode: "", willReturn: wikiDataSingle))
+        let saveCitySearchResultSingle = Single<Result<SearchResultEntity, DataBaseError>>.create { _ in
+            Disposables.create()
+        }
+        Given(databaseUseCase, .saveCitySearchResult(prefCode: 0, cityName: "", lat: 0, lng: 0, willReturn: saveCitySearchResultSingle))
+        let citySearchResultSingle = Single<Result<[SearchResultEntity], DataBaseError>>.create { _ in
+            Disposables.create()
+        }
+        Given(databaseUseCase, .getCitySearchResult(willReturn: citySearchResultSingle))
     }
 
     override func tearDownWithError() throws {
@@ -59,6 +67,7 @@ class SearchLoadingViewModelTests: XCTestCase {
         resasUseCase = nil
         geoDBUseCase = nil
         wikiDataUseCase = nil
+        databaseUseCase = nil
         router = nil
         scheguler = nil
         disposeBag = nil
@@ -89,6 +98,17 @@ class SearchLoadingViewModelTests: XCTestCase {
             return Disposables.create()
         }
         Given(resasUseCase, .getCitiesInPrefecture(prefCode: Parameter<String>(stringLiteral: "\(prefCode)"), willReturn: resasSingle))
+
+        let saveCitySearchResultSingle = Single<Result<SearchResultEntity, DataBaseError>>.create { single in
+            let result = SearchResultEntity(id: "", prefCode: prefCode, prefName: "", cityName: "test", lat: nil, lng: nil, date: nil)
+            single(.success(.success(result)))
+            return Disposables.create()
+        }
+        Given(
+            databaseUseCase,
+            .saveCitySearchResult(prefCode: Parameter(integerLiteral: prefCode), cityName: "test",
+                                  lat: nil, lng: nil, willReturn: saveCitySearchResultSingle)
+        )
 
         // ViewModelのインスタンス生成
         viewModel = SearchLoadingViewModel(
@@ -140,6 +160,17 @@ class SearchLoadingViewModelTests: XCTestCase {
         }
         Given(resasUseCase, .getCitiesInPrefecture(prefCode: Parameter<String>(stringLiteral: "\(prefCode)"), willReturn: resasSingle))
 
+        let saveCitySearchResultSingle = Single<Result<SearchResultEntity, DataBaseError>>.create { single in
+            let result = SearchResultEntity(id: "", prefCode: prefCode, prefName: "", cityName: "test", lat: nil, lng: nil, date: nil)
+            single(.success(.success(result)))
+            return Disposables.create()
+        }
+        Given(
+            databaseUseCase,
+            .saveCitySearchResult(prefCode: Parameter(integerLiteral: prefCode), cityName: "test",
+                                  lat: nil, lng: nil, willReturn: saveCitySearchResultSingle)
+        )
+
         // ViewModelのインスタンス生成
         viewModel = SearchLoadingViewModel(
             view: view,
@@ -188,7 +219,7 @@ class SearchLoadingViewModelTests: XCTestCase {
         }
 
         // 検索結果が保存されているかどうか確認
-        Verify(databaseUseCase, 1, .saveCitySearchResult(prefCode: Parameter<Int>(integerLiteral: prefCode), cityName: "test"))
+        Verify(databaseUseCase, 1, .saveCitySearchResult(prefCode: Parameter<Int>(integerLiteral: prefCode), cityName: "test", lat: nil, lng: nil))
     }
 
     /// 「都道府県から検索」時のローディング状態テスト：異常系
@@ -212,6 +243,17 @@ class SearchLoadingViewModelTests: XCTestCase {
             return Disposables.create()
         }
         Given(resasUseCase, .getCitiesInPrefecture(prefCode: Parameter<String>(stringLiteral: "\(prefCode)"), willReturn: resasSingle))
+
+        let saveCitySearchResultSingle = Single<Result<SearchResultEntity, DataBaseError>>.create { single in
+            let result = SearchResultEntity(id: "", prefCode: prefCode, prefName: "", cityName: "test", lat: nil, lng: nil, date: nil)
+            single(.success(.success(result)))
+            return Disposables.create()
+        }
+        Given(
+            databaseUseCase,
+            .saveCitySearchResult(prefCode: Parameter(integerLiteral: prefCode), cityName: "test",
+                                  lat: nil, lng: nil, willReturn: saveCitySearchResultSingle)
+        )
 
         // ViewModelのインスタンス生成
         viewModel = SearchLoadingViewModel(
@@ -261,7 +303,7 @@ class SearchLoadingViewModelTests: XCTestCase {
         }
 
         // 検索結果が保存されていないことを確認
-        Verify(databaseUseCase, 0, .saveCitySearchResult(prefCode: Parameter<Int>(integerLiteral: prefCode), cityName: "test"))
+        Verify(databaseUseCase, 0, .saveCitySearchResult(prefCode: Parameter<Int>(integerLiteral: prefCode), cityName: "test", lat: nil, lng: nil))
     }
 
     /// 「現在地から検索」時のローディングテスト：正常系
@@ -286,6 +328,17 @@ class SearchLoadingViewModelTests: XCTestCase {
             return Disposables.create()
         }
         Given(wikiDataUseCase, .getWikiData(wikiCode: "Qxx", willReturn: wikiDataSingle))
+
+        let saveCitySearchResultSingle = Single<Result<SearchResultEntity, DataBaseError>>.create { single in
+            let result = SearchResultEntity(id: "", prefCode: prefCode, prefName: "", cityName: "test", lat: nil, lng: nil, date: nil)
+            single(.success(.success(result)))
+            return Disposables.create()
+        }
+        Given(
+            databaseUseCase,
+            .saveCitySearchResult(prefCode: Parameter(integerLiteral: prefCode), cityName: "test",
+                                  lat: nil, lng: nil, willReturn: saveCitySearchResultSingle)
+        )
 
         // ViewModelのインスタンス生成
         viewModel = SearchLoadingViewModel(
@@ -330,7 +383,7 @@ class SearchLoadingViewModelTests: XCTestCase {
         }
 
         // 検索結果が保存されているかどうか確認
-        Verify(databaseUseCase, 1, .saveCitySearchResult(prefCode: Parameter<Int>(integerLiteral: prefCode), cityName: "test"))
+        Verify(databaseUseCase, 1, .saveCitySearchResult(prefCode: Parameter<Int>(integerLiteral: prefCode), cityName: "test", lat: nil, lng: nil))
     }
 
     /// 「現在地から検索」時のローディングテスト：異常系
@@ -397,7 +450,7 @@ class SearchLoadingViewModelTests: XCTestCase {
         }
 
         // 検索結果が保存されていないことを確認
-        Verify(databaseUseCase, 0, .saveCitySearchResult(prefCode: Parameter<Int>(integerLiteral: 1), cityName: "test"))
+        Verify(databaseUseCase, 0, .saveCitySearchResult(prefCode: Parameter<Int>(integerLiteral: 1), cityName: "test", lat: nil, lng: nil))
     }
 
     func testPerformanceExample() throws {

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "spotlight-stroke-monochrome.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

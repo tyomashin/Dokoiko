@@ -13,7 +13,7 @@ enum SearchLoadingNavigationDestination {
     // 検索中画面
     case searching(conditionData: SearchConditionDataEntity)
     // 検索結果画面
-    case searchResult(prefecture: PrefectureType, cityName: String)
+    case searchResult(searchResult: SearchResultEntity)
     // 戻る
     case back
 }
@@ -68,9 +68,9 @@ struct SearchLoadingRouter: SearchLoadingRouterProtocol {
             loadingVC.inject(viewModel: viewModel)
             navigationController.pushViewController(loadingVC, animated: true)
 
-        case let .searchResult(prefecture: prefecture, cityName: cityName):
-            // TODO:
-            break
+        case let .searchResult(searchResult: searchResult):
+            let searchResultRouter = SearchResultRouter(navigationController: navigationController)
+            searchResultRouter.navigate(to: .searchResultFromLoading(searchResult: searchResult, animation: true))
 
         case .back:
             navigationController.popViewController(animated: true)

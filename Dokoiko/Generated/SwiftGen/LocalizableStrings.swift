@@ -12,6 +12,8 @@ import Foundation
 internal enum L10n {
 
   internal enum Btn {
+    /// 閉じる
+    internal static let close = L10n.tr("Localizable", "btn.close")
     /// OK
     internal static let ok = L10n.tr("Localizable", "btn.ok")
     internal enum SearchCondition {
@@ -80,6 +82,33 @@ internal enum L10n {
       internal static let three = L10n.tr("Localizable", "searchLoading.nowLoading.three")
       /// Loading . .
       internal static let two = L10n.tr("Localizable", "searchLoading.nowLoading.two")
+    }
+  }
+
+  internal enum SearchResult {
+    internal enum MapTransition {
+      /// マップで場所を確認
+      internal static let title = L10n.tr("Localizable", "searchResult.mapTransition.title")
+    }
+    internal enum SpotSearch {
+      /// スポットを調べる
+      internal static let title = L10n.tr("Localizable", "searchResult.spotSearch.title")
+      internal enum Recommend {
+        /// アプリの\n推薦スポット
+        internal static let title = L10n.tr("Localizable", "searchResult.spotSearch.recommend.title")
+      }
+      internal enum Web {
+        /// Web検索
+        internal static let title = L10n.tr("Localizable", "searchResult.spotSearch.web.title")
+      }
+    }
+    internal enum StartTitle {
+      /// あなたにオススメする\nドコ行こ？地域は・・・
+      internal static let title = L10n.tr("Localizable", "searchResult.startTitle.title")
+    }
+    internal enum WebSearch {
+      /// スポット+ランキング
+      internal static let queryDefault = L10n.tr("Localizable", "searchResult.webSearch.queryDefault")
     }
   }
 

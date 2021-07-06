@@ -80,7 +80,12 @@ class MainViewModelTests: XCTestCase {
 
         /* 評価 */
         // routerの画面遷移メソッドが２回呼ばれていることを確認
-        Verify(router, 2, .navigate(to: .value(.searchCondition)))
+        Verify(router, 2, .navigate(to: .matching { result in
+            if case .searchCondition = result {
+                return true
+            }
+            return false
+        }))
 
         // 意図した検索結果リストが返されるかどうか確認
         XCTAssertEqual(searchResultEvents.events.last?.value.element, searchEntity)

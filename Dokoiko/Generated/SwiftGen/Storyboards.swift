@@ -32,6 +32,11 @@ internal enum StoryboardScene {
 
     internal static let initialScene = InitialSceneType<Dokoiko.SearchLoadingViewController>(storyboard: SearchLoading.self)
   }
+  internal enum SearchResult: StoryboardType {
+    internal static let storyboardName = "SearchResult"
+
+    internal static let initialScene = InitialSceneType<Dokoiko.SearchResultViewController>(storyboard: SearchResult.self)
+  }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name
 

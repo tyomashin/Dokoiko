@@ -1,6 +1,7 @@
-binary "https://dl.google.com/geosdk/GoogleMaps.json" "5.0.0"
+binary "https://dl.google.com/geosdk/GoogleMaps.json" "5.1.0"
 github "Alamofire/Alamofire" "5.4.3"
 github "AliSoftware/OHHTTPStubs" "9.1.0"
 github "MakeAWishFoundation/SwiftyMocky" "4.0.4"
 github "ReactiveX/RxSwift" "6.0.0"
+github "airbnb/lottie-ios" "409cc3071f0c6c91cfd34f345f5eeb1dae9a5fc4"
 github "realm/realm-cocoa" "v10.7.3"

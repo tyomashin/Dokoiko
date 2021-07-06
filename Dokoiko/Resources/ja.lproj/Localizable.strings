@@ -14,6 +14,7 @@
 "btn.searchCondition.prefectures" = "都道府県から探す";
 "btn.searchCondition.currentLocation" = "現在地の近くから探す";
 "btn.ok" = "OK";
+"btn.close" = "閉じる";
 
 "searchCondition.empty" = "地域の検索方法を選択してください";
 "searchCondition.area.title" = "エリア";
@@ -28,3 +29,9 @@
 "searchLoading.nowLoading" = "あなたに代わって\n今日の行き先を決めています。\nしばらくお待ちください・・・";
 "searchLoading.complete" = "あなたの行き先が\n決定しました！";
 "searchLoading.finish" = "Finish !";
+"searchResult.startTitle.title" = "あなたにオススメする\nドコ行こ？地域は・・・";
+"searchResult.spotSearch.title" = "スポットを調べる";
+"searchResult.spotSearch.web.title" = "Web検索";
+"searchResult.spotSearch.recommend.title" = "アプリの\n推薦スポット";
+"searchResult.mapTransition.title" = "マップで場所を確認";
+"searchResult.webSearch.queryDefault" = "スポット+ランキング";

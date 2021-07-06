@@ -97,6 +97,7 @@ targets:
       - framework: Carthage/Build/Realm.xcframework
       - framework: Carthage/Build/SwiftyMocky.xcframework
       - framework: Carthage/Build/SwiftyPrototype.xcframework
+      - framework: Carthage/Build/Lottie.xcframework
       # GoogleMap導入（参考リンクメモ）
       # https://nekowen.hatenablog.jp/entry/2020/09/01/133812
       # https://stackoverflow.com/questions/8171164/ios-objc-class-cttelephonynetworkinfo-not-found

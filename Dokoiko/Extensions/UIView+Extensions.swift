@@ -41,4 +41,10 @@ extension UIView {
         layer.shouldRasterize = true
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
+
+    /// 枠をつける
+    func addBorderFrame(color: UIColor, borderWidth: CGFloat = 1) {
+        layer.borderColor = color.cgColor
+        layer.borderWidth = borderWidth
+    }
 }
