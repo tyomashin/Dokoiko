@@ -16,6 +16,8 @@ class SearchResultObject: Object {
     @objc dynamic var prefCode = 0
     // 市区名
     @objc dynamic var cityName = ""
+    // 市区コード
+    @objc dynamic var cityCode: String?
     // 市区を表す緯度経度
     let lat = RealmOptional<Double>()
     let lng = RealmOptional<Double>()

@@ -86,6 +86,9 @@ $ make
 ```swift
 enum APIKeys {
     static let RESAS_API_KEY = ""
+    static let GEO_DB_API_KEY = ""
+    static let GCP_KEY = ""
+    static let LOCAL_SEARCH_API = ""
 }
 ```
 

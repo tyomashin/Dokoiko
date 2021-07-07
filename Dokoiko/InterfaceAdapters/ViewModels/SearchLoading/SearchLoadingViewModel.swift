@@ -128,9 +128,10 @@ class SearchLoadingViewModel: SearchLoadingViewModelProtocol {
                     if let searchResult = response.result?.shuffled().first,
                        let prefCode = searchResult.prefCode,
                        let prefecture = PrefectureType.allCases.first(where: { $0.prefCode == prefCode }),
-                       let cityName = searchResult.cityName {
+                       let cityName = searchResult.cityName,
+                       let cityCode = searchResult.cityCode {
                         // 検索結果をDBに格納
-                        self.saveSearchResult(prefCode: prefecture.prefCode, cityName: cityName, lat: nil, lng: nil)
+                        self.saveSearchResult(prefCode: prefecture.prefCode, cityName: cityName, cityCode: cityCode, lat: nil, lng: nil)
                     }
                     // 検索結果が有効でない場合
                     else {
@@ -185,7 +186,7 @@ class SearchLoadingViewModel: SearchLoadingViewModelProtocol {
                 case let .success(response: response):
                     // 場所名が正常に取得できた場合
                     if let cityName = response.entities?[wikiDataId]?.labels?.ja?.value {
-                        self?.saveSearchResult(prefCode: prefecture.prefCode, cityName: cityName, lat: lat, lng: lng)
+                        self?.saveSearchResult(prefCode: prefecture.prefCode, cityName: cityName, cityCode: nil, lat: lat, lng: lng)
                     }
                     // 検索結果が有効でない場合
                     else {
@@ -201,9 +202,9 @@ class SearchLoadingViewModel: SearchLoadingViewModelProtocol {
     }
 
     /// 検索結果をDBに保存する
-    private func saveSearchResult(prefCode: Int, cityName: String, lat: Double?, lng: Double?) {
+    private func saveSearchResult(prefCode: Int, cityName: String, cityCode: String?, lat: Double?, lng: Double?) {
         searchResultUseCase
-            .saveCitySearchResult(prefCode: prefCode, cityName: cityName, lat: lat, lng: lng)
+            .saveCitySearchResult(prefCode: prefCode, cityName: cityName, cityCode: cityCode, lat: lat, lng: lng)
             .subscribe(onSuccess: { [weak self] result in
                 switch result {
                 case let .success(entity):

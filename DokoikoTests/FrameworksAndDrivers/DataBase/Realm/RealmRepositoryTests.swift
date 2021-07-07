@@ -38,18 +38,19 @@ class RealmRepositoryTests: XCTestCase {
     /// 市区の検索結果の保存処理と緯度経度変更処理のテスト
     func testSaveCitySearchResult() throws {
         // 保存処理
-        var result = try! repository.saveCitySearchResult(prefCode: 1, cityName: "京都市", lat: nil, lng: nil)
+        var result = try! repository.saveCitySearchResult(prefCode: 1, cityName: "京都市", cityCode: "00000", lat: nil, lng: nil)
             .toBlocking(timeout: 5000).single()
         switch result {
         case let .success(city):
             XCTAssertEqual(city.prefCode, 1)
             XCTAssertEqual(city.cityName, "京都市")
+            XCTAssertEqual(city.cityCode, "00000")
         case .failure:
             XCTFail()
         }
 
         var tmpID = ""
-        result = try! repository.saveCitySearchResult(prefCode: 5, cityName: "長野市", lat: 30.123, lng: 135.56789)
+        result = try! repository.saveCitySearchResult(prefCode: 5, cityName: "長野市", cityCode: nil, lat: 30.123, lng: 135.56789)
             .toBlocking(timeout: 5000).single()
         switch result {
         case let .success(city):
@@ -77,7 +78,7 @@ class RealmRepositoryTests: XCTestCase {
     /// 市区の検索結果一覧を取得
     func testGetCitySearchResult() throws {
         // 前準備
-        _ = try! repository.saveCitySearchResult(prefCode: 1, cityName: "京都市", lat: nil, lng: nil).toBlocking(timeout: 5000).single()
+        _ = try! repository.saveCitySearchResult(prefCode: 1, cityName: "京都市", cityCode: "00000", lat: nil, lng: nil).toBlocking(timeout: 5000).single()
 
         let result = try! repository.getCitySearchResult().toBlocking(timeout: 5000).single()
         switch result {

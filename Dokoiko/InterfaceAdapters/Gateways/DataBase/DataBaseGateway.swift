@@ -15,9 +15,10 @@ protocol DataBaseGatewayProtocol {
     /// - Parameters:
     ///   - prefCode: 都道府県コード
     ///   - cityName: 市区名
+    ///   - cityCode: 市区コード
     ///   - lat: 市区の緯度
     ///   - lng: 市区の経度
-    func saveCitySearchResult(prefCode: Int, cityName: String, lat: Double?, lng: Double?) -> Single<Result<SearchResultEntity, DataBaseError>>
+    func saveCitySearchResult(prefCode: Int, cityName: String, cityCode: String?, lat: Double?, lng: Double?) -> Single<Result<SearchResultEntity, DataBaseError>>
     /// 市区の緯度経度を変更する。
     /// 成功時はそのオブジェクトを返し、失敗時はエラーを返す。
     /// - Parameters:
@@ -38,8 +39,14 @@ struct DataBaseGateway: DataBaseGatewayProtocol {
     }
 
     /// 市区の検索結果を格納する
-    func saveCitySearchResult(prefCode: Int, cityName: String, lat: Double?, lng: Double?) -> Single<Result<SearchResultEntity, DataBaseError>> {
-        database.saveCitySearchResult(prefCode: prefCode, cityName: cityName, lat: lat, lng: lng)
+    func saveCitySearchResult(
+        prefCode: Int,
+        cityName: String,
+        cityCode: String?,
+        lat: Double?,
+        lng: Double?
+    ) -> Single<Result<SearchResultEntity, DataBaseError>> {
+        database.saveCitySearchResult(prefCode: prefCode, cityName: cityName, cityCode: cityCode, lat: lat, lng: lng)
             .map { result -> Result<SearchResultEntity, DataBaseError> in
                 switch result {
                 case let .success(object):
@@ -103,6 +110,7 @@ extension DataBaseGateway {
             prefCode: object.prefCode,
             prefName: prefType.name,
             cityName: object.cityName,
+            cityCode: object.cityCode,
             lat: object.lat.value,
             lng: object.lng.value,
             date: object.date

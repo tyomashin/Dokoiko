@@ -50,9 +50,11 @@ class DataBaseGatewayTests: XCTestCase {
         // 検索結果格納のテスト
         let prefCode = 1
         let cityName = "京都市"
+        let cityCode = "00000"
         // モックのメソッドが返す値を定義
         let single = Single<Result<SearchResultObject, DataBaseError>>.create { single in
             let result = SearchResultObject(id: "id", prefCode: prefCode, cityName: cityName)
+            result.cityCode = cityCode
             result.lat.value = nil
             result.lng.value = nil
             single(.success(.success(result)))
@@ -61,15 +63,17 @@ class DataBaseGatewayTests: XCTestCase {
         // モックが返すデータを指定
         databaseMock.given(.saveCitySearchResult(prefCode: Parameter<Int>(integerLiteral: prefCode),
                                                  cityName: Parameter<String>(stringLiteral: cityName),
+                                                 cityCode: Parameter<String?>(stringLiteral: cityCode),
                                                  lat: nil, lng: nil,
                                                  willReturn: single))
 
-        var result = try! gateway.saveCitySearchResult(prefCode: prefCode, cityName: cityName, lat: nil, lng: nil)
+        var result = try! gateway.saveCitySearchResult(prefCode: prefCode, cityName: cityName, cityCode: cityCode, lat: nil, lng: nil)
             .toBlocking(timeout: 1000).single()
         switch result {
         case let .success(object):
             XCTAssertEqual(prefCode, object.prefCode)
             XCTAssertEqual(cityName, object.cityName)
+            XCTAssertEqual(cityCode, object.cityCode)
             let prefName = PrefectureType.allCases.first(where: { $0.prefCode == prefCode })?.name
             XCTAssertEqual(prefName!, object.prefName)
         case .failure:

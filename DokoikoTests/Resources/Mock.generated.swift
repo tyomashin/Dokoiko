@@ -234,16 +234,16 @@ open class DatabaseProtocolMock: DatabaseProtocol, Mock {
         if scopes.contains(.perform) { methodPerformValues = [] }
     }
 
-    open func saveCitySearchResult(prefCode: Int, cityName: String, lat: Double?, lng: Double?) -> Single<Result<SearchResultObject, DataBaseError>> {
-        addInvocation(.m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(Parameter<Int>.value(prefCode), Parameter<String>.value(cityName), Parameter<Double?>.value(lat), Parameter<Double?>.value(lng)))
-        let perform = methodPerformValue(.m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(Parameter<Int>.value(prefCode), Parameter<String>.value(cityName), Parameter<Double?>.value(lat), Parameter<Double?>.value(lng))) as? (Int, String, Double?, Double?) -> Void
-        perform?(prefCode, cityName, lat, lng)
+    open func saveCitySearchResult(prefCode: Int, cityName: String, cityCode: String?, lat: Double?, lng: Double?) -> Single<Result<SearchResultObject, DataBaseError>> {
+        addInvocation(.m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(Parameter<Int>.value(prefCode), Parameter<String>.value(cityName), Parameter<String?>.value(cityCode), Parameter<Double?>.value(lat), Parameter<Double?>.value(lng)))
+        let perform = methodPerformValue(.m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(Parameter<Int>.value(prefCode), Parameter<String>.value(cityName), Parameter<String?>.value(cityCode), Parameter<Double?>.value(lat), Parameter<Double?>.value(lng))) as? (Int, String, String?, Double?, Double?) -> Void
+        perform?(prefCode, cityName, cityCode, lat, lng)
         var __value: Single<Result<SearchResultObject, DataBaseError>>
         do {
-            __value = try methodReturnValue(.m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(Parameter<Int>.value(prefCode), Parameter<String>.value(cityName), Parameter<Double?>.value(lat), Parameter<Double?>.value(lng))).casted()
+            __value = try methodReturnValue(.m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(Parameter<Int>.value(prefCode), Parameter<String>.value(cityName), Parameter<String?>.value(cityCode), Parameter<Double?>.value(lat), Parameter<Double?>.value(lng))).casted()
         } catch {
-            onFatalFailure("Stub return value not specified for saveCitySearchResult(prefCode: Int, cityName: String, lat: Double?, lng: Double?). Use given")
-            Failure("Stub return value not specified for saveCitySearchResult(prefCode: Int, cityName: String, lat: Double?, lng: Double?). Use given")
+            onFatalFailure("Stub return value not specified for saveCitySearchResult(prefCode: Int, cityName: String, cityCode: String?, lat: Double?, lng: Double?). Use given")
+            Failure("Stub return value not specified for saveCitySearchResult(prefCode: Int, cityName: String, cityCode: String?, lat: Double?, lng: Double?). Use given")
         }
         return __value
     }
@@ -277,16 +277,17 @@ open class DatabaseProtocolMock: DatabaseProtocol, Mock {
     }
 
     fileprivate enum MethodType {
-        case m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(Parameter<Int>, Parameter<String>, Parameter<Double?>, Parameter<Double?>)
+        case m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(Parameter<Int>, Parameter<String>, Parameter<String?>, Parameter<Double?>, Parameter<Double?>)
         case m_setCityLocation__id_idlat_latlng_lng(Parameter<String>, Parameter<Double>, Parameter<Double>)
         case m_getCitySearchResult
 
         static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
             switch (lhs, rhs) {
-            case let (.m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(lhsPrefcode, lhsCityname, lhsLat, lhsLng), .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(rhsPrefcode, rhsCityname, rhsLat, rhsLng)):
+            case let (.m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(lhsPrefcode, lhsCityname, lhsCitycode, lhsLat, lhsLng), .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(rhsPrefcode, rhsCityname, rhsCitycode, rhsLat, rhsLng)):
                 var results: [Matcher.ParameterComparisonResult] = []
                 results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsPrefcode, rhs: rhsPrefcode, with: matcher), lhsPrefcode, rhsPrefcode, "prefCode"))
                 results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsCityname, rhs: rhsCityname, with: matcher), lhsCityname, rhsCityname, "cityName"))
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsCitycode, rhs: rhsCitycode, with: matcher), lhsCitycode, rhsCitycode, "cityCode"))
                 results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsLat, rhs: rhsLat, with: matcher), lhsLat, rhsLat, "lat"))
                 results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsLng, rhs: rhsLng, with: matcher), lhsLng, rhsLng, "lng"))
                 return Matcher.ComparisonResult(results)
@@ -305,7 +306,7 @@ open class DatabaseProtocolMock: DatabaseProtocol, Mock {
 
         func intValue() -> Int {
             switch self {
-            case let .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(p0, p1, p2, p3): return p0.intValue + p1.intValue + p2.intValue + p3.intValue
+            case let .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(p0, p1, p2, p3, p4): return p0.intValue + p1.intValue + p2.intValue + p3.intValue + p4.intValue
             case let .m_setCityLocation__id_idlat_latlng_lng(p0, p1, p2): return p0.intValue + p1.intValue + p2.intValue
             case .m_getCitySearchResult: return 0
             }
@@ -313,7 +314,7 @@ open class DatabaseProtocolMock: DatabaseProtocol, Mock {
 
         func assertionName() -> String {
             switch self {
-            case .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng: return ".saveCitySearchResult(prefCode:cityName:lat:lng:)"
+            case .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng: return ".saveCitySearchResult(prefCode:cityName:cityCode:lat:lng:)"
             case .m_setCityLocation__id_idlat_latlng_lng: return ".setCityLocation(id:lat:lng:)"
             case .m_getCitySearchResult: return ".getCitySearchResult()"
             }
@@ -328,8 +329,8 @@ open class DatabaseProtocolMock: DatabaseProtocol, Mock {
             super.init(products)
         }
 
-        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, lat: Parameter<Double?>, lng: Parameter<Double?>, willReturn: Single<Result<SearchResultObject, DataBaseError>>...) -> MethodStub {
-            Given(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(prefCode, cityName, lat, lng), products: willReturn.map { StubProduct.return($0 as Any) })
+        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, cityCode: Parameter<String?>, lat: Parameter<Double?>, lng: Parameter<Double?>, willReturn: Single<Result<SearchResultObject, DataBaseError>>...) -> MethodStub {
+            Given(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(prefCode, cityName, cityCode, lat, lng), products: willReturn.map { StubProduct.return($0 as Any) })
         }
 
         public static func setCityLocation(id: Parameter<String>, lat: Parameter<Double>, lng: Parameter<Double>, willReturn: Single<Result<SearchResultObject, DataBaseError>>...) -> MethodStub {
@@ -340,9 +341,9 @@ open class DatabaseProtocolMock: DatabaseProtocol, Mock {
             Given(method: .m_getCitySearchResult, products: willReturn.map { StubProduct.return($0 as Any) })
         }
 
-        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, lat: Parameter<Double?>, lng: Parameter<Double?>, willProduce: (Stubber<Single<Result<SearchResultObject, DataBaseError>>>) -> Void) -> MethodStub {
+        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, cityCode: Parameter<String?>, lat: Parameter<Double?>, lng: Parameter<Double?>, willProduce: (Stubber<Single<Result<SearchResultObject, DataBaseError>>>) -> Void) -> MethodStub {
             let willReturn: [Single<Result<SearchResultObject, DataBaseError>>] = []
-            let given: Given = { Given(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(prefCode, cityName, lat, lng), products: willReturn.map { StubProduct.return($0 as Any) }) }()
+            let given: Given = { Given(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(prefCode, cityName, cityCode, lat, lng), products: willReturn.map { StubProduct.return($0 as Any) }) }()
             let stubber = given.stub(for: Single<Result<SearchResultObject, DataBaseError>>.self)
             willProduce(stubber)
             return given
@@ -368,7 +369,7 @@ open class DatabaseProtocolMock: DatabaseProtocol, Mock {
     public struct Verify {
         fileprivate var method: MethodType
 
-        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, lat: Parameter<Double?>, lng: Parameter<Double?>) -> Verify { Verify(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(prefCode, cityName, lat, lng)) }
+        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, cityCode: Parameter<String?>, lat: Parameter<Double?>, lng: Parameter<Double?>) -> Verify { Verify(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(prefCode, cityName, cityCode, lat, lng)) }
         public static func setCityLocation(id: Parameter<String>, lat: Parameter<Double>, lng: Parameter<Double>) -> Verify { Verify(method: .m_setCityLocation__id_idlat_latlng_lng(id, lat, lng)) }
         public static func getCitySearchResult() -> Verify { Verify(method: .m_getCitySearchResult) }
     }
@@ -377,8 +378,8 @@ open class DatabaseProtocolMock: DatabaseProtocol, Mock {
         fileprivate var method: MethodType
         var performs: Any
 
-        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, lat: Parameter<Double?>, lng: Parameter<Double?>, perform: @escaping (Int, String, Double?, Double?) -> Void) -> Perform {
-            Perform(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(prefCode, cityName, lat, lng), performs: perform)
+        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, cityCode: Parameter<String?>, lat: Parameter<Double?>, lng: Parameter<Double?>, perform: @escaping (Int, String, String?, Double?, Double?) -> Void) -> Perform {
+            Perform(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(prefCode, cityName, cityCode, lat, lng), performs: perform)
         }
 
         public static func setCityLocation(id: Parameter<String>, lat: Parameter<Double>, lng: Parameter<Double>, perform: @escaping (String, Double, Double) -> Void) -> Perform {
@@ -3608,32 +3609,33 @@ open class SearchResultUseCaseProtocolMock: SearchResultUseCaseProtocol, Mock {
         return __value
     }
 
-    open func saveCitySearchResult(prefCode: Int, cityName: String, lat: Double?, lng: Double?) -> Single<Result<SearchResultEntity, DataBaseError>> {
-        addInvocation(.m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(Parameter<Int>.value(prefCode), Parameter<String>.value(cityName), Parameter<Double?>.value(lat), Parameter<Double?>.value(lng)))
-        let perform = methodPerformValue(.m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(Parameter<Int>.value(prefCode), Parameter<String>.value(cityName), Parameter<Double?>.value(lat), Parameter<Double?>.value(lng))) as? (Int, String, Double?, Double?) -> Void
-        perform?(prefCode, cityName, lat, lng)
+    open func saveCitySearchResult(prefCode: Int, cityName: String, cityCode: String?, lat: Double?, lng: Double?) -> Single<Result<SearchResultEntity, DataBaseError>> {
+        addInvocation(.m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(Parameter<Int>.value(prefCode), Parameter<String>.value(cityName), Parameter<String?>.value(cityCode), Parameter<Double?>.value(lat), Parameter<Double?>.value(lng)))
+        let perform = methodPerformValue(.m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(Parameter<Int>.value(prefCode), Parameter<String>.value(cityName), Parameter<String?>.value(cityCode), Parameter<Double?>.value(lat), Parameter<Double?>.value(lng))) as? (Int, String, String?, Double?, Double?) -> Void
+        perform?(prefCode, cityName, cityCode, lat, lng)
         var __value: Single<Result<SearchResultEntity, DataBaseError>>
         do {
-            __value = try methodReturnValue(.m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(Parameter<Int>.value(prefCode), Parameter<String>.value(cityName), Parameter<Double?>.value(lat), Parameter<Double?>.value(lng))).casted()
+            __value = try methodReturnValue(.m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(Parameter<Int>.value(prefCode), Parameter<String>.value(cityName), Parameter<String?>.value(cityCode), Parameter<Double?>.value(lat), Parameter<Double?>.value(lng))).casted()
         } catch {
-            onFatalFailure("Stub return value not specified for saveCitySearchResult(prefCode: Int, cityName: String, lat: Double?, lng: Double?). Use given")
-            Failure("Stub return value not specified for saveCitySearchResult(prefCode: Int, cityName: String, lat: Double?, lng: Double?). Use given")
+            onFatalFailure("Stub return value not specified for saveCitySearchResult(prefCode: Int, cityName: String, cityCode: String?, lat: Double?, lng: Double?). Use given")
+            Failure("Stub return value not specified for saveCitySearchResult(prefCode: Int, cityName: String, cityCode: String?, lat: Double?, lng: Double?). Use given")
         }
         return __value
     }
 
     fileprivate enum MethodType {
         case m_getCitySearchResult
-        case m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(Parameter<Int>, Parameter<String>, Parameter<Double?>, Parameter<Double?>)
+        case m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(Parameter<Int>, Parameter<String>, Parameter<String?>, Parameter<Double?>, Parameter<Double?>)
 
         static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
             switch (lhs, rhs) {
             case (.m_getCitySearchResult, .m_getCitySearchResult): return .match
 
-            case let (.m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(lhsPrefcode, lhsCityname, lhsLat, lhsLng), .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(rhsPrefcode, rhsCityname, rhsLat, rhsLng)):
+            case let (.m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(lhsPrefcode, lhsCityname, lhsCitycode, lhsLat, lhsLng), .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(rhsPrefcode, rhsCityname, rhsCitycode, rhsLat, rhsLng)):
                 var results: [Matcher.ParameterComparisonResult] = []
                 results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsPrefcode, rhs: rhsPrefcode, with: matcher), lhsPrefcode, rhsPrefcode, "prefCode"))
                 results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsCityname, rhs: rhsCityname, with: matcher), lhsCityname, rhsCityname, "cityName"))
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsCitycode, rhs: rhsCitycode, with: matcher), lhsCitycode, rhsCitycode, "cityCode"))
                 results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsLat, rhs: rhsLat, with: matcher), lhsLat, rhsLat, "lat"))
                 results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsLng, rhs: rhsLng, with: matcher), lhsLng, rhsLng, "lng"))
                 return Matcher.ComparisonResult(results)
@@ -3644,14 +3646,14 @@ open class SearchResultUseCaseProtocolMock: SearchResultUseCaseProtocol, Mock {
         func intValue() -> Int {
             switch self {
             case .m_getCitySearchResult: return 0
-            case let .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(p0, p1, p2, p3): return p0.intValue + p1.intValue + p2.intValue + p3.intValue
+            case let .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(p0, p1, p2, p3, p4): return p0.intValue + p1.intValue + p2.intValue + p3.intValue + p4.intValue
             }
         }
 
         func assertionName() -> String {
             switch self {
             case .m_getCitySearchResult: return ".getCitySearchResult()"
-            case .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng: return ".saveCitySearchResult(prefCode:cityName:lat:lng:)"
+            case .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng: return ".saveCitySearchResult(prefCode:cityName:cityCode:lat:lng:)"
             }
         }
     }
@@ -3668,8 +3670,8 @@ open class SearchResultUseCaseProtocolMock: SearchResultUseCaseProtocol, Mock {
             Given(method: .m_getCitySearchResult, products: willReturn.map { StubProduct.return($0 as Any) })
         }
 
-        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, lat: Parameter<Double?>, lng: Parameter<Double?>, willReturn: Single<Result<SearchResultEntity, DataBaseError>>...) -> MethodStub {
-            Given(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(prefCode, cityName, lat, lng), products: willReturn.map { StubProduct.return($0 as Any) })
+        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, cityCode: Parameter<String?>, lat: Parameter<Double?>, lng: Parameter<Double?>, willReturn: Single<Result<SearchResultEntity, DataBaseError>>...) -> MethodStub {
+            Given(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(prefCode, cityName, cityCode, lat, lng), products: willReturn.map { StubProduct.return($0 as Any) })
         }
 
         public static func getCitySearchResult(willProduce: (Stubber<Single<Result<[SearchResultEntity], DataBaseError>>>) -> Void) -> MethodStub {
@@ -3680,9 +3682,9 @@ open class SearchResultUseCaseProtocolMock: SearchResultUseCaseProtocol, Mock {
             return given
         }
 
-        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, lat: Parameter<Double?>, lng: Parameter<Double?>, willProduce: (Stubber<Single<Result<SearchResultEntity, DataBaseError>>>) -> Void) -> MethodStub {
+        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, cityCode: Parameter<String?>, lat: Parameter<Double?>, lng: Parameter<Double?>, willProduce: (Stubber<Single<Result<SearchResultEntity, DataBaseError>>>) -> Void) -> MethodStub {
             let willReturn: [Single<Result<SearchResultEntity, DataBaseError>>] = []
-            let given: Given = { Given(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(prefCode, cityName, lat, lng), products: willReturn.map { StubProduct.return($0 as Any) }) }()
+            let given: Given = { Given(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(prefCode, cityName, cityCode, lat, lng), products: willReturn.map { StubProduct.return($0 as Any) }) }()
             let stubber = given.stub(for: Single<Result<SearchResultEntity, DataBaseError>>.self)
             willProduce(stubber)
             return given
@@ -3693,7 +3695,7 @@ open class SearchResultUseCaseProtocolMock: SearchResultUseCaseProtocol, Mock {
         fileprivate var method: MethodType
 
         public static func getCitySearchResult() -> Verify { Verify(method: .m_getCitySearchResult) }
-        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, lat: Parameter<Double?>, lng: Parameter<Double?>) -> Verify { Verify(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(prefCode, cityName, lat, lng)) }
+        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, cityCode: Parameter<String?>, lat: Parameter<Double?>, lng: Parameter<Double?>) -> Verify { Verify(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(prefCode, cityName, cityCode, lat, lng)) }
     }
 
     public struct Perform {
@@ -3704,8 +3706,8 @@ open class SearchResultUseCaseProtocolMock: SearchResultUseCaseProtocol, Mock {
             Perform(method: .m_getCitySearchResult, performs: perform)
         }
 
-        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, lat: Parameter<Double?>, lng: Parameter<Double?>, perform: @escaping (Int, String, Double?, Double?) -> Void) -> Perform {
-            Perform(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamelat_latlng_lng(prefCode, cityName, lat, lng), performs: perform)
+        public static func saveCitySearchResult(prefCode: Parameter<Int>, cityName: Parameter<String>, cityCode: Parameter<String?>, lat: Parameter<Double?>, lng: Parameter<Double?>, perform: @escaping (Int, String, String?, Double?, Double?) -> Void) -> Perform {
+            Perform(method: .m_saveCitySearchResult__prefCode_prefCodecityName_cityNamecityCode_cityCodelat_latlng_lng(prefCode, cityName, cityCode, lat, lng), performs: perform)
         }
     }
 

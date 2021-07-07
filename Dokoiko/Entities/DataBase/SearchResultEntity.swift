@@ -13,6 +13,7 @@ struct SearchResultEntity: Equatable {
     let prefCode: Int
     let prefName: String
     let cityName: String
+    var cityCode: String?
     var lat: Double?
     var lng: Double?
     var date: Date?

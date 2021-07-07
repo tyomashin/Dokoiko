@@ -17,9 +17,10 @@ protocol DatabaseProtocol {
     /// - Parameters:
     ///   - prefCode: 都道府県コード
     ///   - cityName: 市区名
+    ///   - cityCode: 市区コード
     ///   - lat: 市区の緯度
     ///   - lng: 市区の経度
-    func saveCitySearchResult(prefCode: Int, cityName: String, lat: Double?, lng: Double?) -> Single<Result<SearchResultObject, DataBaseError>>
+    func saveCitySearchResult(prefCode: Int, cityName: String, cityCode: String?, lat: Double?, lng: Double?) -> Single<Result<SearchResultObject, DataBaseError>>
     /// 市区の緯度経度を変更する。
     /// 成功時はそのオブジェクトを返し、失敗時はエラーを返す。
     /// - Parameters:
@@ -55,10 +56,17 @@ class RealmRepository: DatabaseProtocol {
     }
 
     /// 市区の検索結果を格納する
-    func saveCitySearchResult(prefCode: Int, cityName: String, lat: Double?, lng: Double?) -> Single<Result<SearchResultObject, DataBaseError>> {
+    func saveCitySearchResult(
+        prefCode: Int,
+        cityName: String,
+        cityCode: String?,
+        lat: Double?,
+        lng: Double?
+    ) -> Single<Result<SearchResultObject, DataBaseError>> {
         let result: Result<SearchResultObject, DataBaseError>
         let id = createID()
         let object = SearchResultObject(id: id, prefCode: prefCode, cityName: cityName)
+        object.cityCode = cityCode
         object.lat.value = lat
         object.lng.value = lng
         do {
