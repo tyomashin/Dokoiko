@@ -1,0 +1,5291 @@
+
+{
+    "ResultInfo": {
+        "Count": 100,
+        "Total": 230,
+        "Start": 1,
+        "Status": 200,
+        "Description": "",
+        "Copyright": "",
+        "Latency": 0.064
+    },
+    "Feature": [
+        {
+            "Id": "kdr8500",
+            "Gid": "H0L2NLeB7zg",
+            "Name": "四六時中 赤穂店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.40039084505,34.755862128317"
+            },
+            "Category": [
+                "日本料理"
+            ],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "0a27e53788d805683045b71e0178b16553c6e7c5",
+                "CassetteId": "a6e27b84663abc4336dc275c6fb7f978",
+                "Yomi": "シロクジチュウアコウテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市中広字別所55-3 イオン赤穂店2F",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-45-3784",
+                "Genre": [
+                    {
+                        "Code": "0101011",
+                        "Name": "日本料理"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "800",
+                        "Time": "10",
+                        "Geometry": {
+                            "Type": "point",
+                            "Coordinates": "134.393350,34.756509"
+                        }
+                    },
+                    {
+                        "Id": "26368",
+                        "SubId": "2636801",
+                        "Name": "坂越",
+                        "Railway": "JR在来線",
+                        "Exit": "出口",
+                        "ExitId": "12443",
+                        "Distance": "2443",
+                        "Time": "30",
+                        "Geometry": {
+                            "Type": "point",
+                            "Coordinates": "134.417486,34.768676"
+                        }
+                    }
+                ],
+                "LeadImage": "https://rimage.gnst.jp/rest/img/b2a1160bomst/s_0n7b.jpg",
+                "ParkingFlag": "false",
+                "SmartPhoneCouponFlag": "false",
+                "Coupon": []
+            }
+        },
+        {
+            "Id": "c204500",
+            "Gid": "r3vrwqaJgxQ",
+            "Name": "赤穂飯店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.37072400,34.76228784"
+            },
+            "Category": [
+                "中華料理,ファミリーレストラン"
+            ],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "752bef4e55e843a368d081e089bf6c489176ab92",
+                "CassetteId": "a6e27b84663abc4336dc275c6fb7f978",
+                "Yomi": "アコウハンテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市黒崎町148",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-1700",
+                "Genre": [
+                    {
+                        "Code": "0104001",
+                        "Name": "中華料理"
+                    },
+                    {
+                        "Code": "0123001",
+                        "Name": "ファミレス"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "2422",
+                        "Time": "30",
+                        "Geometry": {
+                            "Type": "point",
+                            "Coordinates": "134.393492,34.757035"
+                        }
+                    },
+                    {
+                        "Id": "26457",
+                        "SubId": "2645701",
+                        "Name": "天和",
+                        "Railway": "JR在来線",
+                        "Exit": "出口",
+                        "ExitId": "12658",
+                        "Distance": "2969",
+                        "Time": "37",
+                        "Geometry": {
+                            "Type": "point",
+                            "Coordinates": "134.351270,34.749203"
+                        }
+                    }
+                ],
+                "LeadImage": "https://rimage.gnst.jp/rest/img/ep2n9j9z0000/s_006w.jpg",
+                "ParkingFlag": "true",
+                "SmartPhoneCouponFlag": "false",
+                "Coupon": [],
+                "KeepCount": "11"
+            }
+        },
+        {
+            "Id": "22830880024",
+            "Gid": "IjoZrcni_nw",
+            "Name": "和伊　和伊",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.386203611111,34.755905833333"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "133c4e4ee4ec563c70f0611550b309006b09bf05",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ワイワイ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市惣門町５２−１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-6811",
+                "Genre": [
+                    {
+                        "Code": "0110001",
+                        "Name": "和風居酒屋"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "734",
+                        "Time": "9"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "743",
+                        "Time": "9"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830871330",
+            "Gid": "EC5VrK9gjgI",
+            "Name": "コメダ珈琲店　イオン赤穂店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.400874166667,34.755792777778"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "07eb978cfc3781f2e2ca16008d4de88a9631590e",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "コメダコーヒーテンイオンアコウテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市中広５５−３",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-56-5569",
+                "Genre": [
+                    {
+                        "Code": "0115002",
+                        "Name": "喫茶店"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "858",
+                        "Time": "10"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "905",
+                        "Time": "11"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "t000102722",
+            "Gid": "IuX_HQFQit2",
+            "Name": "雲火焼展示館　桃井ミュージアム",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.412740,34.7316786"
+            },
+            "Category": [],
+            "Description": "雲火焼の窯元・赤穂瀬戸内窯が「雲火焼展示館　桃井ミュージアム」をオープン。雲火焼の祖・大嶋黄谷の作品、また雲火焼を再現した現代作家、桃井香子と長棟州彦の作品を展示しています。<br />\n　<br />\n　赤穂雲火焼とは、大嶋黄谷の雲火焼を復元し、「兵庫県伝統的工芸品」に指定されている陶器のことを言います。無釉でありながら、炎と煙によって窯の中で描かれたその色彩と文様は、燃える夕焼空を連想させます。赤穂瀬戸内窯では、歴史を踏襲しつつ、現代に生きる陶工として、新たな美的・技術的革新を重ねています。<br />\n<br />\n　赤穂御崎が一望できる赤穂御崎公園の山手に位置しております。春は桜の満開を楽しめ、夏には海水浴でにぎわいます。秋は紅葉、空気の澄んだ冬には瀬戸内海に浮かぶ島々を展望できます。雲火焼をご覧になった後は、日本夕日百選に選ばれた赤穂御崎の夕日を眺めながら、桃井ミュージアムのオープンカフェでゆっくりした時間をお過ごしください。",
+            "Style": [],
+            "Property": {
+                "Uid": "ad4bbadec8fc2129072b8cad09063d2f279add4f",
+                "CassetteId": "132c700e0ebf5a1d386e9b725d7d1e6b",
+                "Yomi": "ウンカヤキテンジカン　モモイミュージアム",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市御崎634",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-56-9933",
+                "Genre": [
+                    {
+                        "Code": "0115009",
+                        "Name": "ギャラリーカフェ"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "4296",
+                        "Time": "53",
+                        "Geometry": {
+                            "Type": "point",
+                            "Coordinates": "134.393350,34.756509"
+                        }
+                    }
+                ],
+                "CatchCopy": "播州赤穂　御崎の新名所　赤穂の伝統工芸【雲火焼】に囲まれて、ゆったりとした時間を過ごせるギャラリーカフェ",
+                "LeadImage": "http://tenpo.west.edge.storage-yahoo.jp/tenpo-t000102722-release/photo_image1-thumb",
+                "CreditcardFlag": "0",
+                "ParkingFlag": "1",
+                "SmartPhoneCouponFlag": "false",
+                "Price": "400",
+                "KeepCount": "16"
+            }
+        },
+        {
+            "Id": "kcjm221",
+            "Gid": "jFat5I3MuZ-",
+            "Name": "丸亀製麺 赤穂店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.39854945,34.75429551"
+            },
+            "Category": [
+                "うどん,讃岐うどん,天ぷら"
+            ],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "76d14bc85a93a5b2097a88c7425d3e7a2094f925",
+                "CassetteId": "a6e27b84663abc4336dc275c6fb7f978",
+                "Yomi": "マルガメセイメン アコウテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市中広2-3",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-3150",
+                "Genre": [
+                    {
+                        "Code": "0101018",
+                        "Name": "うどん"
+                    },
+                    {
+                        "Code": "0101014",
+                        "Name": "天ぷら、揚げ物"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "611",
+                        "Time": "7",
+                        "Geometry": {
+                            "Type": "point",
+                            "Coordinates": "134.393350,34.756509"
+                        }
+                    },
+                    {
+                        "Id": "26368",
+                        "SubId": "2636801",
+                        "Name": "坂越",
+                        "Railway": "JR在来線",
+                        "Exit": "出口",
+                        "ExitId": "12443",
+                        "Distance": "2775",
+                        "Time": "34",
+                        "Geometry": {
+                            "Type": "point",
+                            "Coordinates": "134.417486,34.768676"
+                        }
+                    }
+                ],
+                "LeadImage": "https://rimage.gnst.jp/rest/img/mpkp0prz0000/s_0002.jpg",
+                "ParkingFlag": "true",
+                "SmartPhoneCouponFlag": "false",
+                "Coupon": [],
+                "KeepCount": "8"
+            }
+        },
+        {
+            "Id": "6309580",
+            "Gid": "0KTUzGmBgHM",
+            "Name": "美鶴",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.39254459,34.75413688"
+            },
+            "Category": [
+                "和食,料亭"
+            ],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "59a898071d6aa48b0bb8b1946e33ae41c699547b",
+                "CassetteId": "a6e27b84663abc4336dc275c6fb7f978",
+                "Yomi": "ミカク",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市 加里屋53-6",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-5187",
+                "Genre": [
+                    {
+                        "Code": "0101",
+                        "Name": "和食"
+                    },
+                    {
+                        "Code": "0101004",
+                        "Name": "料亭"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "380",
+                        "Time": "4",
+                        "Geometry": {
+                            "Type": "point",
+                            "Coordinates": "134.393350,34.756509"
+                        }
+                    },
+                    {
+                        "Id": "26368",
+                        "SubId": "2636801",
+                        "Name": "坂越",
+                        "Railway": "JR在来線",
+                        "Exit": "出口",
+                        "ExitId": "12443",
+                        "Distance": "3177",
+                        "Time": "39",
+                        "Geometry": {
+                            "Type": "point",
+                            "Coordinates": "134.417486,34.768676"
+                        }
+                    }
+                ],
+                "ParkingFlag": "false",
+                "SmartPhoneCouponFlag": "false",
+                "Coupon": [],
+                "KeepCount": "12"
+            }
+        },
+        {
+            "Id": "7255692",
+            "Gid": "_UxTl1Sny7E",
+            "Name": "ごほうび酒場",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.39353336,34.75418415"
+            },
+            "Category": [
+                "居酒屋"
+            ],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "d21ff7ecf315f46f0faaa6b6b387bfe241744094",
+                "CassetteId": "a6e27b84663abc4336dc275c6fb7f978",
+                "Yomi": "ゴホウビサカバ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市 加里屋40-6 赤穂プラザハイツ103",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-4845",
+                "Genre": [
+                    {
+                        "Code": "0110",
+                        "Name": "居酒屋、ビアホール"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "368",
+                        "Time": "4",
+                        "Geometry": {
+                            "Type": "point",
+                            "Coordinates": "134.393350,34.756509"
+                        }
+                    },
+                    {
+                        "Id": "26368",
+                        "SubId": "2636801",
+                        "Name": "坂越",
+                        "Railway": "JR在来線",
+                        "Exit": "出口",
+                        "ExitId": "12443",
+                        "Distance": "3043",
+                        "Time": "38",
+                        "Geometry": {
+                            "Type": "point",
+                            "Coordinates": "134.417486,34.768676"
+                        }
+                    }
+                ],
+                "ParkingFlag": "false",
+                "SmartPhoneCouponFlag": "false",
+                "Coupon": [],
+                "KeepCount": "3"
+            }
+        },
+        {
+            "Id": "22830709135",
+            "Gid": "t_CfEYP1t1I",
+            "Name": "パティスリー・プリエール",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.393100277778,34.749198611111"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "842dea759c8cbe0f515b0f8862c616de6a52a7e4",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "パティスリープリエール",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋中洲５丁目３３",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-0220",
+                "Genre": [
+                    {
+                        "Code": "0118001",
+                        "Name": "洋菓子、ケーキ"
+                    },
+                    {
+                        "Code": "0507004",
+                        "Name": "食料品"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "1083",
+                        "Time": "12"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1418",
+                        "Time": "17"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830536735",
+            "Gid": "-ef0Eg1097Y",
+            "Name": "かん川総本家",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.399549166667,34.757234166667"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "5ca62be5131e0e9c07f5610b6f1efb1aca52993d",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "カンカワソウホンケ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市中広１０８−２１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0120-700677",
+                "Genre": [
+                    {
+                        "Code": "0118002",
+                        "Name": "和菓子、甘味処、たい焼き"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "708",
+                        "Time": "8"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "717",
+                        "Time": "8"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830628620",
+            "Gid": "63wlrpMXVaA",
+            "Name": "ステーキとハンバーグのお店ぱぴー",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.371587777778,34.764107222222"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "d10191106d3c087b7a4c31a5ab7c25dba7661e97",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ステーキトハンバーグノオミセパピー",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市新田５５６−２",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-3722",
+                "Genre": [
+                    {
+                        "Code": "0123001",
+                        "Name": "ファミレス"
+                    }
+                ],
+                "Station": [],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "7"
+            }
+        },
+        {
+            "Id": "22830842575",
+            "Gid": "MSlyGguk3to",
+            "Name": "らうんじ創花",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.392836388889,34.751109444444"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "47b6036d3b6a80b1c40195f136bd617140ca9fb6",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ラウンジソウカ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋２１６４−２",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-3020",
+                "Genre": [
+                    {
+                        "Code": "0119001",
+                        "Name": "バー"
+                    },
+                    {
+                        "Code": "0120003",
+                        "Name": "クラブ"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "782",
+                        "Time": "9"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "876",
+                        "Time": "10"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "ID0100738",
+            "Gid": "Kn6GN06Rd8A",
+            "Name": "すき家 250号赤穂駅前店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.39212763238,34.755974437431"
+            },
+            "Category": [
+                "すき家"
+            ],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "bfb0c9569c4e764d210853c38f95478be2c28a62",
+                "CassetteId": "8cfa8ed3d825ba896fa8d7cffd28cd67",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋69-11",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "LandmarkCode": "11201110000",
+                "Genre": [
+                    {
+                        "Code": "0101031",
+                        "Name": "丼もの、牛丼、親子丼"
+                    },
+                    {
+                        "Code": "0123002",
+                        "Name": "ファストフード"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "166",
+                        "Time": "2",
+                        "Geometry": {
+                            "Type": "point",
+                            "Coordinates": "134.393350,34.756509"
+                        }
+                    },
+                    {
+                        "Id": "26368",
+                        "SubId": "2636801",
+                        "Name": "坂越",
+                        "Railway": "JR在来線",
+                        "Exit": "出口",
+                        "ExitId": "12443",
+                        "Distance": "3102",
+                        "Time": "38",
+                        "Geometry": {
+                            "Type": "point",
+                            "Coordinates": "134.417486,34.768676"
+                        }
+                    }
+                ],
+                "ParkingFlag": "true",
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "4"
+            }
+        },
+        {
+            "Id": "22830243114",
+            "Gid": "ZkwAsVNuvz2",
+            "Name": "ひで",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.396212222222,34.751386111111"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "ebad1eb7168aa0215070cd1b1a1d76141b8eb539",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ヒデ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋駅前町５５−５",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "4",
+                "Tel1": "0791-42-3303",
+                "Genre": [
+                    {
+                        "Code": "0101025",
+                        "Name": "焼き鳥"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "836",
+                        "Time": "10"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "950",
+                        "Time": "11"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830245241",
+            "Gid": "OVm1r3gOYRI",
+            "Name": "デリカショップパセリ",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.384542500000,34.758372222222"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "0631fc7ad581155212bb3c16a0a7600e4cf26d17",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "デリカシヨツプパセリ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市宮前町３−１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-45-1447",
+                "Genre": [
+                    {
+                        "Code": "0101012",
+                        "Name": "握り寿司"
+                    },
+                    {
+                        "Code": "0114001",
+                        "Name": "持ち帰り専門、弁当"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "932",
+                        "Time": "11"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "1050",
+                        "Time": "13"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830537838",
+            "Gid": "hnFCdc4TBq6",
+            "Name": "有限会社米口グリーンナーセリー",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.413438888889,34.778468888889"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "41359d87819af0c88d2484dc96778955c94d4272",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ヨネグチグリーンナーセリー",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市木津３３４",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0120-080786",
+                "Genre": [
+                    {
+                        "Code": "0101053",
+                        "Name": "和食（その他）"
+                    },
+                    {
+                        "Code": "0123001",
+                        "Name": "ファミレス"
+                    },
+                    {
+                        "Code": "0506001",
+                        "Name": "農業、林業"
+                    },
+                    {
+                        "Code": "0506002",
+                        "Name": "園芸"
+                    }
+                ],
+                "Station": [],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830762471",
+            "Gid": "_KwOWIJmJQA",
+            "Name": "播磨屋・元祖塩味饅頭本店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.401816111111,34.747188055556"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "054fab2fd4e26ea22427b9693f819acd7e5d791c",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ハリマヤガンソシオミマンジュウホンテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市尾崎２２２",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-2300",
+                "Genre": [
+                    {
+                        "Code": "0118002",
+                        "Name": "和菓子、甘味処、たい焼き"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "1548",
+                        "Time": "19"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1661",
+                        "Time": "20"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "3"
+            }
+        },
+        {
+            "Id": "22830536736",
+            "Gid": "-ef0Eg1097Y",
+            "Name": "総本家かん川",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.399549166667,34.757234166667"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "c50386974608fb682b16a2d3469e868119c3ee84",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ソウホンケカンカワ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市中広１０８−２１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0120-700677",
+                "Genre": [
+                    {
+                        "Code": "0118002",
+                        "Name": "和菓子、甘味処、たい焼き"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "652",
+                        "Time": "8"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "685",
+                        "Time": "8"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22832002050",
+            "Gid": "szS4tzL5nDU",
+            "Name": "マクドナルド赤穂フレスポ店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.398063333333,34.754645555556"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "fd11c06130b04151472f59c68994409f5d7d1939",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "マクドナルドアコウフレスポテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市中広２−９",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-4558",
+                "Genre": [
+                    {
+                        "Code": "0102003",
+                        "Name": "ハンバーガー"
+                    },
+                    {
+                        "Code": "0123002",
+                        "Name": "ファストフード"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "560",
+                        "Time": "7"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "673",
+                        "Time": "8"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830762396",
+            "Gid": "Z4_w3FHHVzQ",
+            "Name": "まるはち・喰い処",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.390897777778,34.751270555556"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "ea733c34466cf0e314250a8b4c9f536be38b7cc0",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "マルハチクイドコロ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋２１０３",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-45-1091",
+                "Genre": [
+                    {
+                        "Code": "0101012",
+                        "Name": "握り寿司"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "733",
+                        "Time": "9"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "814",
+                        "Time": "10"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "13"
+            }
+        },
+        {
+            "Id": "6348096",
+            "Gid": "IuX_HQFQit2",
+            "Name": "雲火焼展示館 桃井ミュージアム",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.41285166,34.73171474"
+            },
+            "Category": [
+                "コーヒー"
+            ],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "7d21e0fb29b48f634365a5fa4b467944eb6a9770",
+                "CassetteId": "a6e27b84663abc4336dc275c6fb7f978",
+                "Yomi": "ウンカヤキテンジカンモモイミユージアム",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市 御崎634",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-56-9933",
+                "Genre": [
+                    {
+                        "Code": "0116001",
+                        "Name": "コーヒー専門店"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "4257",
+                        "Time": "53",
+                        "Geometry": {
+                            "Type": "point",
+                            "Coordinates": "134.393350,34.756509"
+                        }
+                    }
+                ],
+                "ParkingFlag": "true",
+                "SmartPhoneCouponFlag": "false",
+                "Coupon": [],
+                "KeepCount": "16"
+            }
+        },
+        {
+            "Id": "22830733130",
+            "Gid": "FkfcebLqsts",
+            "Name": "ジュロウ（ＪＹＵＲＯ）",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.353323055556,34.750469444444"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "fd1fbfbab185302af80ec6ca5af9c5473c4e3d83",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ジュロウ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市鷏和５１２",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "5",
+                "Tel1": "0791-43-9528",
+                "Genre": [
+                    {
+                        "Code": "0115002",
+                        "Name": "喫茶店"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26457",
+                        "SubId": "2645701",
+                        "Name": "天和",
+                        "Railway": "JR在来線",
+                        "Exit": "出口",
+                        "ExitId": "12658",
+                        "Distance": "273",
+                        "Time": "3"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830243314",
+            "Gid": "mXklg_Nuvz2",
+            "Name": "バロン",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.396212222222,34.751386111111"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "1f92aaa27e7f374af038bded9887a3793c0413a3",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "バロン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋駅前町６８−７",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "4",
+                "Tel1": "0791-45-1789",
+                "Genre": [
+                    {
+                        "Code": "0115002",
+                        "Name": "喫茶店"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "836",
+                        "Time": "10"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "950",
+                        "Time": "11"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830753210",
+            "Gid": "B51gKi4Orw-",
+            "Name": "株式会社魚正",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.389072500000,34.758655555556"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "ce34568bbffd412a2590b0c86887ea600d6ac34d",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ウオショウ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市寿町７−５",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-2629",
+                "Genre": [
+                    {
+                        "Code": "0101003",
+                        "Name": "割ぽう"
+                    },
+                    {
+                        "Code": "0101004",
+                        "Name": "料亭"
+                    },
+                    {
+                        "Code": "0101012",
+                        "Name": "握り寿司"
+                    },
+                    {
+                        "Code": "0114003",
+                        "Name": "仕出し料理"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "570",
+                        "Time": "7"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "705",
+                        "Time": "8"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830243575",
+            "Gid": "DHtdKCmJA_o",
+            "Name": "クローバー",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.395683055556,34.753165000000"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "97b3cfcfefb752dfe3825b5fb3ce691aa21250c8",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "クローバー",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋中洲３丁目５５",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-8008",
+                "Genre": [
+                    {
+                        "Code": "0115002",
+                        "Name": "喫茶店"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "527",
+                        "Time": "6"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "640",
+                        "Time": "8"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "2"
+            }
+        },
+        {
+            "Id": "22830850121",
+            "Gid": "CFCbU90_QYI",
+            "Name": "ＰＥＡＣＯＣＫ",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.391553055556,34.752003611111"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "ef98ea1bbeacb73f49a4ed7ee5452fbcf9bc85c4",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ピーコック",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋２１９６−１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-56-5533",
+                "Genre": [
+                    {
+                        "Code": "0110001",
+                        "Name": "和風居酒屋"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "588",
+                        "Time": "7"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "667",
+                        "Time": "8"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830880851",
+            "Gid": "j2lAJn9-Hq2",
+            "Name": "台湾料理豊源",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.402824444444,34.742371666667"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "ee4299d3e5bc3c2951a57927336d0411dae663e5",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "タイワンリョウリホウゲン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市尾崎３９３２",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-3448",
+                "Genre": [
+                    {
+                        "Code": "0104006",
+                        "Name": "台湾料理"
+                    }
+                ],
+                "Station": [],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "3"
+            }
+        },
+        {
+            "Id": "22830880849",
+            "Gid": "Qqf4VJm61QY",
+            "Name": "坂利太",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.430007222222,34.766709444444"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "4c58bb80c1e4494bd20b65a4b52cae2909dae7b8",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "サリータ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市坂越２０８３",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-48-8658",
+                "Genre": [
+                    {
+                        "Code": "0118001",
+                        "Name": "洋菓子、ケーキ"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26368",
+                        "SubId": "2636801",
+                        "Name": "坂越",
+                        "Railway": "JR在来線",
+                        "Exit": "出口",
+                        "ExitId": "12443",
+                        "Distance": "1444",
+                        "Time": "18"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "71"
+            }
+        },
+        {
+            "Id": "22830775496",
+            "Gid": "WTHxmUXMcKY",
+            "Name": "つや（２８）",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.406741111111,34.731145277778"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "8e4632742a71282f7c54d4a90263bd3a9bb02b12",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ツヤ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市御崎３２４",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-45-2900",
+                "Genre": [
+                    {
+                        "Code": "0102004",
+                        "Name": "洋食（その他）"
+                    },
+                    {
+                        "Code": "0115001",
+                        "Name": "カフェ"
+                    },
+                    {
+                        "Code": "0115002",
+                        "Name": "喫茶店"
+                    }
+                ],
+                "Station": [],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "2"
+            }
+        },
+        {
+            "Id": "22830242195",
+            "Gid": "osIJKPtQJMY",
+            "Name": "おしどり",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.362662777778,34.774439166667"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "53fc772d6e7b2a97672833d13099a3cf711b1ae8",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "オシドリ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市大津３３",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-1177",
+                "Genre": [
+                    {
+                        "Code": "0115014",
+                        "Name": "カラオケ喫茶"
+                    }
+                ],
+                "Station": [],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830807562",
+            "Gid": "EVK3y8nqm-o",
+            "Name": "かばくろ赤穂店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.390342222222,34.750317777778"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "e4588e414ef1b7b94f1ceba422d4ff5527f2e89d",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "カバクロアコウテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋南６−２",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-25-1449",
+                "Genre": [
+                    {
+                        "Code": "0110001",
+                        "Name": "和風居酒屋"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "881",
+                        "Time": "10"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1216",
+                        "Time": "14"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "3"
+            }
+        },
+        {
+            "Id": "22830751974",
+            "Gid": "B51gKi4Orw-",
+            "Name": "株式会社魚正",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.389072500000,34.758655555556"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "396c83a02757b4b816fe75c05734ede1fcfa8807",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ウオショウ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市寿町７−５",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0120-212629",
+                "Genre": [
+                    {
+                        "Code": "0101003",
+                        "Name": "割ぽう"
+                    },
+                    {
+                        "Code": "0101004",
+                        "Name": "料亭"
+                    },
+                    {
+                        "Code": "0101012",
+                        "Name": "握り寿司"
+                    },
+                    {
+                        "Code": "0114003",
+                        "Name": "仕出し料理"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "570",
+                        "Time": "7"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "705",
+                        "Time": "8"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830244821",
+            "Gid": "yqPViQ9pjIg",
+            "Name": "グルメドール赤穂店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.400865833333,34.755842777778"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "54edc4853932d600fa19275ff3f73ba997fe344f",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "グルメドールアコウテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市中広５５−３",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-45-3784",
+                "Genre": [
+                    {
+                        "Code": "0123001",
+                        "Name": "ファミレス"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "1148",
+                        "Time": "13"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1368",
+                        "Time": "16"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830244782",
+            "Gid": "-ef0Eg1097Y",
+            "Name": "総本家かん川",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.399549166667,34.757234166667"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "2dcafb8e0756195220b8b562ffdd249798028020",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ソウホンケカンカワ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市中広１０８−２１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-45-2222",
+                "Genre": [
+                    {
+                        "Code": "0118002",
+                        "Name": "和菓子、甘味処、たい焼き"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "708",
+                        "Time": "8"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "717",
+                        "Time": "8"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830245228",
+            "Gid": "VbAwzlsfDvo",
+            "Name": "じゅうのいち",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.387583888889,34.759475000000"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "9aa72b0b816fc936d44e048e41b0fd71981fe282",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ジユウノイチ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市宮前町１０−１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-5565",
+                "Genre": [
+                    {
+                        "Code": "0101029",
+                        "Name": "お好み焼き、たこ焼き"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "737",
+                        "Time": "9"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "857",
+                        "Time": "10"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830244817",
+            "Gid": "VLgmB5T-rbc",
+            "Name": "カンパーニュ",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.402215555556,34.756003888889"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "2124960a0dab3e7c4df51d0338356358cde420ca",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "カンパーニユ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市中広１７９−２５",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-45-3520",
+                "Genre": [
+                    {
+                        "Code": "0115002",
+                        "Name": "喫茶店"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "1158",
+                        "Time": "14"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1205",
+                        "Time": "15"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "1"
+            }
+        },
+        {
+            "Id": "22830244470",
+            "Gid": "qUclxNzPhYI",
+            "Name": "りきゅう",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.350389444444,34.747611944444"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "eeaf32e53f6299dd54d6a688e11606e72c22ffc9",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "リキユウ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市鷏和１１６５−６",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-45-1195",
+                "Genre": [
+                    {
+                        "Code": "0101029",
+                        "Name": "お好み焼き、たこ焼き"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26457",
+                        "SubId": "2645701",
+                        "Name": "天和",
+                        "Railway": "JR在来線",
+                        "Exit": "出口",
+                        "ExitId": "12658",
+                        "Distance": "358",
+                        "Time": "4"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "2"
+            }
+        },
+        {
+            "Id": "22830244834",
+            "Gid": "sJT51wJeA-M",
+            "Name": "マクドナルド赤穂ジャスコ店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.400865833333,34.755842777778"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "6ec1e994f768361de934fb689811d1c1274b6a99",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "マクドナルドアコウジャスコテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市中広５５−３",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-46-4057",
+                "Genre": [
+                    {
+                        "Code": "0102003",
+                        "Name": "ハンバーガー"
+                    },
+                    {
+                        "Code": "0123002",
+                        "Name": "ファストフード"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "1148",
+                        "Time": "13"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1368",
+                        "Time": "16"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "5"
+            }
+        },
+        {
+            "Id": "22830750424",
+            "Gid": "ACHAfiZcZJs",
+            "Name": "サンタイカフェ",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.396658611111,34.739955277778"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "ea4df22cc22d69059fede24cf94825e51e493482",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "サンタイカフェ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市尾崎３１８９−１３",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-45-7059",
+                "Genre": [
+                    {
+                        "Code": "0115001",
+                        "Name": "カフェ"
+                    }
+                ],
+                "Station": [],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830243213",
+            "Gid": "7d16o_Nuvz2",
+            "Name": "ぶどう屋",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.396212222222,34.751386111111"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "69ff487665d282b18ea2d06e2dbb04d94649bb8a",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ブドウヤ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋駅前町６４−４",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "4",
+                "Tel1": "0791-43-3733",
+                "Genre": [
+                    {
+                        "Code": "0110001",
+                        "Name": "和風居酒屋"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "836",
+                        "Time": "10"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "950",
+                        "Time": "11"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830763714",
+            "Gid": "sXY9MrGbeG2",
+            "Name": "イタリアン・トマトカフェ赤穂ロイヤルホテル店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.390672,34.7454535"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "b5071f0527619a5a22f669945b49e21622f02928",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "イタリアントマトカフェアコウロイヤルホテルテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋中洲3250",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "4",
+                "Tel1": "0791-43-3848",
+                "Genre": [
+                    {
+                        "Code": "0102004",
+                        "Name": "洋食（その他）"
+                    },
+                    {
+                        "Code": "0115001",
+                        "Name": "カフェ"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "567",
+                        "Time": "7"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "681",
+                        "Time": "8"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830555048",
+            "Gid": "mjLKJ_Nuvz2",
+            "Name": "うさぎ笑っ",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.391311388889,34.755442222222"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "9ef06c221888f0d4506f453aaf3de37f565b7808",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ウサギワラッ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋６８−１１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-7198",
+                "Genre": [
+                    {
+                        "Code": "0110001",
+                        "Name": "和風居酒屋"
+                    },
+                    {
+                        "Code": "0115002",
+                        "Name": "喫茶店"
+                    },
+                    {
+                        "Code": "0116001",
+                        "Name": "コーヒー専門店"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "308",
+                        "Time": "3"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "387",
+                        "Time": "4"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830243710",
+            "Gid": "CHsiDoVc_1Q",
+            "Name": "まさや",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.390550555556,34.749159444444"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "be8f6daf77b935dddab1ed3eaf0d1ddedcd7327a",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "マサヤ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋南１−３５",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-45-1460",
+                "Genre": [
+                    {
+                        "Code": "0114003",
+                        "Name": "仕出し料理"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "1038",
+                        "Time": "12"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1373",
+                        "Time": "16"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830244238",
+            "Gid": "1Ku5qhVSpMI",
+            "Name": "扇",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.362316111111,34.762940277778"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "98fbeb8daa40f828af9befb6f72d9b4ed73a6bd9",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "セン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市新田１１８８−１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-4774",
+                "Genre": [
+                    {
+                        "Code": "0115014",
+                        "Name": "カラオケ喫茶"
+                    }
+                ],
+                "Station": [],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830773613",
+            "Gid": "jHbED3SZnI2",
+            "Name": "さやか坂越店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.429876666667,34.763754166667"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "ada81e4d7ea0cfdcd29c6006d914258a7ec2bc96",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "サヤカサコシテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市坂越２３５１−５",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-46-8788",
+                "Genre": [
+                    {
+                        "Code": "0101029",
+                        "Name": "お好み焼き、たこ焼き"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26368",
+                        "SubId": "2636801",
+                        "Name": "坂越",
+                        "Railway": "JR在来線",
+                        "Exit": "出口",
+                        "ExitId": "12443",
+                        "Distance": "1440",
+                        "Time": "18"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "1"
+            }
+        },
+        {
+            "Id": "22830720387",
+            "Gid": "FFuXzM6Kbzo",
+            "Name": "カン・カフェ",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.389958611111,34.756278055556"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "a2332952718d0c1277e05e5a7bb52c4c7e8f96b5",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "カンカフェ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋７１−９",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-5728",
+                "Genre": [
+                    {
+                        "Code": "0115001",
+                        "Name": "カフェ"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "351",
+                        "Time": "4"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "389",
+                        "Time": "4"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830728673",
+            "Gid": "ywLTgMMXlG-",
+            "Name": "グランドカフェ",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.391506111111,34.748145833333"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "e292444ade705b4b82983d10e4748617fe340ab1",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "グランドカフェ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋中洲６丁目４６",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-5490",
+                "Genre": [
+                    {
+                        "Code": "0115001",
+                        "Name": "カフェ"
+                    },
+                    {
+                        "Code": "0115002",
+                        "Name": "喫茶店"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "1154",
+                        "Time": "14"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1235",
+                        "Time": "15"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "3"
+            }
+        },
+        {
+            "Id": "22830243348",
+            "Gid": "jTb2cP6eWmI",
+            "Name": "いさりび",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.396212222222,34.751386111111"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "6fd8a37d882f426c7f79bf2faf6f7fe49c9397ee",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "イサリビ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋駅前町３９",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "4",
+                "Tel1": "0791-45-3688",
+                "Genre": [
+                    {
+                        "Code": "0101001",
+                        "Name": "懐石料理"
+                    },
+                    {
+                        "Code": "0101011",
+                        "Name": "日本料理"
+                    },
+                    {
+                        "Code": "0101034",
+                        "Name": "海鮮料理"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "836",
+                        "Time": "10"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "950",
+                        "Time": "11"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830837368",
+            "Gid": "-0G8_YJOPD-",
+            "Name": "株式会社神戸白十字　赤穂店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.396521944444,34.753712222222"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "f0a553d2139d5f599db08ab5ba4a3571d5e28538",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "コウベハクジュウジアコウテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋中洲２丁目５３−１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-45-8912",
+                "Genre": [
+                    {
+                        "Code": "0118002",
+                        "Name": "和菓子、甘味処、たい焼き"
+                    },
+                    {
+                        "Code": "0118001",
+                        "Name": "洋菓子、ケーキ"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "481",
+                        "Time": "6"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "594",
+                        "Time": "7"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "2"
+            }
+        },
+        {
+            "Id": "22830719333",
+            "Gid": "hLBEHaPedVk",
+            "Name": "山海",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.392205833333,34.754389722222"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "c11e20c6392022fb1ebc788c3f8d741d18937a9c",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "サンカイ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋５６−１０",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-8533",
+                "Genre": [
+                    {
+                        "Code": "0101050",
+                        "Name": "炉端焼き"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "311",
+                        "Time": "3"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "389",
+                        "Time": "4"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "2"
+            }
+        },
+        {
+            "Id": "22830243853",
+            "Gid": "XnUe0B8roIE",
+            "Name": "魚稚海の駅　しおさい市場店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.446403055556,34.768281666667"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "e199af26c17605ff3c4bf3fee0298011ee174041",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ウオワカウミノエキシオサイシジョウテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市坂越２９０−７",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-46-8121",
+                "Genre": [
+                    {
+                        "Code": "0101040",
+                        "Name": "牡蠣料理"
+                    },
+                    {
+                        "Code": "0501002",
+                        "Name": "食料品、飲料品"
+                    },
+                    {
+                        "Code": "0210007",
+                        "Name": "海産物"
+                    },
+                    {
+                        "Code": "0210003",
+                        "Name": "鮮魚店"
+                    },
+                    {
+                        "Code": "0211001",
+                        "Name": "通信販売"
+                    }
+                ],
+                "Station": [],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "10"
+            }
+        },
+        {
+            "Id": "22830705755",
+            "Gid": "f3PpLg2N2Qg",
+            "Name": "グランダーブル",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.387897777778,34.758547222222"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "2fe142d199f14e7030108814c07272ef1c6cd7ca",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "グランダーブル",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市宮前町１−４",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-3535",
+                "Genre": [
+                    {
+                        "Code": "0102004",
+                        "Name": "洋食（その他）"
+                    },
+                    {
+                        "Code": "0115001",
+                        "Name": "カフェ"
+                    },
+                    {
+                        "Code": "0115002",
+                        "Name": "喫茶店"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "649",
+                        "Time": "8"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "766",
+                        "Time": "9"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830244173",
+            "Gid": "HBnmyn0Ixq2",
+            "Name": "フイッシュアイランド",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.407760277778,34.735772500000"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "5e5e6260cf9d4c3f127dda580a7e86501e28c35d",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "フイッシュアイランド",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市正保橋町３−１３６",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-3872",
+                "Genre": [
+                    {
+                        "Code": "0115002",
+                        "Name": "喫茶店"
+                    }
+                ],
+                "Station": [],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830856267",
+            "Gid": "9dpFwhdibag",
+            "Name": "焼肉・秀吉　赤穂店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.377890277778,34.762668611111"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "08c3258dc5de802a41c0b4cbbabdf30f785c5939",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ヤキニクヒデヨシアコウテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市新田５０８",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "3",
+                "Tel1": "0791-42-1129",
+                "Genre": [
+                    {
+                        "Code": "0108001",
+                        "Name": "焼肉"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1775",
+                        "Time": "22"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "1893",
+                        "Time": "23"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "1"
+            }
+        },
+        {
+            "Id": "22830245158",
+            "Gid": "thNkHyfnFsk",
+            "Name": "赤穂高校食堂一徳",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.397927777778,34.738663611111"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "01f2ffb927d3364cb3e27d8c70d94d61ccc0a9b6",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "アコウコウコウショクドウイットク",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市海浜町１３９",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-6933",
+                "Genre": [
+                    {
+                        "Code": "0111001",
+                        "Name": "定食、食堂"
+                    }
+                ],
+                "Station": [],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830245396",
+            "Gid": "6Qpf4mbcCtI",
+            "Name": "カフェドゥリーフ",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.382170555556,34.755147500000"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "a547e45946d8b25b27108ca21131082b17f07cab",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "カフエドウリーフ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市長池町９４",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-3262",
+                "Genre": [
+                    {
+                        "Code": "0115001",
+                        "Name": "カフェ"
+                    },
+                    {
+                        "Code": "0115002",
+                        "Name": "喫茶店"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1118",
+                        "Time": "13"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "1164",
+                        "Time": "14"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830244086",
+            "Gid": "H6lfIp26T-E",
+            "Name": "ジンギスカンハウス",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.382481666667,34.757833055556"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "ff6673e7fa971591d86d3118c54eb83149aae81a",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ジンギスカンハウス",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市塩屋３５０３",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "3",
+                "Tel1": "0791-43-3512",
+                "Genre": [
+                    {
+                        "Code": "0108002",
+                        "Name": "ジンギスカン"
+                    },
+                    {
+                        "Code": "0102004",
+                        "Name": "洋食（その他）"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1126",
+                        "Time": "14"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "1206",
+                        "Time": "15"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830243309",
+            "Gid": "6IiZY_Nuvz2",
+            "Name": "総本家かん川駅前店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.398116111111,34.757873055556"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "e3f9dd8534e2a1b42aada59ec70593d70268dd20",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ソウホンケカンカワエキマエテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋駅前町６５−１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "4",
+                "Tel1": "0791-45-1212",
+                "Genre": [
+                    {
+                        "Code": "0118002",
+                        "Name": "和菓子、甘味処、たい焼き"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "556",
+                        "Time": "6"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "565",
+                        "Time": "6"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "28662",
+            "Gid": "szS4tzL5nDU",
+            "Name": "マクドナルド赤穂フレスポ店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.39835444485,34.75500571346"
+            },
+            "Category": [
+                "マクドナルド"
+            ],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "c0afb6452d400edb9dd80a2086f8712a5debab65",
+                "CassetteId": "d115e2a62c8f28cb03a493dc407fa03f",
+                "Yomi": "マクドナルドアコウフレスポテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市中広2",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "LandmarkCode": "11201010000",
+                "Tel1": "0791-43-4558",
+                "Genre": [
+                    {
+                        "Code": "0123002",
+                        "Name": "ファストフード"
+                    },
+                    {
+                        "Code": "0102003",
+                        "Name": "ハンバーガー"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "629",
+                        "Time": "7",
+                        "Geometry": {
+                            "Type": "point",
+                            "Coordinates": "134.393350,34.756509"
+                        }
+                    },
+                    {
+                        "Id": "26368",
+                        "SubId": "2636801",
+                        "Name": "坂越",
+                        "Railway": "JR在来線",
+                        "Exit": "出口",
+                        "ExitId": "12443",
+                        "Distance": "2661",
+                        "Time": "33",
+                        "Geometry": {
+                            "Type": "point",
+                            "Coordinates": "134.417486,34.768676"
+                        }
+                    }
+                ],
+                "ParkingFlag": "true",
+                "SmartPhoneCouponFlag": "false",
+                "Coupon": [],
+                "KeepCount": "4"
+            }
+        },
+        {
+            "Id": "22830244066",
+            "Gid": "5c55SeENHsg",
+            "Name": "ル・フレ",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.382481666667,34.757833055556"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "7efb3f92a5ffaa4774a68f7ff248cff6004a02e2",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ルフレ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市塩屋８６３",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "3",
+                "Tel1": "0791-42-6001",
+                "Genre": [
+                    {
+                        "Code": "0115001",
+                        "Name": "カフェ"
+                    },
+                    {
+                        "Code": "0115002",
+                        "Name": "喫茶店"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1126",
+                        "Time": "14"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "1206",
+                        "Time": "15"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "2"
+            }
+        },
+        {
+            "Id": "22830244444",
+            "Gid": "qUclxNzPhYI",
+            "Name": "りきゅう",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.350389444444,34.747611944444"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "6e6990df1068b9447ba4bb64012ff718df89ea02",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "リキユウ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市鷏和１１６５−６",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-7222",
+                "Genre": [
+                    {
+                        "Code": "0101011",
+                        "Name": "日本料理"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26457",
+                        "SubId": "2645701",
+                        "Name": "天和",
+                        "Railway": "JR在来線",
+                        "Exit": "出口",
+                        "ExitId": "12658",
+                        "Distance": "388",
+                        "Time": "4"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830244546",
+            "Gid": "4lN_GTr-t0o",
+            "Name": "スシマス赤穂店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.400865833333,34.755842777778"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "d340c04f26432524a5e05de802d6dadd9e9fdd37",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "スシマスアコウテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市中広５５−３",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-2136",
+                "Genre": [
+                    {
+                        "Code": "0114001",
+                        "Name": "持ち帰り専門、弁当"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "1148",
+                        "Time": "13"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1368",
+                        "Time": "16"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830244589",
+            "Gid": "du1unbau44g",
+            "Name": "かご飲食店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.395830555556,34.749759722222"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "6676184d9516474fb4ab2f06650cb357f914c1ac",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "カゴインシヨクテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市中広２０８７",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "3",
+                "Tel1": "0791-42-3512",
+                "Genre": [
+                    {
+                        "Code": "0101029",
+                        "Name": "お好み焼き、たこ焼き"
+                    },
+                    {
+                        "Code": "0101045",
+                        "Name": "鉄板焼き"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "1053",
+                        "Time": "13"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1148",
+                        "Time": "14"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830739886",
+            "Gid": "HZJS2e6Isdc",
+            "Name": "ホルモン秀吉赤穂店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.370143333333,34.763685000000"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "8ac2a057ab7b1c67f4f7390fce13ca45403c4025",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ホルモンヒデヨシアコウテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市黒崎町１９３",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-9005",
+                "Genre": [
+                    {
+                        "Code": "0108001",
+                        "Name": "焼肉"
+                    },
+                    {
+                        "Code": "0105001",
+                        "Name": "韓国料理、朝鮮料理"
+                    }
+                ],
+                "Station": [],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830775460",
+            "Gid": "569RHFNuvz2",
+            "Name": "メーラーサプナー",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.39218842918805,34.75641865438965"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "114e86039525b0d6352f9519e62a7bba508661a2",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "メーラーサプナー",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋290-10",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "3",
+                "Tel1": "0791-43-2666",
+                "Genre": [
+                    {
+                        "Code": "0105006",
+                        "Name": "インド料理"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "632",
+                        "Time": "7"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "727",
+                        "Time": "9"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "2"
+            }
+        },
+        {
+            "Id": "22830244174",
+            "Gid": "-sLUSgmaIys",
+            "Name": "タートル",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.409065555556,34.737153055556"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "b0b1c2a3e1bf4164e3e2d156dd31641b9fd9075f",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "タートル",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市正保橋町４−２８",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-6110",
+                "Genre": [
+                    {
+                        "Code": "0115002",
+                        "Name": "喫茶店"
+                    }
+                ],
+                "Station": [],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830242588",
+            "Gid": "Xm3T9pINlMU",
+            "Name": "ほかほかアッちゃん弁当",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.393238888889,34.751940000000"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "3cb188cde6f206526938a452f2aaa100eedce30c",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ホカホカアッチャンベントウ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋２１７２−２",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-0788",
+                "Genre": [
+                    {
+                        "Code": "0114001",
+                        "Name": "持ち帰り専門、弁当"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "685",
+                        "Time": "8"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1036",
+                        "Time": "12"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "2"
+            }
+        },
+        {
+            "Id": "22830537830",
+            "Gid": "62Bv3Ws2SyA",
+            "Name": "有限会社三弥",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.390686388889,34.752295277778"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "ad5166f99a618448a38e5947d040fad21727a690",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "サンヤ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋２０７０",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0120-022163",
+                "Genre": [
+                    {
+                        "Code": "0114001",
+                        "Name": "持ち帰り専門、弁当"
+                    },
+                    {
+                        "Code": "0114003",
+                        "Name": "仕出し料理"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "620",
+                        "Time": "7"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "698",
+                        "Time": "8"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830243303",
+            "Gid": "P-VOSlNuvz2",
+            "Name": "ＰＥＬＬ",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.396212222222,34.751386111111"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "a031cd403626f96ef9d647e413fc38c7498928ba",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ペル",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋駅前町５５−１１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "4",
+                "Tel1": "0791-45-1159",
+                "Genre": [
+                    {
+                        "Code": "0119001",
+                        "Name": "バー"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "836",
+                        "Time": "10"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "950",
+                        "Time": "11"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830243069",
+            "Gid": "USTBN_Nuvz2",
+            "Name": "華水",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.398116111111,34.757873055556"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "f4e2bada076a243e4440b029b62097daca687140",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "カスイ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋駅前町４４−１５",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "4",
+                "Tel1": "0791-42-1882",
+                "Genre": [
+                    {
+                        "Code": "0101014",
+                        "Name": "天ぷら、揚げ物"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "556",
+                        "Time": "6"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "565",
+                        "Time": "6"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830708996",
+            "Gid": "8jn0lP6eWmI",
+            "Name": "株式会社かん川本舗",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.396212222222,34.751386111111"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "79382936616f741fa3f6bc0b3e6a8089ed1aa2b5",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "カンカワホンポ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋駅前町５６",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "4",
+                "Tel1": "0791-43-2555",
+                "Genre": [
+                    {
+                        "Code": "0118002",
+                        "Name": "和菓子、甘味処、たい焼き"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "836",
+                        "Time": "10"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "950",
+                        "Time": "11"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "2"
+            }
+        },
+        {
+            "Id": "22830852976",
+            "Gid": "E_eJI1UOmDE",
+            "Name": "まねきや",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.396212222222,34.751386111111"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "d20baaa2b5f11c306a9e2cfa0bf66669b84f7846",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "マネキヤ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋駅前町６７−１０",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "4",
+                "Tel1": "0791-42-2223",
+                "Genre": [
+                    {
+                        "Code": "0110001",
+                        "Name": "和風居酒屋"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "836",
+                        "Time": "10"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "950",
+                        "Time": "11"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830244707",
+            "Gid": "zYezig9pjIg",
+            "Name": "コンセルボ赤穂店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.400865833333,34.755842777778"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "2d5e544cdf7528fb7660442db11a67ec8dd33ece",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "コンセルボアコウテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市中広５５−３",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-6909",
+                "Genre": [
+                    {
+                        "Code": "0117001",
+                        "Name": "ベーカリー"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "1148",
+                        "Time": "13"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1368",
+                        "Time": "16"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830654462",
+            "Gid": "ooVzZguk3to",
+            "Name": "とねっこ亭",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.392808611111,34.751073333333"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "f7c7eb29fe83dcc9012bcdb0c46753dd25b41f67",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "トネッコテイ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋２１６４−２",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-45-3855",
+                "Genre": [
+                    {
+                        "Code": "0110001",
+                        "Name": "和風居酒屋"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "819",
+                        "Time": "9"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1170",
+                        "Time": "14"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830826174",
+            "Gid": "kp0ShiYJOwI",
+            "Name": "高瀬舟",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.426351944444,34.768034444444"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "8a630d72c1547fbbebd0d859ee6e0a8221106be3",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "タカセブネ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市坂越１６５４",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-48-7122",
+                "Genre": [
+                    {
+                        "Code": "0115002",
+                        "Name": "喫茶店"
+                    },
+                    {
+                        "Code": "0207002",
+                        "Name": "日用雑貨"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26368",
+                        "SubId": "2636801",
+                        "Name": "坂越",
+                        "Railway": "JR在来線",
+                        "Exit": "出口",
+                        "ExitId": "12443",
+                        "Distance": "1086",
+                        "Time": "13"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "1"
+            }
+        },
+        {
+            "Id": "22830876617",
+            "Gid": "ZAZnzF0QihQ",
+            "Name": "すし勝",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.391103055556,34.752692500000"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "9587635c250dfa40fd61d31217c82886b336833e",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "スシカツ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋２２３０",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-5355",
+                "Genre": [
+                    {
+                        "Code": "0101012",
+                        "Name": "握り寿司"
+                    },
+                    {
+                        "Code": "0114001",
+                        "Name": "持ち帰り専門、弁当"
+                    },
+                    {
+                        "Code": "0114003",
+                        "Name": "仕出し料理"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "559",
+                        "Time": "6"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "637",
+                        "Time": "7"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830861960",
+            "Gid": "Octk3RulJBQ",
+            "Name": "風来坊",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.392475277778,34.752411944444"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "b46fe567fc887d369359b736f1d03f915e13b8fc",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "フウライボウ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋２１８８−４６",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-55-9898",
+                "Genre": [
+                    {
+                        "Code": "0110001",
+                        "Name": "和風居酒屋"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "556",
+                        "Time": "6"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "651",
+                        "Time": "8"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "5"
+            }
+        },
+        {
+            "Id": "22830244522",
+            "Gid": "UM4pfhsHbeQ",
+            "Name": "ソング",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.398171666667,34.757053611111"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "1b56d624665b116fdd4fb5043592669bb36d0d4c",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ソング",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市中広１４２−４２",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-0680",
+                "Genre": [
+                    {
+                        "Code": "0115014",
+                        "Name": "カラオケ喫茶"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "490",
+                        "Time": "6"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "522",
+                        "Time": "6"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830243131",
+            "Gid": "0KTUzGmBgHM",
+            "Name": "美鶴",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.396212222222,34.751386111111"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "c33ac5e135aae0f66fa47117a83dd3f38c9c920f",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ミカク",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋駅前町５３−６",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "4",
+                "Tel1": "0791-42-5187",
+                "Genre": [
+                    {
+                        "Code": "0101003",
+                        "Name": "割ぽう"
+                    },
+                    {
+                        "Code": "0101004",
+                        "Name": "料亭"
+                    },
+                    {
+                        "Code": "0101011",
+                        "Name": "日本料理"
+                    },
+                    {
+                        "Code": "0114003",
+                        "Name": "仕出し料理"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "836",
+                        "Time": "10"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "950",
+                        "Time": "11"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "12"
+            }
+        },
+        {
+            "Id": "22830245202",
+            "Gid": "Jnp9cFD7nYw",
+            "Name": "株式会社潮見堂本店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.404154166667,34.756759444444"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "75e6dc9bd81b0adfd89cfc9c521f13ea26332ba3",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "シオミドウホンテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市南野中７６０−１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-4200",
+                "Genre": [
+                    {
+                        "Code": "0118002",
+                        "Name": "和菓子、甘味処、たい焼き"
+                    },
+                    {
+                        "Code": "0507004",
+                        "Name": "食料品"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "1071",
+                        "Time": "13"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1118",
+                        "Time": "13"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "1"
+            }
+        },
+        {
+            "Id": "22830244165",
+            "Gid": "cULhQlQ8OFs",
+            "Name": "武蔵",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.407940833333,34.736908611111"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "bf9e127be9a34a2b9df48d69ab8f98a94b028324",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ムサシ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市正保橋町３−１０１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-0634",
+                "Genre": [
+                    {
+                        "Code": "0111001",
+                        "Name": "定食、食堂"
+                    }
+                ],
+                "Station": [],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "2"
+            }
+        },
+        {
+            "Id": "22830245114",
+            "Gid": "EEIwm9xqlIc",
+            "Name": "三島製菓株式会社　本店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.407746666667,34.732047777778"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "043df9db0b6dafe06491f4fbc383ef6fe7b589e1",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ミシマセイカホンテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市御崎３４１−１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-2024",
+                "Genre": [
+                    {
+                        "Code": "0118002",
+                        "Name": "和菓子、甘味処、たい焼き"
+                    }
+                ],
+                "Station": [],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "1"
+            }
+        },
+        {
+            "Id": "22830682710",
+            "Gid": "KzMmNOUQjM-",
+            "Name": "コーヒーガーデンみつばち",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.370235277778,34.761368611111"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "c4908934ff13b6cbe9096939ca2b3deff72619b4",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "コーヒーガーデンミツバチ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市黒崎町８２−１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-9069",
+                "Genre": [
+                    {
+                        "Code": "0115002",
+                        "Name": "喫茶店"
+                    }
+                ],
+                "Station": [],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "2"
+            }
+        },
+        {
+            "Id": "22830242620",
+            "Gid": "62Bv3Ws2SyA",
+            "Name": "有限会社三弥",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.390672777778,34.752292500000"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "6a56129cc1cb4e740a1d35fe1dbc9a6ccc5c3223",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "サンヤ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋２０７０",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-2163",
+                "Genre": [
+                    {
+                        "Code": "0114001",
+                        "Name": "持ち帰り専門、弁当"
+                    },
+                    {
+                        "Code": "0114003",
+                        "Name": "仕出し料理"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "671",
+                        "Time": "8"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "922",
+                        "Time": "11"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830242757",
+            "Gid": "1yaVjcHWTPk",
+            "Name": "喫茶虹",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.393491666667,34.751812222222"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "e3613c17a4cab6c19796d0541ef11464cf266a7b",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "キツサニジ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋２１７１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-0923",
+                "Genre": [
+                    {
+                        "Code": "0115002",
+                        "Name": "喫茶店"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "683",
+                        "Time": "8"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "777",
+                        "Time": "9"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830242925",
+            "Gid": "4lbtLtl_7WI",
+            "Name": "万るやま",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.389295000000,34.755955833333"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "5f1bcdded921ad2644ef56f7083eb3d1ce03d6d5",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "マルヤマ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋７４−１３",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-8832",
+                "Genre": [
+                    {
+                        "Code": "0101011",
+                        "Name": "日本料理"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "426",
+                        "Time": "5"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "461",
+                        "Time": "5"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "5"
+            }
+        },
+        {
+            "Id": "22830243277",
+            "Gid": "yLlyC96eWmI",
+            "Name": "牛料理万",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.396212222222,34.751386111111"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "e3296e18b290118faa0e169225c1ca0f2f26d4a5",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ギユウリヨウリマン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋駅前町３９−１４",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "4",
+                "Tel1": "0791-45-0101",
+                "Genre": [
+                    {
+                        "Code": "0108001",
+                        "Name": "焼肉"
+                    },
+                    {
+                        "Code": "0101011",
+                        "Name": "日本料理"
+                    },
+                    {
+                        "Code": "0102001",
+                        "Name": "ステーキ、ハンバーグ"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "836",
+                        "Time": "10"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "950",
+                        "Time": "11"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830243409",
+            "Gid": "2yYi9_Nuvz2",
+            "Name": "クラブはま",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.392413888889,34.751335277778"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "e0d6896ac9c2dc04e2df99425a75f1928a706c7f",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "クラブハマ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋上町８３−１０",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "4",
+                "Tel1": "0791-42-5058",
+                "Genre": [
+                    {
+                        "Code": "0119001",
+                        "Name": "バー"
+                    },
+                    {
+                        "Code": "0120003",
+                        "Name": "クラブ"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "709",
+                        "Time": "8"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "803",
+                        "Time": "10"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830832216",
+            "Gid": "w4FKOunqm-o",
+            "Name": "神戸唐唐亭赤穂お城前店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.390342222222,34.750317777778"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "0d607523d961fa5d7a0111c97318ca8c401682f2",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "コウベカラカラテイアコウオシロマエテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋南６−２",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-45-2951",
+                "Genre": [
+                    {
+                        "Code": "0108001",
+                        "Name": "焼肉"
+                    },
+                    {
+                        "Code": "0101011",
+                        "Name": "日本料理"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "832",
+                        "Time": "10"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "913",
+                        "Time": "11"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830242400",
+            "Gid": "61JxFBTa3EE",
+            "Name": "お好みポッケ",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.399099722222,34.742168888889"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "54ed91a105f38d42e4b734567a11bff9cd305d17",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "オコノミポッケ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市中浜町７−１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-9678",
+                "Genre": [
+                    {
+                        "Code": "0101029",
+                        "Name": "お好み焼き、たこ焼き"
+                    }
+                ],
+                "Station": [],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830788578",
+            "Gid": "PHJ0pNn3jVo",
+            "Name": "天と海と菓子とＳＡＮＰＯＵ",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.408806944444,34.727149722222"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "f6ce459b539f94212ad1e84f36b9bd999acd51ef",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "テントウミトカシトサンポウ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市御崎２−１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-42-5155",
+                "Genre": [
+                    {
+                        "Code": "0118001",
+                        "Name": "洋菓子、ケーキ"
+                    }
+                ],
+                "Station": [],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "16"
+            }
+        },
+        {
+            "Id": "22830863993",
+            "Gid": "hemzL1UOmDE",
+            "Name": "焼肉味楽",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.391805833333,34.755456111111"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "52cf1a2c43ee187c0c39d75be12f9e62ff8a2f96",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ヤキニクミラク",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋６８−２３",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "5",
+                "Tel1": "0791-42-3484",
+                "Genre": [
+                    {
+                        "Code": "0108001",
+                        "Name": "焼肉"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "264",
+                        "Time": "3"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "342",
+                        "Time": "4"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830242965",
+            "Gid": "Js1eV3INlMU",
+            "Name": "おるごーる",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.393238888889,34.751940000000"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "bbde7abbb0eae5966d6a545d6b80706bd59b3966",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "オルゴール",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋２１７２−２",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-45-1917",
+                "Genre": [
+                    {
+                        "Code": "0115002",
+                        "Name": "喫茶店"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "685",
+                        "Time": "8"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1036",
+                        "Time": "12"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830245242",
+            "Gid": "OVm1r3gOYRI",
+            "Name": "パセリ",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.384542500000,34.758372222222"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "65a9f1aef66265e472f9a1345bce54f0ce9a148a",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "パセリ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市宮前町３−１",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-45-1447",
+                "Genre": [
+                    {
+                        "Code": "0101012",
+                        "Name": "握り寿司"
+                    },
+                    {
+                        "Code": "0114001",
+                        "Name": "持ち帰り専門、弁当"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "932",
+                        "Time": "11"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "1050",
+                        "Time": "13"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830644481",
+            "Gid": "wJruIg9pjIg",
+            "Name": "拉拉麺赤穂店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.400865833333,34.755842777778"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "1b612a4e65875d0358bb545e078231b3e1e31a72",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "リュウリュウメンアコウテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市中広５５−３",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-9992",
+                "Genre": [
+                    {
+                        "Code": "0123002",
+                        "Name": "ファストフード"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "1148",
+                        "Time": "13"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1368",
+                        "Time": "16"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830245186",
+            "Gid": "27DopbFT35k",
+            "Name": "株式会社ナルセ",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.407333055556,34.727287222222"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "f8bd23b5ae94f96706b5ebf1bef0255fbc594a6b",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ナルセ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市御崎２−８",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-45-3355",
+                "Genre": [
+                    {
+                        "Code": "0102004",
+                        "Name": "洋食（その他）"
+                    }
+                ],
+                "Station": [],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830243706",
+            "Gid": "OzbijBcXyYU",
+            "Name": "株式会社かん川本舗　大手門前支店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.389795000000,34.749745555556"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "ad7b9c4d4358b63fd21b8c0301e71b553742aa9a",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "カンカワホンポオオテモンマエシテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋南３−５",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-7201",
+                "Genre": [
+                    {
+                        "Code": "0118002",
+                        "Name": "和菓子、甘味処、たい焼き"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "980",
+                        "Time": "11"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "1315",
+                        "Time": "15"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "8"
+            }
+        },
+        {
+            "Id": "22830882549",
+            "Gid": "8HSD9av8wRg",
+            "Name": "大吉　赤穂インター店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.372723888889,34.762732222222"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "0e9d0be2c880a9cd1a96b1b3987a5ffc48ca33a4",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ダイキチアコウインターテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市黒崎町１５９",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-43-6684",
+                "Genre": [
+                    {
+                        "Code": "0101025",
+                        "Name": "焼き鳥"
+                    }
+                ],
+                "Station": [],
+                "SmartPhoneCouponFlag": "false"
+            }
+        },
+        {
+            "Id": "22830652222",
+            "Gid": "fa1hogtZZOQ",
+            "Name": "シェ・ザッコ",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.398405000000,34.752226388889"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "f379ad924463eb701332f1d0a674174dbeecb8c8",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "シェザッコ",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市中広８６４",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-45-0080",
+                "Genre": [
+                    {
+                        "Code": "0118001",
+                        "Name": "洋菓子、ケーキ"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "726",
+                        "Time": "9"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "840",
+                        "Time": "10"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "5"
+            }
+        },
+        {
+            "Id": "22830808958",
+            "Gid": "sYWLzzgNe4s",
+            "Name": "ほっともっと赤穂加里屋店",
+            "Geometry": {
+                "Type": "point",
+                "Coordinates": "134.395563888889,34.752101111111"
+            },
+            "Category": [],
+            "Description": "",
+            "Style": [],
+            "Property": {
+                "Uid": "2df9a1393035e784500db57ec6f4f5023ea32dfa",
+                "CassetteId": "d8a23e9e64a4c817227ab09858bc1330",
+                "Yomi": "ホットモットアコウホカリヤテン",
+                "Country": {
+                    "Code": "JP",
+                    "Name": "日本"
+                },
+                "Address": "兵庫県赤穂市加里屋中洲３丁目４２",
+                "GovernmentCode": "28212",
+                "AddressMatchingLevel": "6",
+                "Tel1": "0791-46-5655",
+                "Genre": [
+                    {
+                        "Code": "0114001",
+                        "Name": "持ち帰り専門、弁当"
+                    }
+                ],
+                "Station": [
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "南口",
+                        "ExitId": "12739",
+                        "Distance": "673",
+                        "Time": "8"
+                    },
+                    {
+                        "Id": "26513",
+                        "SubId": "2651301",
+                        "Name": "播州赤穂",
+                        "Railway": "JR在来線",
+                        "Exit": "北口",
+                        "ExitId": "12740",
+                        "Distance": "786",
+                        "Time": "9"
+                    }
+                ],
+                "SmartPhoneCouponFlag": "false",
+                "KeepCount": "5"
+            }
+        }
+    ]
+}
