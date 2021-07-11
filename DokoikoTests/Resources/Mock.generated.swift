@@ -865,6 +865,581 @@ open class GeoDBUseCaseProtocolMock: GeoDBUseCaseProtocol, Mock {
     }
 }
 
+// MARK: - LocalSearchAPIClientProtocol
+
+open class LocalSearchAPIClientProtocolMock: LocalSearchAPIClientProtocol, Mock {
+    public init(sequencing sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst, stubbing stubbingPolicy: StubbingPolicy = .wrap, file: StaticString = #file, line: UInt = #line) {
+        SwiftyMockyTestObserver.setup()
+        self.sequencingPolicy = sequencingPolicy
+        self.stubbingPolicy = stubbingPolicy
+        self.file = file
+        self.line = line
+    }
+
+    var matcher = Matcher.default
+    var stubbingPolicy: StubbingPolicy = .wrap
+    var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
+    private var invocations: [MethodType] = []
+    private var methodReturnValues: [Given] = []
+    private var methodPerformValues: [Perform] = []
+    private var file: StaticString?
+    private var line: UInt?
+
+    public typealias PropertyStub = Given
+    public typealias MethodStub = Given
+    public typealias SubscriptStub = Given
+
+    /// Convenience method - call setupMock() to extend debug information when failure occurs
+    public func setupMock(file: StaticString = #file, line: UInt = #line) {
+        self.file = file
+        self.line = line
+    }
+
+    /// Clear mock internals. You can specify what to reset (invocations aka verify, givens or performs) or leave it empty to clear all mock internals
+    public func resetMock(_ scopes: MockScope...) {
+        let scopes: [MockScope] = scopes.isEmpty ? [.invocation, .given, .perform] : scopes
+        if scopes.contains(.invocation) { invocations = [] }
+        if scopes.contains(.given) { methodReturnValues = [] }
+        if scopes.contains(.perform) { methodPerformValues = [] }
+    }
+
+    open func getSpot(
+        cityCode: String,
+        startIndex: Int,
+        category: LocalSearchAPICategoryType
+    ) -> Single<ApiResponseEntity<LocalSearchAPIResponse>> {
+        addInvocation(.m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(Parameter<String>.value(cityCode), Parameter<Int>.value(startIndex), Parameter<LocalSearchAPICategoryType>.value(category)))
+        let perform = methodPerformValue(.m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(Parameter<String>.value(cityCode), Parameter<Int>.value(startIndex), Parameter<LocalSearchAPICategoryType>.value(category))) as? (String, Int, LocalSearchAPICategoryType) -> Void
+        perform?(cityCode, startIndex, category)
+        var __value: Single<ApiResponseEntity<LocalSearchAPIResponse>>
+        do {
+            __value = try methodReturnValue(.m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(Parameter<String>.value(cityCode), Parameter<Int>.value(startIndex), Parameter<LocalSearchAPICategoryType>.value(category))).casted()
+        } catch {
+            onFatalFailure("Stub return value not specified for getSpot(cityCode: String, startIndex: Int, category: LocalSearchAPICategoryType). Use given")
+            Failure("Stub return value not specified for getSpot(cityCode: String, startIndex: Int, category: LocalSearchAPICategoryType). Use given")
+        }
+        return __value
+    }
+
+    open func getSpot(
+        lat: Double,
+        lng: Double,
+        startIndex: Int,
+        category: LocalSearchAPICategoryType
+    ) -> Single<ApiResponseEntity<LocalSearchAPIResponse>> {
+        addInvocation(.m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(Parameter<Double>.value(lat), Parameter<Double>.value(lng), Parameter<Int>.value(startIndex), Parameter<LocalSearchAPICategoryType>.value(category)))
+        let perform = methodPerformValue(.m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(Parameter<Double>.value(lat), Parameter<Double>.value(lng), Parameter<Int>.value(startIndex), Parameter<LocalSearchAPICategoryType>.value(category))) as? (Double, Double, Int, LocalSearchAPICategoryType) -> Void
+        perform?(lat, lng, startIndex, category)
+        var __value: Single<ApiResponseEntity<LocalSearchAPIResponse>>
+        do {
+            __value = try methodReturnValue(.m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(Parameter<Double>.value(lat), Parameter<Double>.value(lng), Parameter<Int>.value(startIndex), Parameter<LocalSearchAPICategoryType>.value(category))).casted()
+        } catch {
+            onFatalFailure("Stub return value not specified for getSpot(lat: Double, lng: Double, startIndex: Int, category: LocalSearchAPICategoryType). Use given")
+            Failure("Stub return value not specified for getSpot(lat: Double, lng: Double, startIndex: Int, category: LocalSearchAPICategoryType). Use given")
+        }
+        return __value
+    }
+
+    open func request<T: Codable>(request: Request) -> Single<ApiResponseEntity<T>> {
+        addInvocation(.m_request__request_request(Parameter<Request>.value(request)))
+        let perform = methodPerformValue(.m_request__request_request(Parameter<Request>.value(request))) as? (Request) -> Void
+        perform?(request)
+        var __value: Single<ApiResponseEntity<T>>
+        do {
+            __value = try methodReturnValue(.m_request__request_request(Parameter<Request>.value(request))).casted()
+        } catch {
+            onFatalFailure("Stub return value not specified for request<T: Codable>(request: Request). Use given")
+            Failure("Stub return value not specified for request<T: Codable>(request: Request). Use given")
+        }
+        return __value
+    }
+
+    open func getDefaultUrlRequest(request: Request) -> URLRequest? {
+        addInvocation(.m_getDefaultUrlRequest__request_request(Parameter<Request>.value(request)))
+        let perform = methodPerformValue(.m_getDefaultUrlRequest__request_request(Parameter<Request>.value(request))) as? (Request) -> Void
+        perform?(request)
+        var __value: URLRequest?
+        do {
+            __value = try methodReturnValue(.m_getDefaultUrlRequest__request_request(Parameter<Request>.value(request))).casted()
+        } catch {
+            // do nothing
+        }
+        return __value
+    }
+
+    fileprivate enum MethodType {
+        case m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(Parameter<String>, Parameter<Int>, Parameter<LocalSearchAPICategoryType>)
+        case m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(Parameter<Double>, Parameter<Double>, Parameter<Int>, Parameter<LocalSearchAPICategoryType>)
+        case m_request__request_request(Parameter<Request>)
+        case m_getDefaultUrlRequest__request_request(Parameter<Request>)
+
+        static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
+            switch (lhs, rhs) {
+            case let (.m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(lhsCitycode, lhsStartindex, lhsCategory), .m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(rhsCitycode, rhsStartindex, rhsCategory)):
+                var results: [Matcher.ParameterComparisonResult] = []
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsCitycode, rhs: rhsCitycode, with: matcher), lhsCitycode, rhsCitycode, "cityCode"))
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsStartindex, rhs: rhsStartindex, with: matcher), lhsStartindex, rhsStartindex, "startIndex"))
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsCategory, rhs: rhsCategory, with: matcher), lhsCategory, rhsCategory, "category"))
+                return Matcher.ComparisonResult(results)
+
+            case let (.m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(lhsLat, lhsLng, lhsStartindex, lhsCategory), .m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(rhsLat, rhsLng, rhsStartindex, rhsCategory)):
+                var results: [Matcher.ParameterComparisonResult] = []
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsLat, rhs: rhsLat, with: matcher), lhsLat, rhsLat, "lat"))
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsLng, rhs: rhsLng, with: matcher), lhsLng, rhsLng, "lng"))
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsStartindex, rhs: rhsStartindex, with: matcher), lhsStartindex, rhsStartindex, "startIndex"))
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsCategory, rhs: rhsCategory, with: matcher), lhsCategory, rhsCategory, "category"))
+                return Matcher.ComparisonResult(results)
+
+            case let (.m_request__request_request(lhsRequest), .m_request__request_request(rhsRequest)):
+                var results: [Matcher.ParameterComparisonResult] = []
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsRequest, rhs: rhsRequest, with: matcher), lhsRequest, rhsRequest, "request"))
+                return Matcher.ComparisonResult(results)
+
+            case let (.m_getDefaultUrlRequest__request_request(lhsRequest), .m_getDefaultUrlRequest__request_request(rhsRequest)):
+                var results: [Matcher.ParameterComparisonResult] = []
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsRequest, rhs: rhsRequest, with: matcher), lhsRequest, rhsRequest, "request"))
+                return Matcher.ComparisonResult(results)
+            default: return .none
+            }
+        }
+
+        func intValue() -> Int {
+            switch self {
+            case let .m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(p0, p1, p2): return p0.intValue + p1.intValue + p2.intValue
+            case let .m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(p0, p1, p2, p3): return p0.intValue + p1.intValue + p2.intValue + p3.intValue
+            case let .m_request__request_request(p0): return p0.intValue
+            case let .m_getDefaultUrlRequest__request_request(p0): return p0.intValue
+            }
+        }
+
+        func assertionName() -> String {
+            switch self {
+            case .m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category: return ".getSpot(cityCode:startIndex:category:)"
+            case .m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category: return ".getSpot(lat:lng:startIndex:category:)"
+            case .m_request__request_request: return ".request(request:)"
+            case .m_getDefaultUrlRequest__request_request: return ".getDefaultUrlRequest(request:)"
+            }
+        }
+    }
+
+    open class Given: StubbedMethod {
+        fileprivate var method: MethodType
+
+        private init(method: MethodType, products: [StubProduct]) {
+            self.method = method
+            super.init(products)
+        }
+
+        public static func getSpot(cityCode: Parameter<String>, startIndex: Parameter<Int>, category: Parameter<LocalSearchAPICategoryType>, willReturn: Single<ApiResponseEntity<LocalSearchAPIResponse>>...) -> MethodStub {
+            Given(method: .m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(cityCode, startIndex, category), products: willReturn.map { StubProduct.return($0 as Any) })
+        }
+
+        public static func getSpot(lat: Parameter<Double>, lng: Parameter<Double>, startIndex: Parameter<Int>, category: Parameter<LocalSearchAPICategoryType>, willReturn: Single<ApiResponseEntity<LocalSearchAPIResponse>>...) -> MethodStub {
+            Given(method: .m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(lat, lng, startIndex, category), products: willReturn.map { StubProduct.return($0 as Any) })
+        }
+
+        public static func request<T: Codable>(request: Parameter<Request>, willReturn: Single<ApiResponseEntity<T>>...) -> MethodStub {
+            Given(method: .m_request__request_request(request), products: willReturn.map { StubProduct.return($0 as Any) })
+        }
+
+        public static func getDefaultUrlRequest(request: Parameter<Request>, willReturn: URLRequest?...) -> MethodStub {
+            Given(method: .m_getDefaultUrlRequest__request_request(request), products: willReturn.map { StubProduct.return($0 as Any) })
+        }
+
+        public static func getSpot(cityCode: Parameter<String>, startIndex: Parameter<Int>, category: Parameter<LocalSearchAPICategoryType>, willProduce: (Stubber<Single<ApiResponseEntity<LocalSearchAPIResponse>>>) -> Void) -> MethodStub {
+            let willReturn: [Single<ApiResponseEntity<LocalSearchAPIResponse>>] = []
+            let given: Given = { Given(method: .m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(cityCode, startIndex, category), products: willReturn.map { StubProduct.return($0 as Any) }) }()
+            let stubber = given.stub(for: Single<ApiResponseEntity<LocalSearchAPIResponse>>.self)
+            willProduce(stubber)
+            return given
+        }
+
+        public static func getSpot(lat: Parameter<Double>, lng: Parameter<Double>, startIndex: Parameter<Int>, category: Parameter<LocalSearchAPICategoryType>, willProduce: (Stubber<Single<ApiResponseEntity<LocalSearchAPIResponse>>>) -> Void) -> MethodStub {
+            let willReturn: [Single<ApiResponseEntity<LocalSearchAPIResponse>>] = []
+            let given: Given = { Given(method: .m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(lat, lng, startIndex, category), products: willReturn.map { StubProduct.return($0 as Any) }) }()
+            let stubber = given.stub(for: Single<ApiResponseEntity<LocalSearchAPIResponse>>.self)
+            willProduce(stubber)
+            return given
+        }
+
+        public static func request<T: Codable>(request: Parameter<Request>, willProduce: (Stubber<Single<ApiResponseEntity<T>>>) -> Void) -> MethodStub {
+            let willReturn: [Single<ApiResponseEntity<T>>] = []
+            let given: Given = { Given(method: .m_request__request_request(request), products: willReturn.map { StubProduct.return($0 as Any) }) }()
+            let stubber = given.stub(for: Single<ApiResponseEntity<T>>.self)
+            willProduce(stubber)
+            return given
+        }
+
+        public static func getDefaultUrlRequest(request: Parameter<Request>, willProduce: (Stubber<URLRequest?>) -> Void) -> MethodStub {
+            let willReturn: [URLRequest?] = []
+            let given: Given = { Given(method: .m_getDefaultUrlRequest__request_request(request), products: willReturn.map { StubProduct.return($0 as Any) }) }()
+            let stubber = given.stub(for: (URLRequest?).self)
+            willProduce(stubber)
+            return given
+        }
+    }
+
+    public struct Verify {
+        fileprivate var method: MethodType
+
+        public static func getSpot(cityCode: Parameter<String>, startIndex: Parameter<Int>, category: Parameter<LocalSearchAPICategoryType>) -> Verify { Verify(method: .m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(cityCode, startIndex, category)) }
+        public static func getSpot(lat: Parameter<Double>, lng: Parameter<Double>, startIndex: Parameter<Int>, category: Parameter<LocalSearchAPICategoryType>) -> Verify { Verify(method: .m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(lat, lng, startIndex, category)) }
+        public static func request(request: Parameter<Request>) -> Verify { Verify(method: .m_request__request_request(request)) }
+        public static func getDefaultUrlRequest(request: Parameter<Request>) -> Verify { Verify(method: .m_getDefaultUrlRequest__request_request(request)) }
+    }
+
+    public struct Perform {
+        fileprivate var method: MethodType
+        var performs: Any
+
+        public static func getSpot(cityCode: Parameter<String>, startIndex: Parameter<Int>, category: Parameter<LocalSearchAPICategoryType>, perform: @escaping (String, Int, LocalSearchAPICategoryType) -> Void) -> Perform {
+            Perform(method: .m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(cityCode, startIndex, category), performs: perform)
+        }
+
+        public static func getSpot(lat: Parameter<Double>, lng: Parameter<Double>, startIndex: Parameter<Int>, category: Parameter<LocalSearchAPICategoryType>, perform: @escaping (Double, Double, Int, LocalSearchAPICategoryType) -> Void) -> Perform {
+            Perform(method: .m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(lat, lng, startIndex, category), performs: perform)
+        }
+
+        public static func request(request: Parameter<Request>, perform: @escaping (Request) -> Void) -> Perform {
+            Perform(method: .m_request__request_request(request), performs: perform)
+        }
+
+        public static func getDefaultUrlRequest(request: Parameter<Request>, perform: @escaping (Request) -> Void) -> Perform {
+            Perform(method: .m_getDefaultUrlRequest__request_request(request), performs: perform)
+        }
+    }
+
+    public func given(_ method: Given) {
+        methodReturnValues.append(method)
+    }
+
+    public func perform(_ method: Perform) {
+        methodPerformValues.append(method)
+        methodPerformValues.sort { $0.method.intValue() < $1.method.intValue() }
+    }
+
+    public func verify(_ method: Verify, count: Count = Count.moreOrEqual(to: 1), file: StaticString = #file, line: UInt = #line) {
+        let fullMatches = matchingCalls(method, file: file, line: line)
+        let success = count.matches(fullMatches)
+        let assertionName = method.method.assertionName()
+        let feedback: String = {
+            guard !success else { return "" }
+            return Utils.closestCallsMessage(
+                for: self.invocations.map { invocation in
+                    matcher.set(file: file, line: line)
+                    defer { matcher.clearFileAndLine() }
+                    return MethodType.compareParameters(lhs: invocation, rhs: method.method, matcher: matcher)
+                },
+                name: assertionName
+            )
+        }()
+        MockyAssert(success, "Expected: \(count) invocations of `\(assertionName)`, but was: \(fullMatches).\(feedback)", file: file, line: line)
+    }
+
+    private func addInvocation(_ call: MethodType) {
+        queue.sync { invocations.append(call) }
+    }
+
+    private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
+        matcher.set(file: file, line: line)
+        defer { matcher.clearFileAndLine() }
+        let candidates = sequencingPolicy.sorted(methodReturnValues, by: { $0.method.intValue() > $1.method.intValue() })
+        let matched = candidates.first(where: { $0.isValid && MethodType.compareParameters(lhs: $0.method, rhs: method, matcher: matcher).isFullMatch })
+        guard let product = matched?.getProduct(policy: stubbingPolicy) else { throw MockError.notStubed }
+        return product
+    }
+
+    private func methodPerformValue(_ method: MethodType) -> Any? {
+        matcher.set(file: file, line: line)
+        defer { matcher.clearFileAndLine() }
+        let matched = methodPerformValues.reversed().first { MethodType.compareParameters(lhs: $0.method, rhs: method, matcher: matcher).isFullMatch }
+        return matched?.performs
+    }
+
+    private func matchingCalls(_ method: MethodType, file: StaticString?, line: UInt?) -> [MethodType] {
+        matcher.set(file: file ?? self.file, line: line ?? self.line)
+        defer { matcher.clearFileAndLine() }
+        return invocations.filter { MethodType.compareParameters(lhs: $0, rhs: method, matcher: matcher).isFullMatch }
+    }
+
+    private func matchingCalls(_ method: Verify, file: StaticString?, line: UInt?) -> Int {
+        matchingCalls(method.method, file: file, line: line).count
+    }
+
+    private func givenGetterValue<T>(_ method: MethodType, _ message: String) -> T {
+        do {
+            return try methodReturnValue(method).casted()
+        } catch {
+            onFatalFailure(message)
+            Failure(message)
+        }
+    }
+
+    private func optionalGivenGetterValue<T>(_ method: MethodType, _ message: String) -> T? {
+        do {
+            return try methodReturnValue(method).casted()
+        } catch {
+            return nil
+        }
+    }
+
+    private func onFatalFailure(_ message: String) {
+        guard let file = self.file, let line = self.line else { return } // Let if fail if cannot handle gratefully
+        SwiftyMockyTestObserver.handleFatalError(message: message, file: file, line: line)
+    }
+}
+
+// MARK: - LocalSearchGatewayProtocol
+
+open class LocalSearchGatewayProtocolMock: LocalSearchGatewayProtocol, Mock {
+    public init(sequencing sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst, stubbing stubbingPolicy: StubbingPolicy = .wrap, file: StaticString = #file, line: UInt = #line) {
+        SwiftyMockyTestObserver.setup()
+        self.sequencingPolicy = sequencingPolicy
+        self.stubbingPolicy = stubbingPolicy
+        self.file = file
+        self.line = line
+    }
+
+    var matcher = Matcher.default
+    var stubbingPolicy: StubbingPolicy = .wrap
+    var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
+    private var invocations: [MethodType] = []
+    private var methodReturnValues: [Given] = []
+    private var methodPerformValues: [Perform] = []
+    private var file: StaticString?
+    private var line: UInt?
+
+    public typealias PropertyStub = Given
+    public typealias MethodStub = Given
+    public typealias SubscriptStub = Given
+
+    /// Convenience method - call setupMock() to extend debug information when failure occurs
+    public func setupMock(file: StaticString = #file, line: UInt = #line) {
+        self.file = file
+        self.line = line
+    }
+
+    /// Clear mock internals. You can specify what to reset (invocations aka verify, givens or performs) or leave it empty to clear all mock internals
+    public func resetMock(_ scopes: MockScope...) {
+        let scopes: [MockScope] = scopes.isEmpty ? [.invocation, .given, .perform] : scopes
+        if scopes.contains(.invocation) { invocations = [] }
+        if scopes.contains(.given) { methodReturnValues = [] }
+        if scopes.contains(.perform) { methodPerformValues = [] }
+    }
+
+    open func getSpot(
+        cityCode: String,
+        startIndex: Int,
+        category: SpotCategory
+    ) -> Single<ApiResponseEntity<[RecommendSpotEntity]>> {
+        addInvocation(.m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(Parameter<String>.value(cityCode), Parameter<Int>.value(startIndex), Parameter<SpotCategory>.value(category)))
+        let perform = methodPerformValue(.m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(Parameter<String>.value(cityCode), Parameter<Int>.value(startIndex), Parameter<SpotCategory>.value(category))) as? (String, Int, SpotCategory) -> Void
+        perform?(cityCode, startIndex, category)
+        var __value: Single<ApiResponseEntity<[RecommendSpotEntity]>>
+        do {
+            __value = try methodReturnValue(.m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(Parameter<String>.value(cityCode), Parameter<Int>.value(startIndex), Parameter<SpotCategory>.value(category))).casted()
+        } catch {
+            onFatalFailure("Stub return value not specified for getSpot(cityCode: String, startIndex: Int, category: SpotCategory). Use given")
+            Failure("Stub return value not specified for getSpot(cityCode: String, startIndex: Int, category: SpotCategory). Use given")
+        }
+        return __value
+    }
+
+    open func getSpot(
+        lat: Double,
+        lng: Double,
+        startIndex: Int,
+        category: SpotCategory
+    ) -> Single<ApiResponseEntity<[RecommendSpotEntity]>> {
+        addInvocation(.m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(Parameter<Double>.value(lat), Parameter<Double>.value(lng), Parameter<Int>.value(startIndex), Parameter<SpotCategory>.value(category)))
+        let perform = methodPerformValue(.m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(Parameter<Double>.value(lat), Parameter<Double>.value(lng), Parameter<Int>.value(startIndex), Parameter<SpotCategory>.value(category))) as? (Double, Double, Int, SpotCategory) -> Void
+        perform?(lat, lng, startIndex, category)
+        var __value: Single<ApiResponseEntity<[RecommendSpotEntity]>>
+        do {
+            __value = try methodReturnValue(.m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(Parameter<Double>.value(lat), Parameter<Double>.value(lng), Parameter<Int>.value(startIndex), Parameter<SpotCategory>.value(category))).casted()
+        } catch {
+            onFatalFailure("Stub return value not specified for getSpot(lat: Double, lng: Double, startIndex: Int, category: SpotCategory). Use given")
+            Failure("Stub return value not specified for getSpot(lat: Double, lng: Double, startIndex: Int, category: SpotCategory). Use given")
+        }
+        return __value
+    }
+
+    fileprivate enum MethodType {
+        case m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(Parameter<String>, Parameter<Int>, Parameter<SpotCategory>)
+        case m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(Parameter<Double>, Parameter<Double>, Parameter<Int>, Parameter<SpotCategory>)
+
+        static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
+            switch (lhs, rhs) {
+            case let (.m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(lhsCitycode, lhsStartindex, lhsCategory), .m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(rhsCitycode, rhsStartindex, rhsCategory)):
+                var results: [Matcher.ParameterComparisonResult] = []
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsCitycode, rhs: rhsCitycode, with: matcher), lhsCitycode, rhsCitycode, "cityCode"))
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsStartindex, rhs: rhsStartindex, with: matcher), lhsStartindex, rhsStartindex, "startIndex"))
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsCategory, rhs: rhsCategory, with: matcher), lhsCategory, rhsCategory, "category"))
+                return Matcher.ComparisonResult(results)
+
+            case let (.m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(lhsLat, lhsLng, lhsStartindex, lhsCategory), .m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(rhsLat, rhsLng, rhsStartindex, rhsCategory)):
+                var results: [Matcher.ParameterComparisonResult] = []
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsLat, rhs: rhsLat, with: matcher), lhsLat, rhsLat, "lat"))
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsLng, rhs: rhsLng, with: matcher), lhsLng, rhsLng, "lng"))
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsStartindex, rhs: rhsStartindex, with: matcher), lhsStartindex, rhsStartindex, "startIndex"))
+                results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsCategory, rhs: rhsCategory, with: matcher), lhsCategory, rhsCategory, "category"))
+                return Matcher.ComparisonResult(results)
+            default: return .none
+            }
+        }
+
+        func intValue() -> Int {
+            switch self {
+            case let .m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(p0, p1, p2): return p0.intValue + p1.intValue + p2.intValue
+            case let .m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(p0, p1, p2, p3): return p0.intValue + p1.intValue + p2.intValue + p3.intValue
+            }
+        }
+
+        func assertionName() -> String {
+            switch self {
+            case .m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category: return ".getSpot(cityCode:startIndex:category:)"
+            case .m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category: return ".getSpot(lat:lng:startIndex:category:)"
+            }
+        }
+    }
+
+    open class Given: StubbedMethod {
+        fileprivate var method: MethodType
+
+        private init(method: MethodType, products: [StubProduct]) {
+            self.method = method
+            super.init(products)
+        }
+
+        public static func getSpot(cityCode: Parameter<String>, startIndex: Parameter<Int>, category: Parameter<SpotCategory>, willReturn: Single<ApiResponseEntity<[RecommendSpotEntity]>>...) -> MethodStub {
+            Given(method: .m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(cityCode, startIndex, category), products: willReturn.map { StubProduct.return($0 as Any) })
+        }
+
+        public static func getSpot(lat: Parameter<Double>, lng: Parameter<Double>, startIndex: Parameter<Int>, category: Parameter<SpotCategory>, willReturn: Single<ApiResponseEntity<[RecommendSpotEntity]>>...) -> MethodStub {
+            Given(method: .m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(lat, lng, startIndex, category), products: willReturn.map { StubProduct.return($0 as Any) })
+        }
+
+        public static func getSpot(cityCode: Parameter<String>, startIndex: Parameter<Int>, category: Parameter<SpotCategory>, willProduce: (Stubber<Single<ApiResponseEntity<[RecommendSpotEntity]>>>) -> Void) -> MethodStub {
+            let willReturn: [Single<ApiResponseEntity<[RecommendSpotEntity]>>] = []
+            let given: Given = { Given(method: .m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(cityCode, startIndex, category), products: willReturn.map { StubProduct.return($0 as Any) }) }()
+            let stubber = given.stub(for: Single<ApiResponseEntity<[RecommendSpotEntity]>>.self)
+            willProduce(stubber)
+            return given
+        }
+
+        public static func getSpot(lat: Parameter<Double>, lng: Parameter<Double>, startIndex: Parameter<Int>, category: Parameter<SpotCategory>, willProduce: (Stubber<Single<ApiResponseEntity<[RecommendSpotEntity]>>>) -> Void) -> MethodStub {
+            let willReturn: [Single<ApiResponseEntity<[RecommendSpotEntity]>>] = []
+            let given: Given = { Given(method: .m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(lat, lng, startIndex, category), products: willReturn.map { StubProduct.return($0 as Any) }) }()
+            let stubber = given.stub(for: Single<ApiResponseEntity<[RecommendSpotEntity]>>.self)
+            willProduce(stubber)
+            return given
+        }
+    }
+
+    public struct Verify {
+        fileprivate var method: MethodType
+
+        public static func getSpot(cityCode: Parameter<String>, startIndex: Parameter<Int>, category: Parameter<SpotCategory>) -> Verify { Verify(method: .m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(cityCode, startIndex, category)) }
+        public static func getSpot(lat: Parameter<Double>, lng: Parameter<Double>, startIndex: Parameter<Int>, category: Parameter<SpotCategory>) -> Verify { Verify(method: .m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(lat, lng, startIndex, category)) }
+    }
+
+    public struct Perform {
+        fileprivate var method: MethodType
+        var performs: Any
+
+        public static func getSpot(cityCode: Parameter<String>, startIndex: Parameter<Int>, category: Parameter<SpotCategory>, perform: @escaping (String, Int, SpotCategory) -> Void) -> Perform {
+            Perform(method: .m_getSpot__cityCode_cityCodestartIndex_startIndexcategory_category(cityCode, startIndex, category), performs: perform)
+        }
+
+        public static func getSpot(lat: Parameter<Double>, lng: Parameter<Double>, startIndex: Parameter<Int>, category: Parameter<SpotCategory>, perform: @escaping (Double, Double, Int, SpotCategory) -> Void) -> Perform {
+            Perform(method: .m_getSpot__lat_latlng_lngstartIndex_startIndexcategory_category(lat, lng, startIndex, category), performs: perform)
+        }
+    }
+
+    public func given(_ method: Given) {
+        methodReturnValues.append(method)
+    }
+
+    public func perform(_ method: Perform) {
+        methodPerformValues.append(method)
+        methodPerformValues.sort { $0.method.intValue() < $1.method.intValue() }
+    }
+
+    public func verify(_ method: Verify, count: Count = Count.moreOrEqual(to: 1), file: StaticString = #file, line: UInt = #line) {
+        let fullMatches = matchingCalls(method, file: file, line: line)
+        let success = count.matches(fullMatches)
+        let assertionName = method.method.assertionName()
+        let feedback: String = {
+            guard !success else { return "" }
+            return Utils.closestCallsMessage(
+                for: self.invocations.map { invocation in
+                    matcher.set(file: file, line: line)
+                    defer { matcher.clearFileAndLine() }
+                    return MethodType.compareParameters(lhs: invocation, rhs: method.method, matcher: matcher)
+                },
+                name: assertionName
+            )
+        }()
+        MockyAssert(success, "Expected: \(count) invocations of `\(assertionName)`, but was: \(fullMatches).\(feedback)", file: file, line: line)
+    }
+
+    private func addInvocation(_ call: MethodType) {
+        queue.sync { invocations.append(call) }
+    }
+
+    private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
+        matcher.set(file: file, line: line)
+        defer { matcher.clearFileAndLine() }
+        let candidates = sequencingPolicy.sorted(methodReturnValues, by: { $0.method.intValue() > $1.method.intValue() })
+        let matched = candidates.first(where: { $0.isValid && MethodType.compareParameters(lhs: $0.method, rhs: method, matcher: matcher).isFullMatch })
+        guard let product = matched?.getProduct(policy: stubbingPolicy) else { throw MockError.notStubed }
+        return product
+    }
+
+    private func methodPerformValue(_ method: MethodType) -> Any? {
+        matcher.set(file: file, line: line)
+        defer { matcher.clearFileAndLine() }
+        let matched = methodPerformValues.reversed().first { MethodType.compareParameters(lhs: $0.method, rhs: method, matcher: matcher).isFullMatch }
+        return matched?.performs
+    }
+
+    private func matchingCalls(_ method: MethodType, file: StaticString?, line: UInt?) -> [MethodType] {
+        matcher.set(file: file ?? self.file, line: line ?? self.line)
+        defer { matcher.clearFileAndLine() }
+        return invocations.filter { MethodType.compareParameters(lhs: $0, rhs: method, matcher: matcher).isFullMatch }
+    }
+
+    private func matchingCalls(_ method: Verify, file: StaticString?, line: UInt?) -> Int {
+        matchingCalls(method.method, file: file, line: line).count
+    }
+
+    private func givenGetterValue<T>(_ method: MethodType, _ message: String) -> T {
+        do {
+            return try methodReturnValue(method).casted()
+        } catch {
+            onFatalFailure(message)
+            Failure(message)
+        }
+    }
+
+    private func optionalGivenGetterValue<T>(_ method: MethodType, _ message: String) -> T? {
+        do {
+            return try methodReturnValue(method).casted()
+        } catch {
+            return nil
+        }
+    }
+
+    private func onFatalFailure(_ message: String) {
+        guard let file = self.file, let line = self.line else { return } // Let if fail if cannot handle gratefully
+        SwiftyMockyTestObserver.handleFatalError(message: message, file: file, line: line)
+    }
+}
+
 // MARK: - LocationGatewayProtocol
 
 open class LocationGatewayProtocolMock: LocationGatewayProtocol, Mock {

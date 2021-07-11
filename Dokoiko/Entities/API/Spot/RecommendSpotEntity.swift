@@ -8,7 +8,7 @@
 import Foundation
 
 /// 推薦スポットのEntity
-struct RecommendSpotEntity {
+struct RecommendSpotEntity: Codable {
     // 名称
     var name: String?
     // 地点情報

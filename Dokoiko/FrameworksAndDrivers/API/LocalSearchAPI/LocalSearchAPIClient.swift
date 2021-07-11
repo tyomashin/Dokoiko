@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 
 /// ローカルサーチAPIでスポットを取得するAPIクライアントが準拠するプロトコル
+/// sourcery: AutoMockable
 protocol LocalSearchAPIClientProtocol: ApiProtocol {
     /// 市区コードをもとにスポットを取得する
     /// - Parameters:
