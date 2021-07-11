@@ -37,7 +37,8 @@ extension LocalSearchAPIRequest: ApiRequestProtocol {
         var parameters: [String: String] = [
             "appid": APIKeys.LOCAL_SEARCH_API,
             "output": "json",
-            "results": "100"
+            "results": "100",
+            "sort": "-score"
         ]
         switch self {
         case let .spotWithCity(cityCode: cityCode, startIndex: startIndex, gc: gc):

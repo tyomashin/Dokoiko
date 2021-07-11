@@ -16,7 +16,7 @@ protocol GeoDBUseCaseProtocol {
 }
 
 /// エリア内の市区情報を取得するユースケース
-class GeoDBUseCase: GeoDBUseCaseProtocol {
+struct GeoDBUseCase: GeoDBUseCaseProtocol {
     private let geoDBGateway: GeoDBGatewayProtocol
 
     init(geoDBGateway: GeoDBGatewayProtocol) {

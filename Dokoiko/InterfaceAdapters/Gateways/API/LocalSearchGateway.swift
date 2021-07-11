@@ -38,6 +38,13 @@ protocol LocalSearchGatewayProtocol {
 /// スポット取得の責務を担うゲートウェイ
 struct LocalSearchGateway: LocalSearchGatewayProtocol {
     private let localSearchClient: LocalSearchAPIClientProtocol
+
+    /// ジャンルのブラックリスト
+    private let denyGenreList = [
+        "0304009", // ラブホテル
+        "04070" // 学習塾系
+    ]
+
     init(localSearchClient: LocalSearchAPIClientProtocol) {
         self.localSearchClient = localSearchClient
     }
@@ -49,7 +56,8 @@ struct LocalSearchGateway: LocalSearchGatewayProtocol {
             .map { result -> ApiResponseEntity<[RecommendSpotEntity]> in
                 switch result {
                 case let .success(response: response):
-                    let entityList = response.feature?.map { translate(apiObject: $0) }.compactMap { $0 } ?? []
+                    let featureList = self.excludeListWithDenyList(featureList: response.feature ?? [])
+                    let entityList = featureList.map { translate(apiObject: $0) }.compactMap { $0 }
                     return .success(response: entityList)
 
                 case let .error(error: error):
@@ -65,7 +73,8 @@ struct LocalSearchGateway: LocalSearchGatewayProtocol {
             .map { result -> ApiResponseEntity<[RecommendSpotEntity]> in
                 switch result {
                 case let .success(response: response):
-                    let entityList = response.feature?.map { translate(apiObject: $0) }.compactMap { $0 } ?? []
+                    let featureList = self.excludeListWithDenyList(featureList: response.feature ?? [])
+                    let entityList = featureList.map { translate(apiObject: $0) }.compactMap { $0 }
                     return .success(response: entityList)
 
                 case let .error(error: error):
@@ -117,5 +126,21 @@ extension LocalSearchGateway {
         case .lifestyle:
             return .lifestyle
         }
+    }
+
+    /// ブラックリストに登録しているジャンルのスポットをリストから除外する
+    private func excludeListWithDenyList(featureList: [LocalSearchAPIFeature]) -> [LocalSearchAPIFeature] {
+        featureList
+            .filter { feature in
+                for denyGenreCode in denyGenreList {
+                    for genre in feature.property?.genre ?? [] {
+                        // 除外する条件
+                        if genre.code?.contains(denyGenreCode) == true {
+                            return false
+                        }
+                    }
+                }
+                return true
+            }
     }
 }
