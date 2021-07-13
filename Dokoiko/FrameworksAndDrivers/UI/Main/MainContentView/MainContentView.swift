@@ -45,12 +45,9 @@ class MainContentView: UIView {
 
     /// 画面初期化時に呼ばれる
     private func initCustom() {
-        let bundle = Bundle(for: MainContentView.self)
-        guard let view = bundle.loadNibNamed("MainContentView", owner: self, options: nil)?.first as? UIView else {
-            return
-        }
-        view.frame = bounds
-        addSubview(view)
+        Bundle(for: MainContentView.self).loadNibNamed("MainContentView", owner: self, options: nil)
+        baseView.frame = bounds
+        addSubview(baseView)
 
         baseView.backgroundColor = Asset.backgroundColorPurple.color
         contentView.backgroundColor = Asset.backgroundColorPurple.color

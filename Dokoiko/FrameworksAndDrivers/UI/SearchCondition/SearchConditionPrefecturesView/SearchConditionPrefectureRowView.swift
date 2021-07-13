@@ -17,6 +17,7 @@ class SearchConditionPrefectureRowView: UIView {
     private var selectedIndex = 0
     private let disposeBag = DisposeBag()
 
+    @IBOutlet var baseView: UIView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var converButton: UIButton!
@@ -39,14 +40,11 @@ class SearchConditionPrefectureRowView: UIView {
 
     /// 画面初期化時に呼ばれる
     private func initCustom() {
-        let bundle = Bundle(for: SearchConditionPrefectureRowView.self)
-        guard let view = bundle.loadNibNamed("SearchConditionPrefectureRowView", owner: self, options: nil)?.first as? UIView else {
-            return
-        }
-        view.frame = bounds
-        addSubview(view)
+        Bundle(for: SearchConditionPrefectureRowView.self).loadNibNamed("SearchConditionPrefectureRowView", owner: self, options: nil)
+        baseView.frame = bounds
+        addSubview(baseView)
 
-        view.backgroundColor = Asset.backgroundColor.color
+        baseView.backgroundColor = Asset.backgroundColor.color
         topView.backgroundColor = Asset.backgroundColor.color
         titleLabel.font = .systemFont(ofSize: 18)
         titleLabel.textColor = Asset.textThinColor.color

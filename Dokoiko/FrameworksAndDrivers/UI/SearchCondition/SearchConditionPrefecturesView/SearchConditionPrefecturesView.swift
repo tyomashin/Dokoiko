@@ -20,6 +20,7 @@ class SearchConditionPrefecturesView: UIView {
     fileprivate let areaSelectedIndexRelay = BehaviorRelay<Int?>(value: nil)
     fileprivate let prefectureSelectedIndexRelay = BehaviorRelay<Int?>(value: nil)
 
+    @IBOutlet var baseView: UIView!
     @IBOutlet weak var stackView: UIStackView!
 
     /// コードからの初期化時に呼ばれる
@@ -36,14 +37,11 @@ class SearchConditionPrefecturesView: UIView {
 
     /// 画面初期化時に呼ばれる
     private func initCustom() {
-        let bundle = Bundle(for: SearchConditionPrefecturesView.self)
-        guard let view = bundle.loadNibNamed("SearchConditionPrefecturesView", owner: self, options: nil)?.first as? UIView else {
-            return
-        }
-        view.frame = bounds
-        addSubview(view)
+        Bundle(for: SearchConditionPrefecturesView.self).loadNibNamed("SearchConditionPrefecturesView", owner: self, options: nil)
+        baseView.frame = bounds
+        addSubview(baseView)
 
-        view.backgroundColor = Asset.backgroundColor.color
+        baseView.backgroundColor = Asset.backgroundColor.color
 
         initSearchConditionViews()
     }

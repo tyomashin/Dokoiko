@@ -25,6 +25,7 @@ class SearchConditionCurrentLocationView: UIView {
     // マップ上のサークル
     private var circle = GMSCircle()
 
+    @IBOutlet var baseView: UIView!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var currentButton: UIButton!
     @IBOutlet weak var noticeLabel: UILabel!
@@ -48,15 +49,12 @@ class SearchConditionCurrentLocationView: UIView {
 
     /// 画面初期化時に呼ばれる
     private func initCustom() {
-        let bundle = Bundle(for: SearchConditionCurrentLocationView.self)
-        guard let view = bundle.loadNibNamed("SearchConditionCurrentLocationView", owner: self, options: nil)?.first as? UIView else {
-            return
-        }
-        view.frame = bounds
-        addSubview(view)
+        Bundle(for: SearchConditionCurrentLocationView.self).loadNibNamed("SearchConditionCurrentLocationView", owner: self, options: nil)
+        baseView.frame = bounds
+        addSubview(baseView)
 
         // UI初期化
-        initUI(view: view)
+        initUI()
         // バインディング
         bindViews()
 
@@ -64,8 +62,8 @@ class SearchConditionCurrentLocationView: UIView {
     }
 
     /// UI初期化
-    private func initUI(view: UIView) {
-        view.backgroundColor = Asset.backgroundColor.color
+    private func initUI() {
+        baseView.backgroundColor = Asset.backgroundColor.color
         radiusView.backgroundColor = Asset.backgroundColor.color
         noticeLabel.textColor = Asset.textThinColor.color
         noticeLabel.font = .systemFont(ofSize: 14)

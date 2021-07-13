@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchConditionCurrentLocationView" customModule="Dokoiko" customModuleProvider="target">
             <connections>
+                <outlet property="baseView" destination="iN0-l3-epB" id="hMv-Id-hJY"/>
                 <outlet property="currentButton" destination="Rfs-F8-Pf8" id="Ico-tD-ANN"/>
                 <outlet property="mapView" destination="gGu-d8-QtQ" id="XpC-ly-d1N"/>
                 <outlet property="mapViewHeightConstraint" destination="dtx-wn-Q2q" id="vPK-Cm-0DK"/>

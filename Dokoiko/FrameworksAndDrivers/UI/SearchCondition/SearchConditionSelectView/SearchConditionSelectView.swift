@@ -21,6 +21,7 @@ class SearchConditionSelectView: UIView {
     private var buttonList = [UIButton]()
     private let disposeBag = DisposeBag()
 
+    @IBOutlet var baseView: UIView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var stackViewBottonSpacingConstraint: NSLayoutConstraint!
@@ -39,14 +40,11 @@ class SearchConditionSelectView: UIView {
 
     /// 画面初期化時に呼ばれる
     private func initCustom() {
-        let bundle = Bundle(for: SearchConditionSelectView.self)
-        guard let view = bundle.loadNibNamed("SearchConditionSelectView", owner: self, options: nil)?.first as? UIView else {
-            return
-        }
-        view.frame = bounds
-        addSubview(view)
+        Bundle(for: SearchConditionSelectView.self).loadNibNamed("SearchConditionSelectView", owner: self, options: nil)
+        baseView.frame = bounds
+        addSubview(baseView)
 
-        view.backgroundColor = Asset.backgroundColor.color
+        baseView.backgroundColor = Asset.backgroundColor.color
         emptyLabel.textColor = Asset.textThinColor.color
         emptyLabel.text = L10n.SearchCondition.empty
         emptyLabel.font = .systemFont(ofSize: 14)

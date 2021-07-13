@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchResultPanelButton" customModule="Dokoiko" customModuleProvider="target">
             <connections>
+                <outlet property="baseView" destination="iN0-l3-epB" id="HIZ-Dz-qIG"/>
                 <outlet property="coverButton" destination="zag-UG-BcF" id="b8V-9h-Lhr"/>
                 <outlet property="iconImageView" destination="yE8-lC-n3f" id="7rU-rD-NGZ"/>
                 <outlet property="titleLabel" destination="S3I-ge-6Dc" id="na3-HV-Sjo"/>

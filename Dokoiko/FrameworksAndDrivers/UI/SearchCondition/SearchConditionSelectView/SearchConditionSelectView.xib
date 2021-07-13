@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchConditionSelectView" customModule="Dokoiko" customModuleProvider="target">
             <connections>
+                <outlet property="baseView" destination="iN0-l3-epB" id="RUR-Xa-o0L"/>
                 <outlet property="emptyLabel" destination="vYV-Q5-gX7" id="1Db-Nh-e0j"/>
                 <outlet property="stackView" destination="U23-7Q-cHz" id="gA2-fV-Unn"/>
                 <outlet property="stackViewBottonSpacingConstraint" destination="l3U-aE-AX2" id="t1r-J3-lcp"/>

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchConditionPrefecturesView" customModule="Dokoiko" customModuleProvider="target">
             <connections>
+                <outlet property="baseView" destination="iN0-l3-epB" id="hLG-Wh-ygC"/>
                 <outlet property="stackView" destination="euT-Se-7UA" id="zBA-5P-YP6"/>
             </connections>
         </placeholder>

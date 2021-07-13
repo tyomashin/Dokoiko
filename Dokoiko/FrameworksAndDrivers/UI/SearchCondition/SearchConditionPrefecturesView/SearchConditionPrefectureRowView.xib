@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchConditionPrefectureRowView" customModule="Dokoiko" customModuleProvider="target">
             <connections>
+                <outlet property="baseView" destination="iN0-l3-epB" id="Lqh-kk-R7o"/>
                 <outlet property="converButton" destination="PwP-ok-cee" id="NRK-cR-IC8"/>
                 <outlet property="imageView" destination="glp-Hb-Xat" id="Kqa-lH-KKa"/>
                 <outlet property="pickerView" destination="GBT-dD-7cF" id="wD9-3e-Es4"/>

@@ -11,9 +11,9 @@ import UIKit
 
 /// 検索結果画面のパネルボタンView
 class SearchResultPanelButton: UIView {
-    weak var backgroundView: UIView?
     private let disposeBag = DisposeBag()
 
+    @IBOutlet var baseView: UIView!
     @IBOutlet weak var coverButton: UIButton!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -32,22 +32,18 @@ class SearchResultPanelButton: UIView {
 
     /// 画面初期化時に呼ばれる
     private func initCustom() {
-        let bundle = Bundle(for: SearchResultPanelButton.self)
-        guard let view = bundle.loadNibNamed("SearchResultPanelButton", owner: self, options: nil)?.first as? UIView else {
-            return
-        }
-        view.frame = bounds
-        backgroundView = view
-        addSubview(view)
+        Bundle(for: SearchResultPanelButton.self).loadNibNamed("SearchResultPanelButton", owner: self, options: nil)
+        baseView.frame = bounds
+        addSubview(baseView)
 
         // UI初期化
-        initUI(view: view)
+        initUI()
     }
 
     /// UI初期化
-    private func initUI(view: UIView) {
-        view.backgroundColor = Asset.backgroundColorWhite.color
-        view.layer.cornerRadius = 10
+    private func initUI() {
+        baseView.backgroundColor = Asset.backgroundColorWhite.color
+        baseView.layer.cornerRadius = 10
 
         titleLabel.font = .systemFont(ofSize: 18, weight: .bold)
         iconImageView.contentMode = .scaleAspectFit
@@ -57,14 +53,14 @@ class SearchResultPanelButton: UIView {
         coverButton
             .rx.controlEvent([.touchUpOutside, .touchUpInside])
             .subscribe(onNext: { [weak self] in
-                self?.backgroundView?.alpha = 1
+                self?.baseView?.alpha = 1
             })
             .disposed(by: disposeBag)
 
         coverButton
             .rx.controlEvent([.touchDown])
             .subscribe(onNext: { [weak self] in
-                self?.backgroundView?.alpha = 0.6
+                self?.baseView?.alpha = 0.6
             })
             .disposed(by: disposeBag)
     }
