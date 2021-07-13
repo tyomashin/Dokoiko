@@ -99,6 +99,11 @@ extension LocalSearchGateway {
         }
 
         let genre: [String]? = apiObject.property?.genre?.map(\.name).compactMap { $0 }
+        let coupons: [RecommendSpotCoupon]?
+        coupons = apiObject.property?.coupon?.map { coupon -> RecommendSpotCoupon in
+            let url = coupon.smartPhoneUrl != nil ? coupon.smartPhoneUrl : coupon.pcUrl
+            return RecommendSpotCoupon(name: coupon.name, url: url)
+        }
         let entity = RecommendSpotEntity(
             name: apiObject.name,
             lat: lat,
@@ -106,7 +111,8 @@ extension LocalSearchGateway {
             genre: genre,
             address: apiObject.property?.address,
             tel: apiObject.property?.tel1,
-            imageUrl: apiObject.property?.leadImage
+            imageUrl: apiObject.property?.leadImage,
+            coupons: coupons
         )
         return entity
     }

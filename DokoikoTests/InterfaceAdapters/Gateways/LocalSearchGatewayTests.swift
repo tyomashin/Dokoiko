@@ -56,7 +56,8 @@ class LocalSearchGatewayTests: XCTestCase {
                 address: "東京都新宿区",
                 tel1: "080-1234-5678",
                 genre: [LocalSearchAPIGenre(code: "", name: "genre1"), LocalSearchAPIGenre(code: "", name: "genre2")],
-                leadImage: "https://sample1"
+                leadImage: "https://sample1",
+                coupon: [LocalSearchAPICoupon(name: "sample", pcUrl: "https:pc", smartPhoneUrl: "https:phone")]
             )
         )
 
@@ -72,7 +73,8 @@ class LocalSearchGatewayTests: XCTestCase {
                 address: "大阪府中央区",
                 tel1: "111-2345-6780",
                 genre: [LocalSearchAPIGenre(code: "", name: "genre3"), LocalSearchAPIGenre(code: "", name: "genre4")],
-                leadImage: "https://sample2"
+                leadImage: "https://sample2",
+                coupon: [LocalSearchAPICoupon(name: "sample", pcUrl: "https:pc", smartPhoneUrl: nil)]
             )
         )
 
@@ -102,6 +104,9 @@ class LocalSearchGatewayTests: XCTestCase {
             XCTAssertEqual(firstEntity.address, sampleFeatureFirst.property?.address)
             XCTAssertEqual(firstEntity.tel, sampleFeatureFirst.property?.tel1)
             XCTAssertEqual(firstEntity.imageUrl, sampleFeatureFirst.property?.leadImage)
+            let couponFirst = firstEntity.coupons?.first
+            XCTAssertEqual(couponFirst?.name, "sample")
+            XCTAssertEqual(couponFirst?.url, "https:phone")
 
             XCTAssertEqual(lastEntity.name, sampleFeatureLast.name)
             XCTAssertEqual(lastEntity.lat, 55.000)
@@ -110,6 +115,10 @@ class LocalSearchGatewayTests: XCTestCase {
             XCTAssertEqual(lastEntity.address, sampleFeatureLast.property?.address)
             XCTAssertEqual(lastEntity.tel, sampleFeatureLast.property?.tel1)
             XCTAssertEqual(lastEntity.imageUrl, sampleFeatureLast.property?.leadImage)
+            let couponLast = lastEntity.coupons?.first
+            XCTAssertEqual(couponLast?.name, "sample")
+            XCTAssertEqual(couponLast?.url, "https:pc")
+
         case .error:
             XCTFail()
         }
@@ -127,6 +136,9 @@ class LocalSearchGatewayTests: XCTestCase {
             XCTAssertEqual(firstEntity.address, sampleFeatureFirst.property?.address)
             XCTAssertEqual(firstEntity.tel, sampleFeatureFirst.property?.tel1)
             XCTAssertEqual(firstEntity.imageUrl, sampleFeatureFirst.property?.leadImage)
+            let couponFirst = firstEntity.coupons?.first
+            XCTAssertEqual(couponFirst?.name, "sample")
+            XCTAssertEqual(couponFirst?.url, "https:phone")
 
             XCTAssertEqual(lastEntity.name, sampleFeatureLast.name)
             XCTAssertEqual(lastEntity.lat, 55.000)
@@ -135,6 +147,9 @@ class LocalSearchGatewayTests: XCTestCase {
             XCTAssertEqual(lastEntity.address, sampleFeatureLast.property?.address)
             XCTAssertEqual(lastEntity.tel, sampleFeatureLast.property?.tel1)
             XCTAssertEqual(lastEntity.imageUrl, sampleFeatureLast.property?.leadImage)
+            let couponLast = lastEntity.coupons?.first
+            XCTAssertEqual(couponLast?.name, "sample")
+            XCTAssertEqual(couponLast?.url, "https:pc")
         case .error:
             XCTFail()
         }

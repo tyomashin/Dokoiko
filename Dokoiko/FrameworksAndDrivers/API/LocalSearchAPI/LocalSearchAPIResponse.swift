@@ -73,6 +73,7 @@ struct LocalSearchAPIProperty: Codable {
         case tel1 = "Tel1"
         case genre = "Genre"
         case leadImage = "LeadImage"
+        case coupon = "Coupon"
     }
 
     var uid: String?
@@ -81,6 +82,7 @@ struct LocalSearchAPIProperty: Codable {
     var tel1: String?
     var genre: [LocalSearchAPIGenre]?
     var leadImage: String?
+    var coupon: [LocalSearchAPICoupon]?
 }
 
 /// ローカルサーチAPIのスポットジャンル
@@ -92,6 +94,19 @@ struct LocalSearchAPIGenre: Codable {
 
     var code: String?
     var name: String?
+}
+
+/// ローカルサーチAPIのクーポン
+struct LocalSearchAPICoupon: Codable {
+    enum CodingKeys: String, CodingKey {
+        case name = "Name"
+        case pcUrl = "PcUrl"
+        case smartPhoneUrl = "SmartPhoneUrl"
+    }
+
+    var name: String?
+    var pcUrl: String?
+    var smartPhoneUrl: String?
 }
 
 /// カテゴリ

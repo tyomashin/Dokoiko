@@ -22,4 +22,12 @@ struct RecommendSpotEntity: Codable {
     var tel: String?
     // 画像
     var imageUrl: String?
+    // クーポン
+    var coupons: [RecommendSpotCoupon]?
+}
+
+/// 推薦スポットのクーポン
+struct RecommendSpotCoupon: Codable {
+    var name: String?
+    var url: String?
 }
