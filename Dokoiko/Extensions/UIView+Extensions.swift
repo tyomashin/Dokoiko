@@ -47,4 +47,31 @@ extension UIView {
         layer.borderColor = color.cgColor
         layer.borderWidth = borderWidth
     }
+
+    /// 親Viewいっぱいに広げる制約をつける
+    func addFitConstraintOnParent(parentView: UIView) {
+        // Autosizingを無効にする
+        translatesAutoresizingMaskIntoConstraints = false
+        // 親Viewいっぱいになるように制約をつける
+        leadingAnchor.constraint(equalTo: parentView.leadingAnchor).isActive = true
+        topAnchor.constraint(equalTo: parentView.topAnchor).isActive = true
+        trailingAnchor.constraint(equalTo: parentView.trailingAnchor).isActive = true
+        bottomAnchor.constraint(equalTo: parentView.bottomAnchor).isActive = true
+
+        layoutIfNeeded()
+    }
+
+    /// 背景にブラー効果を与える
+    func addBackgroundBlur() {
+        // すでにブラーが追加されている場合は何もしない
+        if subviews.first(where: { ($0 as? UIVisualEffectView) != nil }) != nil {
+            return
+        }
+        let blurEffect = UIBlurEffect(style: .dark)
+        let visualEffectView = UIVisualEffectView(effect: blurEffect)
+        visualEffectView.frame = frame
+        addSubview(visualEffectView)
+        visualEffectView.addFitConstraintOnParent(parentView: self)
+        sendSubviewToBack(visualEffectView)
+    }
 }

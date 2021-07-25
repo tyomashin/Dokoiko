@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="436" id="Ood-3A-RGJ" customClass="RecommendPageCell" customModule="Dokoiko" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="636" height="436"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ood-3A-RGJ" id="UgF-8W-zOD">
+                <rect key="frame" x="0.0" y="0.0" width="636" height="436"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="olt-r2-cvu">
+                        <rect key="frame" x="30" y="25" width="576" height="240"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CDC-Lg-ld6">
+                                <rect key="frame" x="0.0" y="0.0" width="576" height="240"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TCA-CJ-R2f">
+                                <rect key="frame" x="10" y="5" width="556" height="48"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TCA-CJ-R2f" firstAttribute="leading" secondItem="olt-r2-cvu" secondAttribute="leading" constant="10" id="149-FN-NUX"/>
+                            <constraint firstItem="TCA-CJ-R2f" firstAttribute="top" secondItem="olt-r2-cvu" secondAttribute="top" constant="5" id="AZh-pF-kee"/>
+                            <constraint firstItem="TCA-CJ-R2f" firstAttribute="height" secondItem="olt-r2-cvu" secondAttribute="height" multiplier="0.2" id="Y78-xx-R1u"/>
+                            <constraint firstAttribute="bottom" secondItem="CDC-Lg-ld6" secondAttribute="bottom" id="bO3-Be-AML"/>
+                            <constraint firstItem="CDC-Lg-ld6" firstAttribute="leading" secondItem="olt-r2-cvu" secondAttribute="leading" id="cx7-rB-Qvd"/>
+                            <constraint firstAttribute="trailing" secondItem="CDC-Lg-ld6" secondAttribute="trailing" id="dPQ-LY-xlq"/>
+                            <constraint firstItem="CDC-Lg-ld6" firstAttribute="top" secondItem="olt-r2-cvu" secondAttribute="top" id="iWj-kH-zNR"/>
+                            <constraint firstItem="TCA-CJ-R2f" firstAttribute="width" secondItem="olt-r2-cvu" secondAttribute="width" priority="750" id="y3X-1L-zUD"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TCA-CJ-R2f" secondAttribute="trailing" constant="10" id="y9t-DX-Nii"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2b4-ar-8Qw">
+                        <rect key="frame" x="30" y="265" width="576" height="171"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0D-Te-QkX">
+                                <rect key="frame" x="20" y="10" width="536" height="111"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bn6-Xz-F79" customClass="IconLabelView" customModule="Dokoiko" customModuleProvider="target">
+                                <rect key="frame" x="20" y="131" width="150" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="R2J-Sc-iEZ"/>
+                                    <constraint firstAttribute="height" constant="30" id="SlV-WR-4kl"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ys-xW-U3O" customClass="LabelView" customModule="Dokoiko" customModuleProvider="target">
+                                <rect key="frame" x="476" y="136" width="80" height="25"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="rsZ-P9-65l"/>
+                                    <constraint firstAttribute="height" constant="25" id="zGJ-RE-fUh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4ys-xW-U3O" secondAttribute="trailing" constant="20" id="0LI-Qu-cXk"/>
+                            <constraint firstAttribute="trailing" secondItem="F0D-Te-QkX" secondAttribute="trailing" constant="20" id="1ZL-MB-Ol2"/>
+                            <constraint firstItem="F0D-Te-QkX" firstAttribute="top" secondItem="2b4-ar-8Qw" secondAttribute="top" constant="10" id="6gs-GM-Yub"/>
+                            <constraint firstAttribute="bottom" secondItem="4ys-xW-U3O" secondAttribute="bottom" constant="10" id="6tT-kb-uKP"/>
+                            <constraint firstItem="Bn6-Xz-F79" firstAttribute="leading" secondItem="2b4-ar-8Qw" secondAttribute="leading" constant="20" id="Qvl-PU-XcY"/>
+                            <constraint firstItem="F0D-Te-QkX" firstAttribute="leading" secondItem="2b4-ar-8Qw" secondAttribute="leading" constant="20" id="SBE-N1-BSE"/>
+                            <constraint firstAttribute="bottom" secondItem="Bn6-Xz-F79" secondAttribute="bottom" constant="10" id="cC3-Em-wes"/>
+                            <constraint firstItem="Bn6-Xz-F79" firstAttribute="top" secondItem="F0D-Te-QkX" secondAttribute="bottom" constant="10" id="dxU-fN-TLe"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="2b4-ar-8Qw" secondAttribute="trailing" constant="30" id="5uA-GQ-mth"/>
+                    <constraint firstAttribute="bottom" secondItem="2b4-ar-8Qw" secondAttribute="bottom" id="96f-uD-2jR"/>
+                    <constraint firstItem="olt-r2-cvu" firstAttribute="leading" secondItem="UgF-8W-zOD" secondAttribute="leading" constant="30" id="boJ-bN-2b4"/>
+                    <constraint firstItem="2b4-ar-8Qw" firstAttribute="top" secondItem="olt-r2-cvu" secondAttribute="bottom" id="dNy-x9-CqW"/>
+                    <constraint firstItem="2b4-ar-8Qw" firstAttribute="leading" secondItem="UgF-8W-zOD" secondAttribute="leading" constant="30" id="gQ1-6P-2GR"/>
+                    <constraint firstAttribute="trailing" secondItem="olt-r2-cvu" secondAttribute="trailing" constant="30" id="lx7-EG-Cj3"/>
+                    <constraint firstItem="olt-r2-cvu" firstAttribute="top" secondItem="UgF-8W-zOD" secondAttribute="top" constant="25" id="vLA-yC-y4A"/>
+                </constraints>
+            </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="olt-r2-cvu" firstAttribute="height" secondItem="Ood-3A-RGJ" secondAttribute="height" multiplier="0.55" id="wC2-SM-pNj"/>
+            </constraints>
+            <connections>
+                <outlet property="categoryStackView" destination="TCA-CJ-R2f" id="wFk-8B-ySf"/>
+                <outlet property="couponLabelView" destination="4ys-xW-U3O" id="2IH-ma-44n"/>
+                <outlet property="detailView" destination="2b4-ar-8Qw" id="ATF-Nr-Ovb"/>
+                <outlet property="distanceIconLabelView" destination="Bn6-Xz-F79" id="nXI-aT-xbg"/>
+                <outlet property="imageView" destination="CDC-Lg-ld6" id="Ptf-Fy-ghE"/>
+                <outlet property="nameLabel" destination="F0D-Te-QkX" id="HNt-n5-dmp"/>
+                <outlet property="topImageView" destination="CDC-Lg-ld6" id="6bd-2h-Fb9"/>
+                <outlet property="topView" destination="olt-r2-cvu" id="eOA-El-2g0"/>
+            </connections>
+            <point key="canvasLocation" x="-456.52173913043481" y="58.928571428571423"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

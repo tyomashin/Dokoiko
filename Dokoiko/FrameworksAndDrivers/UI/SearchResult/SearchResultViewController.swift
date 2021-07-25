@@ -108,7 +108,6 @@ class SearchResultViewController: UIViewController {
         closeButton.backgroundColor = Asset.backgroundColor.color
         closeButton.addBorderFrame(color: Asset.strokeColor.color)
 
-        panelAreaView.dropShadow()
         panelAreaView.backgroundColor = Asset.backgroundColorPurple.color
         panelAreaView.layer.cornerRadius = 10
         webSearchPanel.layer.cornerRadius = 10

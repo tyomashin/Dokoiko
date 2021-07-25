@@ -45,6 +45,7 @@ $ mint bootstrap
 * RxSwift      ... 非同期処理の補助、およびデータバインディング
 * Alamofire    ... ネットワーク通信の補助
 * OHHTTPStubs  ... APIClientのユニットテスト時にネットワーク通信をスタブ化
+* Kingfisher   ... 画像キャッシュ
 
 Carthage によってライブラリをビルドして xcframework を作成する。
 

@@ -48,7 +48,7 @@ class LocalSearchGatewayTests: XCTestCase {
             id: "aaa",
             gid: "aaa",
             name: "sample1",
-            geometry: LocalSearchAPIGeometry(type: "", coordinates: "35.000,123.55556666"),
+            geometry: LocalSearchAPIGeometry(type: "", coordinates: "123.55556666,35.000"),
             category: [],
             property: LocalSearchAPIProperty(
                 uid: "",
@@ -65,7 +65,7 @@ class LocalSearchGatewayTests: XCTestCase {
             id: "aaa",
             gid: "aaa",
             name: "sample2",
-            geometry: LocalSearchAPIGeometry(type: "", coordinates: "55.000,150.55556666"),
+            geometry: LocalSearchAPIGeometry(type: "", coordinates: "150.55556666,55.000"),
             category: [],
             property: LocalSearchAPIProperty(
                 uid: "",

@@ -22,6 +22,11 @@ internal enum StoryboardScene {
 
     internal static let initialScene = InitialSceneType<Dokoiko.MainViewController>(storyboard: Main.self)
   }
+  internal enum RecommendList: StoryboardType {
+    internal static let storyboardName = "RecommendList"
+
+    internal static let initialScene = InitialSceneType<Dokoiko.RecommendListViewController>(storyboard: RecommendList.self)
+  }
   internal enum SearchCondition: StoryboardType {
     internal static let storyboardName = "SearchCondition"
 

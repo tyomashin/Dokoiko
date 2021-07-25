@@ -114,9 +114,9 @@ enum LocalSearchAPICategoryType: String {
     // 飲食店
     case restaurant = "01"
     // ショッピング
-    case shopping = "02"
+    case shopping = "0204,0207,0209"
     // レジャー
-    case leisure = "03"
+    case leisure = "0302,0303,0305005"
     // ライフスタイル
-    case lifestyle = "04"
+    case lifestyle = "0418"
 }

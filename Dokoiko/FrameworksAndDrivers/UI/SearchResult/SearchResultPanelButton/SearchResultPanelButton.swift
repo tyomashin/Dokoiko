@@ -49,6 +49,8 @@ class SearchResultPanelButton: UIView {
         iconImageView.contentMode = .scaleAspectFit
         iconImageView.tintColor = Asset.iconBlackColor.color
 
+        baseView.dropShadow()
+
         // タップ時の見た目制御
         coverButton
             .rx.controlEvent([.touchUpOutside, .touchUpInside])

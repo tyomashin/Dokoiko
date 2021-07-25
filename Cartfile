@@ -5,3 +5,4 @@ github "realm/realm-cocoa" "v10.7.3"
 github "MakeAWishFoundation/SwiftyMocky" ~> 4.0.3
 binary "https://dl.google.com/geosdk/GoogleMaps.json"
 github "airbnb/lottie-ios" "master"
+github "onevcat/Kingfisher" ~> 6.0

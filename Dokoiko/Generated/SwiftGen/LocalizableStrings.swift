@@ -26,6 +26,11 @@ internal enum L10n {
     }
   }
 
+  internal enum Coupon {
+    /// クーポン
+    internal static let title = L10n.tr("Localizable", "coupon.title")
+  }
+
   internal enum Dialog {
     internal enum Message {
       internal enum Error {
@@ -110,6 +115,13 @@ internal enum L10n {
       /// スポット+ランキング
       internal static let queryDefault = L10n.tr("Localizable", "searchResult.webSearch.queryDefault")
     }
+  }
+
+  internal enum SpotList {
+    /// スポットが見つかりませんでした
+    internal static let empty = L10n.tr("Localizable", "spotList.empty")
+    /// スポット
+    internal static let title = L10n.tr("Localizable", "spotList.title")
   }
 
   internal enum Title {

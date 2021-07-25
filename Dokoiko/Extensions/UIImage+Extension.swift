@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Kingfisher
 import UIKit
 
 extension UIImage {
@@ -43,5 +44,39 @@ extension UIImage {
             }
         }
         return images
+    }
+
+    /// URLから画像を取得
+    static func getImage(urlStr: String, completion: ((UIImage?) -> Void)? = nil) {
+        DispatchQueue.global().async {
+            guard let url = URL(string: urlStr) else {
+                return
+            }
+            guard let data = try? Data(contentsOf: url) else {
+                return
+            }
+            let image = UIImage(data: data)
+            DispatchQueue.main.async {
+                completion?(image)
+            }
+        }
+    }
+
+    /// URLから画像を取得（キャッシュライブラリを使用）
+    static func getImageWithKingfisher(urlStr: String, completion: ((UIImage?) -> Void)? = nil) {
+        guard let url = URL(string: urlStr) else {
+            return
+        }
+        let kf = KingfisherManager.shared
+        let resource = ImageResource(downloadURL: url)
+        kf.retrieveImage(with: resource) { result in
+            switch result {
+            case let .success(image):
+                completion?(image.image)
+
+            case .failure:
+                break
+            }
+        }
     }
 }

@@ -35,3 +35,7 @@
 "searchResult.spotSearch.recommend.title" = "アプリの\n推薦スポット";
 "searchResult.mapTransition.title" = "マップで場所を確認";
 "searchResult.webSearch.queryDefault" = "スポット+ランキング";
+
+"spotList.title" = "スポット";
+"coupon.title" = "クーポン";
+"spotList.empty" = "スポットが見つかりませんでした";

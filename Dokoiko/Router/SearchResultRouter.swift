@@ -71,8 +71,7 @@ struct SearchResultRouter: SearchResultRouterProtocol {
             navigationController.pushViewController(searchResultVC, animated: true)
 
         case let .recommendSpot(searchResult: searchResult):
-            // TODO:
-            break
+            _ = RecommendListRouter(parentNaV: navigationController, searchResult: searchResult)
 
         case .close:
             navigationController.popViewController(animated: true)

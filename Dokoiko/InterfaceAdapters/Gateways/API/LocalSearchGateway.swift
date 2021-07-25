@@ -41,8 +41,12 @@ struct LocalSearchGateway: LocalSearchGatewayProtocol {
 
     /// ジャンルのブラックリスト
     private let denyGenreList = [
-        "0304009", // ラブホテル
-        "04070" // 学習塾系
+        "0205001", // コンビニ
+        "0205002",
+        "0206001", // リサイクル
+        "0206002",
+        "0206003",
+        "0211001" // 通信販売
     ]
 
     init(localSearchClient: LocalSearchAPIClientProtocol) {
@@ -91,11 +95,11 @@ extension LocalSearchGateway {
         var lng: Double?
 
         let coordinates = apiObject.geometry?.coordinates?.components(separatedBy: ",")
-        if let latStr = coordinates?.first {
-            lat = Double(latStr)
-        }
-        if let lngStr = coordinates?.last {
+        if let lngStr = coordinates?.first {
             lng = Double(lngStr)
+        }
+        if let latStr = coordinates?.last {
+            lat = Double(latStr)
         }
 
         let genre: [String]? = apiObject.property?.genre?.map(\.name).compactMap { $0 }

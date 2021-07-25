@@ -38,7 +38,7 @@ extension LocalSearchAPIRequest: ApiRequestProtocol {
             "appid": APIKeys.LOCAL_SEARCH_API,
             "output": "json",
             "results": "100",
-            "sort": "-score"
+            "sort": "-rating"
         ]
         switch self {
         case let .spotWithCity(cityCode: cityCode, startIndex: startIndex, gc: gc):
@@ -49,7 +49,7 @@ extension LocalSearchAPIRequest: ApiRequestProtocol {
         case let .spotWithLocation(lat: lat, lng: lng, startIndex: startIndex, gc: gc):
             parameters["lat"] = lat
             parameters["lon"] = lng
-            parameters["dist"] = "10"
+            parameters["dist"] = "5"
             parameters["start"] = startIndex
             parameters["gc"] = gc
         }

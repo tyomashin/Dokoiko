@@ -14,6 +14,8 @@ struct RecommendSpotEntity: Codable {
     // 地点情報
     var lat: Double?
     var lng: Double?
+    // 距離
+    var distanceKM: Double?
     // ジャンル文字列
     var genre: [String]?
     // 住所
