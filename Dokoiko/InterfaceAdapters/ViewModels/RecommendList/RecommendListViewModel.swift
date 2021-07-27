@@ -157,7 +157,9 @@ class RecommendListViewModel: RecommendListViewModelProtocol {
                 case let .success(response: result):
                     // 距離を計算してスポットEntityに格納
                     let newResult = result.map { self.calcSpotDistance(spot: $0, location: location) }
-                    return .success(response: newResult)
+                    // 重複スポットを削除する
+                    let narrowSpotList = self.deleteDuplicateSpot(spotList: newResult)
+                    return .success(response: narrowSpotList)
 
                 case let .error(error: error):
                     return .error(error: error)
@@ -180,6 +182,45 @@ class RecommendListViewModel: RecommendListViewModelProtocol {
                 self.spotEntityDataRelay.accept(newSpotDatas)
             })
             .disposed(by: disposeBag)
+    }
+
+    /// 重複するスポットを削除する
+    /// - Parameter spotList: 対象のスポットリスト
+    /// - Returns: 重複要素を削除したスポットリスト
+    private func deleteDuplicateSpot(spotList: [RecommendSpotEntity]) -> [RecommendSpotEntity] {
+        spotList.reduce(into: [RecommendSpotEntity]()) { currentList, newSpot in
+            // 重複フラグ
+            var isDuplicate = false; var targetIndex: Int?
+            // 緯度経度が一致するスポットが存在する場合
+            if let index = currentList.firstIndex(where: { $0.lat == newSpot.lat && $0.lng == newSpot.lng }) {
+                // 重複フラグを立てる
+                isDuplicate = true; targetIndex = index
+            }
+            // 名前の部分一致を含む場合(かつ距離が100m以内の店舗の場合)
+            else if let index = currentList.firstIndex(where: {
+                // スポット間の距離が100m以内の場合
+                if let firstDistance = $0.distanceKM, let secondDistance = newSpot.distanceKM, fabs(firstDistance - secondDistance) <= 0.1 {
+                    // かつ、片方のスポットの名称の一部がもう片方に含まれている場合
+                    if let firstName = $0.name?.components(separatedBy: CharacterSet(charactersIn: " 　")).joined(),
+                       let secondName = newSpot.name?.components(separatedBy: CharacterSet(charactersIn: " 　")).joined(),
+                       firstName.contains(secondName) || secondName.contains(firstName) {
+                        return true
+                    } else { return false }
+                } else { return false }
+            }) {
+                // 重複フラグを立てる
+                isDuplicate = true; targetIndex = index
+            }
+
+            if isDuplicate, let index = targetIndex {
+                // 画像URLがある方を優先する
+                if currentList[index].imageUrl == nil, newSpot.imageUrl != nil { currentList[index] = newSpot }
+                // カテゴリが多い方を優先する
+                else if let couponCount = currentList[index].coupons?.count, couponCount < (newSpot.coupons?.count ?? 0) { currentList[index] = newSpot }
+            }
+            // 重複スポットが存在しない場合
+            else { currentList.append(newSpot) }
+        }
     }
 
     /// 距離を計算して返す
