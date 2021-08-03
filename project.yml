@@ -131,8 +131,9 @@ targets:
         INFOPLIST_FILE: DokoikoTests/Info.plist
     dependencies:
       - target: Dokoiko
-      # テスト用のフレームワークをメインターゲットで指定すると、シミュレーターで実行する際にエラーが出るためテストターゲットのみで指定
+      # テスト用のフレームワークをメインターゲットで指定すると、シミュレーターで実行する際にエラーが出る.
       # https://github.com/Carthage/Carthage/issues/1717
+      # -> 1度シミュレーターでのテストを実行してからだと、ライブラリが読み込まれているため正常に起動できる
       #- framework: Carthage/Build/RxBlocking.xcframework
       #- framework: Carthage/Build/RxTest.xcframework
 

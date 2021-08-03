@@ -28,8 +28,26 @@ struct RecommendSpotEntity: Codable {
     var coupons: [RecommendSpotCoupon]?
 }
 
+extension RecommendSpotEntity: Equatable {
+    static func == (lhs: RecommendSpotEntity, rhs: RecommendSpotEntity) -> Bool {
+        if lhs.name == rhs.name,
+           lhs.lat == rhs.lat,
+           lhs.lng == rhs.lng,
+           lhs.distanceKM == rhs.distanceKM,
+           lhs.genre == rhs.genre,
+           lhs.address == rhs.address,
+           lhs.tel == rhs.tel,
+           lhs.imageUrl == rhs.imageUrl,
+           lhs.coupons == rhs.coupons {
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
 /// 推薦スポットのクーポン
-struct RecommendSpotCoupon: Codable {
+struct RecommendSpotCoupon: Codable, Equatable {
     var name: String?
     var url: String?
 }

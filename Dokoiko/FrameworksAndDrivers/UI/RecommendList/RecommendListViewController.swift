@@ -10,6 +10,7 @@ import RxSwift
 import UIKit
 
 /// 推薦リスト画面が準拠するプロトコル
+/// sourcery: AutoMockable
 protocol RecommendListVCProtocol: AnyObject {
     /// 閉じるボタンがタップされた時のイベント
     var tapCloseButton: Driver<Void> { get }
