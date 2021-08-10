@@ -86,6 +86,23 @@ targets:
                   echo "failed SwiftGen Run Script"
                 fi
         name: Run Script (SwiftGen)
+      - script: |
+                if which mint >/dev/null; then
+                  xcrun --sdk macosx mint run carthage copy-frameworks
+                else
+                  echo "failed SwiftGen Run Script"
+                fi
+        name: Run Script (Copy Framework)
+        inputFiles:
+          - $(SRCROOT)/Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator/RxBlocking.framework
+          - $(SRCROOT)/Carthage/Build/RxTest.xcframework/ios-arm64_i386_x86_64-simulator/RxTest.framework
+          - $(SRCROOT)/Carthage/Build/iOS/Realm.framework
+          - $(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework
+        outputFiles:
+          - $(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxBlocking.framework
+          - $(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxTest.framework
+          - $(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework
+          - $(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework
     # 依存するライブラリなどを指定
     dependencies:
       - framework: Carthage/Build/RxSwift.xcframework
@@ -93,8 +110,9 @@ targets:
       - framework: Carthage/Build/RxRelay.xcframework
       - framework: Carthage/Build/Alamofire.xcframework
       - framework: Carthage/Build/OHHTTPStubs.xcframework
-      - framework: Carthage/Build/RealmSwift.xcframework
-      - framework: Carthage/Build/Realm.xcframework
+      # RealmはCarthageでXCFrameworkを作成できないため、frameworkで指定
+      #- framework: Carthage/Build/iOS/RealmSwift.framework
+      #- framework: Carthage/Build/iOS/Realm.framework
       - framework: Carthage/Build/SwiftyMocky.xcframework
       - framework: Carthage/Build/SwiftyPrototype.xcframework
       - framework: Carthage/Build/Lottie.xcframework
@@ -109,11 +127,15 @@ targets:
         embed: false
       - carthage: GoogleMapsCore
         embed: false
+      - carthage: Realm
+        embed: false
+      - carthage: RealmSwift
+        embed: false
       - sdk: libc++.tbd
       - sdk: libz.tbd
       - sdk: CoreTelephony.framework
-      - framework: Carthage/Build/RxBlocking.xcframework
-      - framework: Carthage/Build/RxTest.xcframework
+      #- framework: Carthage/Build/RxBlocking.xcframework
+      #- framework: Carthage/Build/RxTest.xcframework
 
   DokoikoTests:
     type: bundle.unit-test
@@ -131,11 +153,11 @@ targets:
         INFOPLIST_FILE: DokoikoTests/Info.plist
     dependencies:
       - target: Dokoiko
-      # テスト用のフレームワークをメインターゲットで指定すると、シミュレーターで実行する際にエラーが出る.
-      # https://github.com/Carthage/Carthage/issues/1717
-      # -> 1度シミュレーターでのテストを実行してからだと、ライブラリが読み込まれているため正常に起動できる
-      #- framework: Carthage/Build/RxBlocking.xcframework
-      #- framework: Carthage/Build/RxTest.xcframework
+      # memo: テスト用のフレームワークをメインターゲットで指定すると実行時にエラーが出るため、テストターゲットで指定している
+      # memo: Test Target には XCFramework が使えないため、シミュレータ用のframeworkのみ指定している
+      # https://dev.classmethod.jp/articles/build-carthage-use-xcframework/
+      - framework: Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator/RxBlocking.framework
+      - framework: Carthage/Build/RxTest.xcframework/ios-arm64_i386_x86_64-simulator/RxTest.framework  
 
   DokoikoUITests:
     type: bundle.ui-testing
@@ -148,8 +170,8 @@ targets:
         INFOPLIST_FILE: DokoikoUITests/Info.plist
     dependencies:
       - target: Dokoiko
-      #- framework: Carthage/Build/RxBlocking.xcframework
-      #- framework: Carthage/Build/RxTest.xcframework
+      - framework: Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator/RxBlocking.framework
+      - framework: Carthage/Build/RxTest.xcframework/ios-arm64_i386_x86_64-simulator/RxTest.framework  
 
 
 # スキームの設定。一旦参考サイトをコピペで記載している
