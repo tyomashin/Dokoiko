@@ -10,6 +10,8 @@
 "dialog.title.error" = "エラー";
 "dialog.message.error.searchLoading" = "検索に失敗しました";
 "dialog.message.error.searchLoading.empty" = "有効な場所が見つかりませんでした。検索条件を変更してみてください";
+"dialog.message.error.couponEmpty" = "本クーポンのURLは無効です";
+
 "btn.searchCondition.search" = "地域をランダムに検索";
 "btn.searchCondition.prefectures" = "都道府県から探す";
 "btn.searchCondition.currentLocation" = "現在地の近くから探す";
@@ -38,4 +40,10 @@
 
 "spotList.title" = "スポット";
 "coupon.title" = "クーポン";
+"access.title" = "アクセス";
 "spotList.empty" = "スポットが見つかりませんでした";
+"spotDetail.title" = "スポットの詳細";
+"spotDetail.address.empty" = "住所: --";
+"spotDetail.tel.empty" = "TEL: --";
+"spotDetail.link.route" = "経路案内";
+"spotDetail.link.web" = "Webサイト";

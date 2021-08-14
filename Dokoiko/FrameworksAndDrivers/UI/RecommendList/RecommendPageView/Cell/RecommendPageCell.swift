@@ -23,7 +23,6 @@ class RecommendPageCell: UITableViewCell {
     private func initCustom() {
         backgroundColor = Asset.backgroundColor.color
         contentView.backgroundColor = Asset.backgroundColor.color
-        distanceIconLabelView.backgroundColor = Asset.backgroundColorWhite.color
         topView.backgroundColor = Asset.primaryColor.color
         topView.addBackgroundBlur()
 

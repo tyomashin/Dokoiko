@@ -47,15 +47,18 @@ class LabelView: UIView {
     ///   - text: 文言
     ///   - textColor: 文字色
     ///   - viewColor: 背景色
+    ///   - textSize: テキストサイズ
     /// - Returns: Viewのサイズ
     @discardableResult
     func setDetails(
         text: String,
         textColor: UIColor = Asset.textColorWhite.color,
-        viewColor: UIColor = Asset.backgroundColor.color
+        viewColor: UIColor = Asset.backgroundColor.color,
+        textSize: CGFloat = 10
     ) -> CGFloat {
         label.text = text
         label.textColor = textColor
+        label.font = .boldSystemFont(ofSize: textSize)
         baseView.backgroundColor = viewColor
 
         // 横幅を計算

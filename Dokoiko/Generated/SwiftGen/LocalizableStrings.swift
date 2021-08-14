@@ -11,6 +11,11 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
 
+  internal enum Access {
+    /// アクセス
+    internal static let title = L10n.tr("Localizable", "access.title")
+  }
+
   internal enum Btn {
     /// 閉じる
     internal static let close = L10n.tr("Localizable", "btn.close")
@@ -34,6 +39,8 @@ internal enum L10n {
   internal enum Dialog {
     internal enum Message {
       internal enum Error {
+        /// 本クーポンのURLは無効です
+        internal static let couponEmpty = L10n.tr("Localizable", "dialog.message.error.couponEmpty")
         /// 検索に失敗しました
         internal static let searchLoading = L10n.tr("Localizable", "dialog.message.error.searchLoading")
         internal enum SearchLoading {
@@ -114,6 +121,25 @@ internal enum L10n {
     internal enum WebSearch {
       /// スポット+ランキング
       internal static let queryDefault = L10n.tr("Localizable", "searchResult.webSearch.queryDefault")
+    }
+  }
+
+  internal enum SpotDetail {
+    /// スポットの詳細
+    internal static let title = L10n.tr("Localizable", "spotDetail.title")
+    internal enum Address {
+      /// 住所: --
+      internal static let empty = L10n.tr("Localizable", "spotDetail.address.empty")
+    }
+    internal enum Link {
+      /// 経路案内
+      internal static let route = L10n.tr("Localizable", "spotDetail.link.route")
+      /// Webサイト
+      internal static let web = L10n.tr("Localizable", "spotDetail.link.web")
+    }
+    internal enum Tel {
+      /// TEL: --
+      internal static let empty = L10n.tr("Localizable", "spotDetail.tel.empty")
     }
   }
 

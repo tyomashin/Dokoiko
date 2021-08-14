@@ -62,12 +62,12 @@ extension UIView {
     }
 
     /// 背景にブラー効果を与える
-    func addBackgroundBlur() {
+    func addBackgroundBlur(style: UIBlurEffect.Style = .dark) {
         // すでにブラーが追加されている場合は何もしない
         if subviews.first(where: { ($0 as? UIVisualEffectView) != nil }) != nil {
             return
         }
-        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffect = UIBlurEffect(style: style)
         let visualEffectView = UIVisualEffectView(effect: blurEffect)
         visualEffectView.frame = frame
         addSubview(visualEffectView)

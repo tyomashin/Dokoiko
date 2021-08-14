@@ -87,6 +87,15 @@ class RecommendListViewModel: RecommendListViewModelProtocol {
             })
             .disposed(by: disposeBag)
 
+        // スポット選択を検知
+        view
+            .tapSpot
+            .drive(onNext: { [weak self] spotInfo in
+                // 画面遷移
+                self?.router.navigate(to: .recommendDetail(spot: spotInfo.spot, spotCategory: spotInfo.category))
+            })
+            .disposed(by: disposeBag)
+
         // ページ変化を検知
         view
             .currentPage

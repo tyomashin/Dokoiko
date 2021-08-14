@@ -13,7 +13,7 @@ enum RecommendListNavigationDestination {
     // 推薦リスト表示
     case recommendList(searchResult: SearchResultEntity)
     // 推薦スポット詳細表示
-    case recommendDetail(spot: RecommendSpotEntity)
+    case recommendDetail(spot: RecommendSpotEntity, spotCategory: SpotCategory)
     // 閉じる
     case close
 }
@@ -65,9 +65,9 @@ struct RecommendListRouter: RecommendListRouterProtocol {
             vc.inject(viewModel: viewModel)
             navigationController.pushViewController(vc, animated: true)
 
-        case let .recommendDetail(spot: spot):
-            // TODO:
-            break
+        case let .recommendDetail(spot: spot, spotCategory: spotCategory):
+            let detailRouter = RecommendDetailRouter(navigationController: navigationController)
+            detailRouter.navigate(to: .recommendDetail(spotEntity: spot, spotCategory: spotCategory))
 
         case .close:
             navigationController.dismiss(animated: true, completion: nil)

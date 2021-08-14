@@ -12,8 +12,12 @@ import UIKit
 /// 推薦リスト画面が準拠するプロトコル
 /// sourcery: AutoMockable
 protocol RecommendListVCProtocol: AnyObject {
+    typealias SpotInfo = (spot: RecommendSpotEntity, category: SpotCategory)
+
     /// 閉じるボタンがタップされた時のイベント
     var tapCloseButton: Driver<Void> { get }
+    /// スポットがタップされた時のイベント
+    var tapSpot: Driver<SpotInfo> { get }
     /// 現在のページ
     var currentPage: Driver<Int> { get }
 }
@@ -296,6 +300,12 @@ extension RecommendListViewController: UIScrollViewDelegate {
 extension RecommendListViewController: RecommendListVCProtocol {
     var tapCloseButton: Driver<Void> {
         Driver.merge(closeButton.rx.tap.asDriver(), floatCloseButton.rx.tap.asDriver())
+    }
+
+    var tapSpot: Driver<SpotInfo> {
+        Driver.merge(
+            spotViewList.map(\.spotPageView.rx.selectedSpot)
+        )
     }
 
     var currentPage: Driver<Int> {

@@ -22,13 +22,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vl1-Z2-aTs">
-                    <rect key="frame" x="10" y="16" width="129" height="129"/>
+                    <rect key="frame" x="10" y="24" width="112.5" height="113"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="vl1-Z2-aTs" secondAttribute="height" multiplier="1:1" id="fIu-mB-rCt"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liq-JT-Eli">
-                    <rect key="frame" x="159" y="29" width="268" height="103"/>
+                    <rect key="frame" x="142.5" y="35.5" width="284.5" height="90"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                 <constraint firstItem="vl1-Z2-aTs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="JdD-5r-HN0"/>
                 <constraint firstItem="liq-JT-Eli" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="JyP-Rn-3ri"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="liq-JT-Eli" secondAttribute="trailing" constant="20" id="Omz-8c-1uX"/>
-                <constraint firstItem="vl1-Z2-aTs" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.8" id="WeB-s3-NRG"/>
+                <constraint firstItem="vl1-Z2-aTs" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.7" id="WeB-s3-NRG"/>
                 <constraint firstItem="liq-JT-Eli" firstAttribute="height" secondItem="vl1-Z2-aTs" secondAttribute="height" multiplier="0.8" id="c2s-ms-8T8"/>
                 <constraint firstItem="liq-JT-Eli" firstAttribute="leading" secondItem="vl1-Z2-aTs" secondAttribute="trailing" constant="20" id="d6V-6W-nPa"/>
                 <constraint firstItem="vl1-Z2-aTs" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="vme-4y-k5Y"/>

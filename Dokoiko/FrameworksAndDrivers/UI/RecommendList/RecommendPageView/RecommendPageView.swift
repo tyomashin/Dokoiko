@@ -34,6 +34,8 @@ class RecommendPageView: UIView {
     private var spotCategory = SpotCategory.leisure
     /// スクロールイベント
     let scrollInfoRelay = BehaviorRelay<ScrollInfo?>(value: nil)
+    /// セルの選択イベント
+    let selectedCellRelay = BehaviorRelay<RecommendListVCProtocol.SpotInfo?>(value: nil)
 
     @IBOutlet var baseView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -177,6 +179,12 @@ extension RecommendPageView: UITableViewDataSource {
 
         return cell
     }
+
+    /// セルが選択された時に呼ばれる
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let spot = spotEntityList[indexPath.row]
+        selectedCellRelay.accept((spot, spotCategory))
+    }
 }
 
 extension Reactive where Base: RecommendPageView {
@@ -197,5 +205,10 @@ extension Reactive where Base: RecommendPageView {
     /// リストスクロール時の情報
     var scrollInfo: Driver<Base.ScrollInfo> {
         base.scrollInfoRelay.asDriver().compactMap { $0 }
+    }
+
+    /// セルが選択された時のイベント
+    var selectedSpot: Driver<RecommendListVCProtocol.SpotInfo> {
+        base.selectedCellRelay.asDriver().compactMap { $0 }
     }
 }
