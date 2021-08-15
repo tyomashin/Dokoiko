@@ -24,7 +24,7 @@ protocol RecommendDetailViewModelProtocol: AnyObject {
 /// 推薦詳細画面のViewModel
 class RecommendDetailViewModel: RecommendDetailViewModelProtocol {
     private weak var view: RecommendDetailVCProtocol?
-    private let router: RecommendDetailRouter
+    private let router: RecommendDetailRouterProtocol
     private let spotEntity: RecommendSpotEntity
     private let spotCategory: SpotCategory
     private let disposeBag = DisposeBag()
@@ -43,7 +43,7 @@ class RecommendDetailViewModel: RecommendDetailViewModelProtocol {
 
     init(
         view: RecommendDetailVCProtocol,
-        router: RecommendDetailRouter,
+        router: RecommendDetailRouterProtocol,
         spotEntity: RecommendSpotEntity,
         spotCategory: SpotCategory
     ) {

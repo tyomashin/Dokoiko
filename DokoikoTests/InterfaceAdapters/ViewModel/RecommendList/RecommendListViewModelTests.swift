@@ -38,6 +38,7 @@ class RecommendListViewModelTests: XCTestCase {
         // モックにダミーデータを入れておく
         Given(view, .currentPage(getter: .empty()))
         Given(view, .tapCloseButton(getter: .empty()))
+        Given(view, .tapSpot(getter: .empty()))
     }
 
     override func tearDownWithError() throws {
