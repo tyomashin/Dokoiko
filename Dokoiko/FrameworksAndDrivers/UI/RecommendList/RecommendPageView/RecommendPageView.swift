@@ -36,6 +36,10 @@ class RecommendPageView: UIView {
     let scrollInfoRelay = BehaviorRelay<ScrollInfo?>(value: nil)
     /// セルの選択イベント
     let selectedCellRelay = BehaviorRelay<RecommendListVCProtocol.SpotInfo?>(value: nil)
+    /// リスト初期化済みフラグ
+    private var isListInitFlag = false
+    /// 一時保存中のTableViewのOFFSET
+    private var tmpContentOffset: CGPoint?
 
     @IBOutlet var baseView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -98,6 +102,7 @@ class RecommendPageView: UIView {
 
         // 読み込み完了状態
         case let .complete(category: category, spotList: spotList):
+            isListInitFlag = true
             // リストが空の場合
             if spotList.isEmpty {
                 // エンプティステート
@@ -115,6 +120,14 @@ class RecommendPageView: UIView {
                 loadingImageView.isHidden = true
                 loadingImageView.animationImages = nil
                 emptyLabel.isHidden = true
+                // OFFSETが渡されている場合は反映
+                if let offset = tmpContentOffset {
+                    tableView.delegate = nil
+                    tableView.setContentOffset(offset, animated: false)
+                    currentTopOffset = offset.y
+                    tmpContentOffset = nil
+                    tableView.delegate = self
+                }
                 // データをリロードする
                 spotCategory = category
                 spotEntityList = spotList
@@ -133,6 +146,23 @@ class RecommendPageView: UIView {
         // リピートする
         loadingImageView.animationRepeatCount = 0
         loadingImageView.startAnimating()
+    }
+
+    /// TableViewのオフセットを調整する
+    func setContentOffset(newOffset: CGPoint) {
+        // すでにスポットを表示している場合はここでTableViewのオフセットを反映
+        if isListInitFlag {
+            // memo: scrollViewDidScrollがトリガーされないようにする
+            // 参考：https://codehero.jp/ios/9418311/setting-contentoffset-programmatically-triggers-scrollviewdidscroll
+            tableView.delegate = nil
+            tableView.setContentOffset(newOffset, animated: false)
+            currentTopOffset = newOffset.y
+            tableView.delegate = self
+        }
+        // まだスポットを表示していない場合、一時的にオフセットを保持
+        else {
+            tmpContentOffset = newOffset
+        }
     }
 }
 

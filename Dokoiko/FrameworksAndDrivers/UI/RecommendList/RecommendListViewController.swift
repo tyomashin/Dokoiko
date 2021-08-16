@@ -220,7 +220,7 @@ class RecommendListViewController: UIViewController {
                 }
                 if targetView.tableView.contentOffset.y >= -topInset, targetView.tableView.contentOffset.y <= -tabView.frame.height {
                     let newOffset = CGPoint(x: 0, y: (-tabView.frame.height - headerView.frame.height) - headerViewTopConstraints.constant)
-                    targetView.tableView.setContentOffset(newOffset, animated: false)
+                    targetView.setContentOffset(newOffset: newOffset)
                 }
             }
         }
@@ -257,7 +257,7 @@ class RecommendListViewController: UIViewController {
                     }
                     if targetView.tableView.contentOffset.y <= 0 {
                         let newOffset = CGPoint(x: 0, y: (-tabView.frame.height - headerView.frame.height) - headerViewTopConstraints.constant)
-                        targetView.tableView.setContentOffset(newOffset, animated: false)
+                        targetView.setContentOffset(newOffset: newOffset)
                     }
                 }
             }
