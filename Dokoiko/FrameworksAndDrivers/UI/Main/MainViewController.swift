@@ -56,67 +56,6 @@ class MainViewController: UIViewController {
             bindViewModel(viewModel: viewModel)
             viewModel.loadedViews()
         }
-
-        /*
-         let hoge = WikiDataUseCase(wikiDataGateway: WikiDataGateway(wikiDataClient: WikiDataAPIClient()))
-         hoge.getWikiData(wikiCode: "Q750569")
-         .subscribe { result in
-         print(result)
-         }
-
-         LocationManager
-         .shared
-         .requestLocationAuth()
-         .filter {
-         $0 != .notDetermined
-         }
-         .take(1)
-         .flatMap { _ in
-         LocationManager.shared.getCurrentLocation()
-         }
-         .subscribe(onNext: {
-         print($0)
-         })
-
-         ResasUseCase(resasGateway: ResasGateway(resasAPIClient: ResasAPIClient()))
-         .getCitiesInPrefecture(prefCode: "2")
-         .subscribe(onSuccess: { result in
-         switch result {
-         case let .success(response: response):
-         response.result?.forEach { data in
-         print(data.cityName!, data.cityName!.isCheckRegularExpression(pattern: "^.*[市区]$"))
-         }
-
-         case let .error(error: error):
-         print(error)
-         }
-         })
-
-         GeoDBGateway(geoDBAPIClient: GeoDBAPIClient())
-         .getCitiesInArea(lat: 34.74124244449794, lng: 135.39854344652093, radiusKM: 10.55555)
-         .subscribe(onSuccess: { result in
-         switch result {
-         case let .success(response: response):
-         print(response)
-
-         case let .error(error: error):
-         print(error)
-         }
-         })
-         */
-        /*
-         GeoDBAPIClient()
-         .getCitiesInArea(location: "+34.74124244449794+135.39854344652093", radiusKM: "10")
-         .subscribe(onSuccess: { result in
-         switch result {
-         case let .success(response: response):
-         print(response)
-
-         case let .error(error: error):
-         print(error)
-         }
-         })
-         */
     }
 
     override func viewWillAppear(_ animated: Bool) {

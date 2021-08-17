@@ -11,6 +11,7 @@ import UIKit
 class MainContentCell: UITableViewCell {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var leftView: UIView!
+    @IBOutlet weak var leftLabel: UILabel!
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var subLabel: UILabel!
     @IBOutlet weak var borderView: UIView!
@@ -21,7 +22,10 @@ class MainContentCell: UITableViewCell {
         containerView.backgroundColor = Asset.backgroundColorPurple.color
         leftView.backgroundColor = Asset.backgroundColorWhite.color
         leftView.layer.cornerRadius = 5
+        leftLabel.textColor = Asset.textThinColor.color
+        leftLabel.font = .boldSystemFont(ofSize: 18)
         borderView.backgroundColor = Asset.strokeColor.color
+        borderView.isHidden = true
         mainLabel.textColor = Asset.textColor.color
         subLabel.textColor = Asset.textThinColor.color
         mainLabel.font = .systemFont(ofSize: 24)
@@ -30,7 +34,8 @@ class MainContentCell: UITableViewCell {
     }
 
     /// セルの内容をセットする
-    func setDetails(firstText: String, subText: String) {
+    func setDetails(topText: String, firstText: String, subText: String) {
+        leftLabel.text = topText
         mainLabel.text = firstText
         subLabel.text = subText
 

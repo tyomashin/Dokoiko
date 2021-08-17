@@ -24,6 +24,9 @@ protocol MainViewModelProtocol: AnyObject {
 
 /// メイン画面のViewModel
 class MainViewModel: MainViewModelProtocol {
+    /// 検索履歴の表示数
+    private let SEARCH_RESULT_COUNT = 30
+
     /// 初回起動フラグ
     /*
      private let initialFlagRelay = BehaviorRelay<Bool>(value: false)
@@ -96,14 +99,31 @@ class MainViewModel: MainViewModelProtocol {
     private func updateSearchResults() {
         searchResultUseCase.getCitySearchResult()
             .subscribe(onSuccess: { [weak self] result in
+                guard let self = self else { return }
                 switch result {
                 case let .success(response):
-                    self?.searchHistoryListRelay.accept(response)
+                    self.searchHistoryListRelay.accept(self.filterSearchResults(searchResults: response))
 
                 case .failure:
-                    self?.searchHistoryListRelay.accept([])
+                    self.searchHistoryListRelay.accept([])
                 }
             })
             .disposed(by: disposeBag)
+    }
+
+    /// 検索履歴リストをフィルターする
+    private func filterSearchResults(searchResults: [SearchResultEntity]) -> [SearchResultEntity] {
+        // 日付順にソート
+        var result = searchResults.sorted {
+            if let firstDate = $0.date, let secondDate = $1.date, secondDate < firstDate {
+                return true
+            } else {
+                return false
+            }
+        }
+        // リストの個数を制限
+        result = Array(result.prefix(SEARCH_RESULT_COUNT))
+
+        return result
     }
 }

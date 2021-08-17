@@ -116,9 +116,13 @@ extension MainContentView: UITableViewDataSource, UITableViewDelegate {
         let dateUtils = DateUtils()
         var dateStr = ""
         if let date = result.date {
-            dateStr = dateUtils.getFormatterStrJP(date: date, formatter: "yyyy年MM月dd日") ?? ""
+            dateStr = dateUtils.getFormatterStrJP(date: date, formatter: "yyyy年MM月dd日 HH時mm分") ?? ""
         }
-        cell.setDetails(firstText: result.cityName, subText: dateStr)
+        var prefName = result.prefName
+        if prefName.last == "県" || prefName.last == "都" || prefName.last == "府" {
+            prefName = String(prefName.dropLast())
+        }
+        cell.setDetails(topText: prefName, firstText: result.cityName, subText: dateStr)
         return cell
     }
 
