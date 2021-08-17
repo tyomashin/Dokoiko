@@ -47,6 +47,7 @@ class MainViewController: UIViewController {
 
         searchButton.setBackgroundImage(Asset.topPrimaryButton.image, for: .normal)
         searchButton.setBackgroundImage(Asset.topPrimaryButtonHighlight.image, for: .highlighted)
+        searchButton.dropShadow(color: Asset.primaryDarkColor.color, opacity: 0.5, shadowOffset: .init(width: 5, height: 5))
 
         contentAreaView.dropShadow()
 
