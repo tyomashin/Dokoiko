@@ -22,16 +22,23 @@ extension UIView {
     /// 背景に影をつける
     /// 参考：https://stackoverflow.com/questions/39624675/add-shadow-on-uiview-using-swift-3
     ///      https://xyk.hatenablog.com/entry/2017/03/19/023639
-    /// - Parameter scale:
-    func dropShadow(scale: Bool = true, color: UIColor = .lightGray) {
+    /// - Parameters:
+    ///   - color: 影の色
+    ///   - opacity: 影の濃さ
+    ///   - shadowOffset: 影の方向 (左上からどれだけずらすかの指定)
+    func dropShadow(
+        color: UIColor = .lightGray,
+        opacity: Float = 0.8,
+        shadowOffset: CGSize = .init(width: 1, height: 1)
+    ) {
         // サブレイヤーをViewの境界でクリップしないようにする
         layer.masksToBounds = false
         // 影の色
         layer.shadowColor = color.cgColor
         // 影の濃さ
-        layer.shadowOpacity = 0.8
+        layer.shadowOpacity = opacity
         // 影の方向
-        layer.shadowOffset = CGSize(width: 1, height: 1)
+        layer.shadowOffset = shadowOffset
         // 影のぼかし量
         layer.shadowRadius = 5
         // 影の形状を明示して処理を高速化
@@ -39,7 +46,7 @@ extension UIView {
         // layer.shadowPath = UIBezierPath(rect: bounds).cgPath
         // 処理の高速化のため
         layer.shouldRasterize = true
-        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+        layer.rasterizationScale = UIScreen.main.scale
     }
 
     /// 枠をつける

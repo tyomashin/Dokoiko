@@ -69,7 +69,7 @@ class RecommendListViewController: UIViewController {
         floatCloseButton.backgroundColor = Asset.subPinkColor.color
         floatCloseButton.imageView?.contentMode = .scaleAspectFit
         floatCloseButton.layer.cornerRadius = floatCloseButton.frame.width / 2
-        floatCloseButton.dropShadow(scale: true, color: Asset.primaryDarkColor.color)
+        floatCloseButton.dropShadow(color: Asset.primaryDarkColor.color)
         floatCloseButton.imageEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
 
         scrollView.delegate = self
