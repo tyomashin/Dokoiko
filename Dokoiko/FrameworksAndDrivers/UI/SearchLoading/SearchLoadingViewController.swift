@@ -155,7 +155,8 @@ class SearchLoadingViewController: UIViewController {
         // 完了時の表示
         detailLabel.text = L10n.SearchLoading.complete
         loadingLabel.text = L10n.SearchLoading.finish
-        gifImageView.image = Asset.loadingCompletion.image
+        gifImageView.image = Asset.loadingCompletion.image.withRenderingMode(.alwaysTemplate)
+        gifImageView.tintColor = Asset.subPinkColor.color
 
         // 0.75 秒待機
         Observable<Int>
