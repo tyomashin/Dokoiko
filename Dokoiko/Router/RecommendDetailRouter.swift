@@ -94,7 +94,10 @@ class RecommendDetailRouter: RecommendDetailRouterProtocol {
 
     /// GoogleMapを開く
     private func openGoogleMap(spotLat: Double, spotLng: Double) {
-        guard let url = URL(string: "comgooglemaps://") else {
+        guard let url = URL(string: "comgooglemaps://"), UIApplication.shared.canOpenURL(url) else {
+            // WebブラウザでGoogleMapを開く
+            let url = "https://www.google.com/maps/dir/?api=1&destination=\(spotLat),\(spotLng)&travelmode=driving&dir_action=navigate"
+            openWebBrowser(urlStr: url)
             return
         }
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)

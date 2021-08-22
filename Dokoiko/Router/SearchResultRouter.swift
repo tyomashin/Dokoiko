@@ -122,12 +122,22 @@ struct SearchResultRouter: SearchResultRouterProtocol {
 
     /// GoogleMapを開く
     private func openGoogleMap(query: String) {
-        guard let url = URL(string: "comgooglemaps://") else {
-            // googleMapがない場合はAppleMapへ遷移
+        var url: URL?
+        // GoogleMapを開ける場合
+        if let tmpUrl = URL(string: "comgooglemaps://"), UIApplication.shared.canOpenURL(tmpUrl) {
+            url = tmpUrl
+        }
+        // GoogleMapが開けない場合
+        else if let tmpUrl = URL(string: "https://www.google.co.jp/maps/place/") {
+            url = tmpUrl
+        }
+
+        guard let baseUrl = url else {
+            // googleMapが開けない場合はAppleMapへ遷移
             navigate(to: .transitionAppleMap(query: query))
             return
         }
-        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        var components = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true)
         var queryItems = [URLQueryItem]()
         queryItems.append(URLQueryItem(name: "q", value: query))
         components?.queryItems = queryItems
