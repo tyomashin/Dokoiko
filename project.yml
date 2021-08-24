@@ -19,7 +19,7 @@ settings:
   # Common
   base:
     MARKETING_VERSION: 1.0.0
-    CURRENT_PROJECT_VERSION: 1
+    CURRENT_PROJECT_VERSION: 4
     DEVELOPMENT_TEAM: 38BV25GUUS
     # SWIFT_VERSION: 5
     # PRODUCT_NAME: $TARGET_NAME
@@ -55,6 +55,7 @@ targets:
     settings:
       base: 
         INFOPLIST_FILE: Dokoiko/Info.plist
+        TARGETED_DEVICE_FAMILY: 1
     preBuildScripts:
       - script: |
                 if which mint >/dev/null; then
@@ -94,13 +95,14 @@ targets:
                 fi
         name: Run Script (Copy Framework)
         inputFiles:
-          - $(SRCROOT)/Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator/RxBlocking.framework
-          - $(SRCROOT)/Carthage/Build/RxTest.xcframework/ios-arm64_i386_x86_64-simulator/RxTest.framework
+          # arcive した後にAppStoreConnectにアップロードしようとした際に、以下のテスト用フレームワークを入れておくとエラーになる
+          #- $(SRCROOT)/Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator/RxBlocking.framework
+          #- $(SRCROOT)/Carthage/Build/RxTest.xcframework/ios-arm64_i386_x86_64-simulator/RxTest.framework
           - $(SRCROOT)/Carthage/Build/iOS/Realm.framework
           - $(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework
         outputFiles:
-          - $(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxBlocking.framework
-          - $(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxTest.framework
+          #- $(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxBlocking.framework
+          #- $(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxTest.framework
           - $(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework
           - $(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework
     # 依存するライブラリなどを指定
@@ -113,8 +115,6 @@ targets:
       # RealmはCarthageでXCFrameworkを作成できないため、frameworkで指定
       #- framework: Carthage/Build/iOS/RealmSwift.framework
       #- framework: Carthage/Build/iOS/Realm.framework
-      - framework: Carthage/Build/SwiftyMocky.xcframework
-      - framework: Carthage/Build/SwiftyPrototype.xcframework
       - framework: Carthage/Build/Lottie.xcframework
       - framework: Carthage/Build/Kingfisher.xcframework
       # GoogleMap導入（参考リンクメモ）
@@ -136,6 +136,8 @@ targets:
       - sdk: CoreTelephony.framework
       #- framework: Carthage/Build/RxBlocking.xcframework
       #- framework: Carthage/Build/RxTest.xcframework
+      #- framework: Carthage/Build/SwiftyMocky.xcframework
+      #- framework: Carthage/Build/SwiftyPrototype.xcframework
 
   DokoikoTests:
     type: bundle.unit-test
@@ -157,7 +159,9 @@ targets:
       # memo: Test Target には XCFramework が使えないため、シミュレータ用のframeworkのみ指定している
       # https://dev.classmethod.jp/articles/build-carthage-use-xcframework/
       - framework: Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator/RxBlocking.framework
-      - framework: Carthage/Build/RxTest.xcframework/ios-arm64_i386_x86_64-simulator/RxTest.framework  
+      - framework: Carthage/Build/RxTest.xcframework/ios-arm64_i386_x86_64-simulator/RxTest.framework 
+      - framework: Carthage/Build/SwiftyMocky.xcframework/ios-arm64_i386_x86_64-simulator/SwiftyMocky.framework
+      - framework: Carthage/Build/SwiftyPrototype.xcframework/ios-arm64_i386_x86_64-simulator/SwiftyPrototype.framework
 
   DokoikoUITests:
     type: bundle.ui-testing
@@ -171,7 +175,9 @@ targets:
     dependencies:
       - target: Dokoiko
       - framework: Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator/RxBlocking.framework
-      - framework: Carthage/Build/RxTest.xcframework/ios-arm64_i386_x86_64-simulator/RxTest.framework  
+      - framework: Carthage/Build/RxTest.xcframework/ios-arm64_i386_x86_64-simulator/RxTest.framework 
+      - framework: Carthage/Build/SwiftyMocky.xcframework/ios-arm64_i386_x86_64-simulator/SwiftyMocky.framework
+      - framework: Carthage/Build/SwiftyPrototype.xcframework/ios-arm64_i386_x86_64-simulator/SwiftyPrototype.framework
 
 
 # スキームの設定。一旦参考サイトをコピペで記載している
