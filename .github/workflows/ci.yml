@@ -1,0 +1,117 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  DEVELOPER_DIR: /Applications/Xcode_12.4.app
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    # リポジトリのチェックアウト
+    - uses: actions/checkout@v2
+
+    # 確認用：使用可能なXcodeバージョンを出力
+    - name: Show Xcode list
+      run: ls /Applications | grep 'Xcode'
+
+    # Gemsのキャッシュ
+    - name: Cache Gems
+      uses: actions/cache@v2
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+
+    # Gemsのインストール
+    - name: Install Bundled Gems
+      run: |
+        bundle config path vendor/bundle
+        bundle install --jobs 4 --retry 3
+
+    # Mint で管理しているCLIツールをインストール
+    - name: Install Mint
+      run: brew install mint
+
+    # Mint 管理のライブラリのキャッシュを復元
+    - name: Cache Mint packages
+      uses: actions/cache@v2
+      with:
+        path: mint
+        key: ${{ runner.os }}-mint-${{ hashFiles('**/Mintfile') }}
+        restore-keys: |
+          ${{ runner.os }}-mint-
+
+    # Carthageで管理しているライブラリのキャッシュ
+    - name: Cache Carthage packages
+      uses: actions/cache@v2
+      with:
+        path: Carthage
+        key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
+        restore-keys: |
+          ${{ runner.os }}-carthage-
+
+    # Carthageで管理しているライブラリのインストール
+    - name: Install Carthage frameworks
+      run: |
+        mint run carthage bootstrap --platform iOS --use-xcframeworks --cache-builds
+        echo '*** Resolved dependencies:'
+        cat 'Cartfile.resolved'
+      env:
+        GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    # プロジェクトファイルの生成
+    - name: Generate Xcode project with XcodeGen
+      run: mint run xcodegen xcodegen generate
+
+    # ビルド
+    - name: Xcode build
+      run: set -o pipefail &&
+        xcodebuild
+        -sdk iphoneos
+        -scheme Dokoiko
+        -destination 'generic/platform=iOS'
+        build
+        | bundle exec xcpretty
+        
+    # 単体テスト
+    - name: Xcode Unit Test
+      run: set -o pipefail &&
+        xcodebuild
+        -sdk iphonesimulator
+        -scheme Dokoiko
+        -skip-testing DokoikoUITests
+        -destination 'platform=iOS Simulator,name=iPhone 12 Pro Max'
+        clean test
+        | bundle exec xcpretty --report html
+
+    # コードカバレッジの出力
+    - name: Convert Code coverage to HTML
+      run: bundle exec slather coverage --html --output-directory html_report
+
+    # テスト結果のアップロード
+    - uses: actions/upload-artifact@v2
+      with:
+        name: test-results
+        path: build/reports
+
+    # コードカバレッジのアップロード
+    - uses: actions/upload-artifact@v2
+      with:
+        name: test-coverage
+        path: html_report
+        
+
+
+
+
+
+
