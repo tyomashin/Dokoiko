@@ -29,13 +29,18 @@ settings:
     # 一部のフレームワークでBitCode対応がされていないものがあるためNo指定
     ENABLE_BITCODE: NO
     OTHER_LDFLAGS: -ObjC
+    CODE_SIGN_STYLE: Manual
   configs:
     Debug:
       GCC_PREPROCESSOR_DEFINITIONS: DEVELOP=1
       OTHER_SWIFT_FLAGS: -D DEVELOP
+      CODE_SIGN_IDENTITY: Apple Development
+      PROVISIONING_PROFILE_SPECIFIER: dokoiko_develop
     Release:
       GCC_PREPROCESSOR_DEFINITIONS: "$(inherited)"
       OTHER_SWIFT_FLAGS: "$(inherited)"
+      CODE_SIGN_IDENTITY: Apple Development
+      PROVISIONING_PROFILE_SPECIFIER: dokoiko_product
 
 targets:
   Dokoiko:

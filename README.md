@@ -1,18 +1,27 @@
 # 概要
+App Store にリリースしている「 Dokoiko 」というアプリのプロジェクトです。<br>
+本アプリでは以下の機能を提供しています。<br>
+
+* 都市のランダム検索
+* 都市のスポット推薦
+
+[Dokoiko (App Store)](https://apps.apple.com/us/app/%E4%BB%8A%E6%97%A5%E3%81%AE%E8%A1%8C%E3%81%8D%E5%85%88%E3%81%8C%E6%B1%BA%E3%81%BE%E3%82%8B-dokoiko/id1581844051)
 
 # 環境
 
 * Xcode 12.4
 
 # 環境と導入
+本プロジェクトをビルドするにあたって、環境構築するための手順について記載しています。<br>
+環境構築の特徴は以下の通りです。<br>
 
-* CLI ツールを開発環境にインストールしておく必要がある。(mint でインストールする)
+* CLI ツールを開発環境にインストールしておく必要がある(mint でインストール)
 * Carthage を使用している
 * XcodeGen を使用している
 
 ## 1. ツールのインストール
 
-本プロジェクトでは、以下のCLIツールを導入している<br>
+本プロジェクトでは、以下のCLIツールを導入しています。<br>
 
 * SwiftLint
 * SwiftGen
@@ -21,16 +30,16 @@
 * Carthage
 * SwiftyMocky
 
-これらは mint でインストールしている（Mintfile に記載）。<br>
+これらは mint でインストールしています（Mintfile に記載）。<br>
 
 
-まず、mint をインストールする。
+mint をインストール
 
 ```
 $ brew install mint
 ```
 
-Mintfile に記載している CLI ツールをインストールする。
+Mintfile に記載している CLI ツールをインストール
 
 ```
 $ mint bootstrap
@@ -39,32 +48,26 @@ $ mint bootstrap
 
 ## 2. ライブラリのビルド
 
-本プロジェクトでは Carthage でライブラリ管理をしている。<br>
-導入しているライブラリは以下の通り。
+本プロジェクトでは Carthage でライブラリ管理をしています。<br>
+導入しているライブラリは以下<Br>
 
-* RxSwift      ... 非同期処理の補助、およびデータバインディング
-* Alamofire    ... ネットワーク通信の補助
+* RxSwift      ... 非同期処理、およびデータバインディング
+* Alamofire    ... ネットワーク通信
 * OHHTTPStubs  ... APIClientのユニットテスト時にネットワーク通信をスタブ化
+* lottie       ... Adobe Effects のアニメーション再生
 * Kingfisher   ... 画像キャッシュ
 
-Carthage によってライブラリをビルドして xcframework を作成する。
+Carthage でライブラリをビルドして xcframework を作成
 
 ```
 $ mint run carthage update --platform iOS --use-xcframeworks --cache-builds
 ```
 
-なお、Carthage のバージョンは 0.37.0 を使用しているため、
-Xcode12 から発生していたframeworkのビルドエラーにも対処できている。<br>
-
-### 参考文献
-[XCFrameworksに対応したCarthageを使ってみた](https://laptrinhx.com/xcframeworksni-dui-yingshitacarthagewo-shittemita-2660437151/) <br>
-
-
 ## 3. プロジェクトファイルの生成
 
-XcodeGen を使用してプロジェクトファイルを自動生成している。<br>
+XcodeGen を使用してプロジェクトファイルを自動生成しています。<br>
 
-XcodeGen は Mint で入れているため、以下のコマンドで実行できる。<br>
+プロジェクトファイルの生成
 
 ```
 $ mint run xcodegen xcodegen generate
@@ -72,8 +75,9 @@ $ mint run xcodegen xcodegen generate
 
 ### 備考
 
-xcodegen のコマンドを実行してから、プロジェクトを開くまでのコマンドを Makefile に記載している。<br>
-このため以下のコマンドを入力するだけで、上記 xcodeGen コマンドが実行されてXcodeが自動で立ち上がる。
+xcodegen のコマンドを実行してから、プロジェクトを開くまでのコマンドを Makefile に記載しています。<br>
+このため以下のコマンドを入力すると、上記 xcodeGen コマンドが実行された後、
+Xcodeプロジェクトが自動で立ち上がります。
 
 ```
 $ make
@@ -81,8 +85,8 @@ $ make
 
 ### 4. APIキー
 
-本プロジェクトでは API キーを格納した swift ファイルを gitignore に追加している。<br>
-このため、以下の形式のファイルをプロジェクトのどこかに格納しておく必要がある。<br>
+本プロジェクトでは API キーを格納した swift ファイルを gitignore に追加しています。<br>
+このため、個々人の環境で以下の内容のファイルを作成しておく必要があります。
 
 ```swift
 enum APIKeys {
@@ -97,11 +101,11 @@ enum APIKeys {
 # アーキテクチャ
 ## GUIアーキテクチャ
 
-MVVM を採用している。
+MVVM を採用
 
 ## システムアーキテクチャ
 
-クリーンアーキテクチャを採用して、MVVM の Model レイヤを分割している。<br>
+クリーンアーキテクチャを採用して、MVVM の Model レイヤを分割。<br>
 アプリ全体のレイヤは以下のように分割している。
 
 * Entities
@@ -169,13 +173,10 @@ UIKit や Alamofire、RealmSwift などのライブラリを使用したロジ�
 * 画面遷移の責務を担う（遷移ロジックを ViewController から切り離す）
 * 画面遷移に必要な事前処理も行う（ViewController, ViewModel, UseCase などそれぞれの依存関係を解消してインスタンス化 == DI）
 * Router 自体は ViewModel がプロパティとして保持する
-* 1画面1Router
+* 原則、1画面1Router
 
-# 今後の課題
+# 今後の課題・関心
 
-## ViewModel の肥大化
-
-単方向データバインディングを実現するReactorKitを導入したい。<br>
-
-[ReactorKit(Flux + Reactive Programming)を学ぶ1 入門編](https://qiita.com/yusuga/items/e793963ff51ee493497a)
-[ReactorKitを導入してiOS開発のViewModel複雑化を改善する](https://cam-inc.co.jp/p/techblog/441147032279712705)
+## VIPER
+クリーンアーキテクチャをiOSプロジェクト向けに適用したVIPERアーキテクチャについて調査し、
+次のプロジェクトで採用してみたい。

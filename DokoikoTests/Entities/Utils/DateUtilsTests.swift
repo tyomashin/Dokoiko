@@ -27,7 +27,8 @@ class DateUtilsTests: XCTestCase {
     func testGetFormatterStrJP() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let calendar = Calendar(identifier: .gregorian)
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(identifier: "Asia/Tokyo")!
         let date = calendar.date(from: DateComponents(year: 2020, month: 4, day: 10, hour: 21, minute: 0, second: 20))
         let formatDateStr = dateUtils.getFormatterStrJP(date: date!, formatter: "yyyy年MM月dd日HH時mm分ss秒")
         XCTAssertEqual(formatDateStr, "2020年04月10日21時00分20秒")
